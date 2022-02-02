@@ -1,0 +1,15 @@
+#userName.ng-pristine.ng-invalid.ng-touched {
+    border-bottom: 1px solid red;
+}
+
+#email.ng-pristine.ng-invalid.ng-touched {
+    border-bottom: 1px solid red;
+}
+
+#companyName.ng-pristine.ng-invalid.ng-touched {
+    border-bottom: 1px solid red;
+}
+
+.zmdi.zmdi-alert-circle-o {
+    color: red;
+}
