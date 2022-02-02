@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+#userName.ng-pristine.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+
+#email.ng-pristine.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+
+#companyName.ng-pristine.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
