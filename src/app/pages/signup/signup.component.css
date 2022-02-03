@@ -10,6 +10,10 @@
     border-bottom: 1px solid red;
 }
 
+#pass.ng-pristine.ng-invalid.ng-touched {
+    border-bottom: 1px solid red;
+}
+
 .zmdi.zmdi-alert-circle-o {
     color: red;
 }
