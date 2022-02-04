@@ -47,6 +47,7 @@
                         <input required ngModel #pass="ngModel" type="password" name="pass" id="pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
                     </div>
 
+                    <!-- Password validation Feild -->
                     <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="pass.touched && !pass.valid">
                         <div *ngIf="pass.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
                         <div *ngIf="pass.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters.</div>
@@ -62,6 +63,11 @@
                         <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                         <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                     </div>
+
+                    <!-- For viewing output -->
+
+                    <p>{{registerForm.value | json}}</p>
+
                     <div class="form-group form-button">
                         <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="!registerForm.valid" />
                     </div>

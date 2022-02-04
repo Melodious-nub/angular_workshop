@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
   }
 
   onRegSubmit(registerForm: any){
-    
+    console.log(registerForm.value);
   }
   
 }
