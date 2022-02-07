@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  // Get Http Data From Api
+  posts: any = [];
+  private urlApi = 'https://jsonplaceholder.typicode.com/posts';
+
+  constructor(private http:HttpClient) {
+    http.get(this.urlApi).subscribe(response => {
+      this.posts = response;
+    })
+   }
 
   ngOnInit(): void {
   }

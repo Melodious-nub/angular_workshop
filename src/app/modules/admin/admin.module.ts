@@ -9,6 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     AdminRoutingModule,
     FontAwesomeModule,
+    HttpClientModule,
   ]
 })
 export class AdminModule { }

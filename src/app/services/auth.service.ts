@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private router: Router) {}
+  constructor(private router: Router,) {}
 
   // Here I set token check in LocalStorage
   // In live project I've to check if tocken is valid or not, based on i will return true or false
