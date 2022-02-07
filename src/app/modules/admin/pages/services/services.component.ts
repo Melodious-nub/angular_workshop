@@ -21,4 +21,11 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createPost(inputTitle: HTMLInputElement){
+    let post = { title: inputTitle.value }
+    this.http.post(this.urlApi, JSON.stringify(post)).subscribe(response => {
+      console.log(response);
+    })
+  }
+
 }
