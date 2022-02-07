@@ -21,10 +21,25 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+//Create New post and api Propertises 
   createPost(inputTitle: HTMLInputElement){
-    let post = { title: inputTitle.value }
-    this.http.post(this.urlApi, JSON.stringify(post)).subscribe(response => {
+    let post: any = { title: inputTitle.value};
+    inputTitle.value = '';
+
+    this.http.post(this.urlApi, JSON.stringify(post)).subscribe((response:any) => {
       console.log(response);
+
+      post.id = response.id;
+      this.posts.splice(0, 0, post);
+    })
+  }
+//Create New Body and api Propertises
+  createBody(inputBody: HTMLInputElement){
+    let body: any = { body: inputBody.value};
+    this.http.post(this.urlApi, JSON.stringify(body)).subscribe((response:any) => {
+      console.log(response);
+      body.id = response.id;
+      this.posts.splice(0, 0, body);
     })
   }
 

@@ -57,7 +57,10 @@
 </div>
 
 <div class="container">
-    <input #inputTitle (keypress.enter)="createPost(inputTitle)" type="text" class="form-control">
+    <form>
+        <input #inputTitle (keyup.enter)="createPost(inputTitle)" type="text" class="form-control mt-2">
+        <input #inputBody (keyup.enter)="createBody(inputBody)" type="text" class="form-control mt-2">
+    </form>
 </div>
 
 <div class="container">

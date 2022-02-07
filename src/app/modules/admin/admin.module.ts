@@ -10,6 +10,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdminRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
   ]
 })
 export class AdminModule { }
