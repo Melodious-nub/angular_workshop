@@ -57,9 +57,10 @@
 </div>
 
 <div class="container">
-    <form>
-        <input #inputTitle (keyup.enter)="createPost(inputTitle)" type="text" class="form-control mt-2">
-        <input #inputBody (keyup.enter)="createBody(inputBody)" type="text" class="form-control mt-2">
+    <form class="inputForm" id="inputForm" #inputForm="ngForm" (ngSubmit)="onInputSubmit(inputForm)">
+        <input ngModel #inputTitle="ngModel" name="inputTitle" type="text" class="form-control mt-2">
+        <input ngModel #inputBody="ngModel" name="inputBody" type="text" class="form-control mt-2">
+        <button class="btn btn-danger mt-2" type="submit">Submit</button>
     </form>
 </div>
 

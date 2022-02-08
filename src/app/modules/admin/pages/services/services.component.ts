@@ -43,4 +43,8 @@ export class ServicesComponent implements OnInit {
     })
   }
 
+  onInputSubmit(inputForm: any) {
+    console.log(inputForm.value);
+  }
+
 }
