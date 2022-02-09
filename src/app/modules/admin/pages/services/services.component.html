@@ -60,6 +60,7 @@
 <div class="container">
     <form>
         <input #inputTitle name="inputTitle " type="text " class="form-control mt-2 ">
+        <!-- Keyup event for both two input field together -->
         <input (keyup.enter)="createBody(inputBody,inputTitle)" #inputBody name="inputBody" type="text " class="form-control mt-2 ">
     </form>
 </div>
