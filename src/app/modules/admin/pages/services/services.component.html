@@ -56,23 +56,23 @@
     </div>
 </div>
 
+<!-- Submit form with api & keyup event enter -->
 <div class="container">
-    <form class="inputForm" id="inputForm" #inputForm="ngForm" (ngSubmit)="onInputSubmit(inputForm)">
-        <input ngModel #inputTitle="ngModel" name="inputTitle" type="text" class="form-control mt-2">
-        <input ngModel #inputBody="ngModel" name="inputBody" type="text" class="form-control mt-2">
-        <button class="btn btn-danger mt-2" type="submit">Submit</button>
+    <form>
+        <input #inputTitle name="inputTitle " type="text " class="form-control mt-2 ">
+        <input (keyup.enter)="createBody(inputBody,inputTitle)" #inputBody name="inputBody" type="text " class="form-control mt-2 ">
     </form>
 </div>
 
-<div class="container">
-    <div class="card shadow mt-2">
-        <div class="card-body">
-            <h5 class="card-title">Post Component</h5>
-            <ul class="list-group">
-                <li class="list-group-item" *ngFor="let list of posts">
-                    <p style="color: brown;">Title</p>
-                    <p style="font-size: large;">{{list.title}}</p>
-                    <p style="color: blueviolet;">Body</p>
+<div class="container ">
+    <div class="card shadow mt-2 ">
+        <div class="card-body ">
+            <h5 class="card-title ">Post Component</h5>
+            <ul class="list-group ">
+                <li class="list-group-item " *ngFor="let list of posts ">
+                    <p style="color: brown; ">Title</p>
+                    <p style="font-size: large; ">{{list.title}}</p>
+                    <p style="color: blueviolet; ">Body</p>
                     <p>{{list.body}}</p>
                 </li>
             </ul>
