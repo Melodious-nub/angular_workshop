@@ -47,9 +47,13 @@ export class ServicesComponent implements OnInit {
     })
   }
 
-
-  // onInputSubmit(inputForm: any) {
-  //   console.log(inputForm.value.inputTitle);
-  // }
+updatePost(posts: any) {
+  // in patch method we only use object selected properties or few properties which should be modified
+  this.http.patch(this.urlApi + '/' + posts.id, JSON.stringify({ isRead: true})).subscribe(response => {
+    console.log(response);
+  })
+  // in put method, entire object goes to server, it is most recomended method & widely supported
+  // this.http.put(this.urlApi, JSON.stringify(posts))
+}
 
 }
