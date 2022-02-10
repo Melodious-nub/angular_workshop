@@ -71,7 +71,7 @@
             <h5 class="card-title ">Post Component</h5>
             <ul class="list-group ">
                 <li class="list-group-item " *ngFor="let list of posts ">
-                    <p style="color: brown; ">Title <button (click)="updatePost(posts)" class="btn btn-outline-info btn-sm">Update</button></p>
+                    <p style="color: brown; ">Title <button (click)="updatePost(inputBody,inputTitle)" class="btn btn-outline-info btn-sm">Update</button></p>
                     <p style="font-size: large; ">{{list.title}}</p>
                     <p style="color: blueviolet; ">Body <button class="btn btn-outline-info btn-sm">Update</button></p>
                     <p>{{list.body}}</p>
