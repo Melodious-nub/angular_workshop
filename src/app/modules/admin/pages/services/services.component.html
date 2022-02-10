@@ -73,7 +73,7 @@
                 <li class="list-group-item " *ngFor="let list of posts ">
                     <p style="color: brown; ">Title
                         <button (click)="updatePost(inputBody,inputTitle)" class="btn btn-outline-info btn-sm"><i class="zmdi zmdi-edit"></i></button>
-                        <button class="btn btn-outline-danger btn-sm mx-1"><i class="zmdi zmdi-delete"></i></button>
+                        <button (click)="deleteTitle(posts)" class="btn btn-outline-danger btn-sm mx-1"><i class="zmdi zmdi-delete"></i></button>
                     </p>
                     <p style="font-size: large; ">{{list.title}}</p>
                     <p style="color: blueviolet; ">Body

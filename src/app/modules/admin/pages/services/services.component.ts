@@ -61,5 +61,12 @@ export class ServicesComponent implements OnInit {
     })
   }
 
+  deleteTitle(inputTitle: HTMLInputElement){
+    this.http.delete(this.urlApi + '/' + inputTitle.id).subscribe(response => {
+      let index = this.posts.indexOf(inputTitle);
+      this.posts.splice(index, 1);
+    })
+  }
+
 
 }
