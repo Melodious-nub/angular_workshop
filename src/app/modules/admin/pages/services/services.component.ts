@@ -38,7 +38,7 @@ export class ServicesComponent implements OnInit {
 
 
 //Create New Body and api Propertises for multiple input field
-  createBody(inputBody: HTMLInputElement, inputTitle: HTMLInputElement){
+  createPost(inputBody: HTMLInputElement, inputTitle: HTMLInputElement){
     let body: any = { body: inputBody.value, title: inputTitle.value};
     this.http.post(this.urlApi, JSON.stringify(body)).subscribe((response:any) => {
       console.log(response);
@@ -49,10 +49,6 @@ export class ServicesComponent implements OnInit {
 
   updatePost(list: any) {
     // in patch method we only use object selected properties or few properties which should be modified
-    // this.http.patch(this.urlApi + '/' + updateBody.id, JSON.stringify({ isRead: true})).subscribe((response:any) => {
-    //   console.log(response);
-    //   updateBody.id = response.id;
-    // })
 
     // in put method, entire object goes to server, it is most recomended method & widely supported
     this.http.put(this.urlApi + '/' + list.id, JSON.stringify(list)).subscribe((response: any) => {
@@ -61,10 +57,13 @@ export class ServicesComponent implements OnInit {
     })
   }
 
+  // 
   deleteTitle(list: any){
     this.http.delete(this.urlApi + '/' + list.id).subscribe(response => {
-      let index = list.indexOf(list);
-      list.splice(index, 1);
+      // we can now dlt our post, so that i have to find the index of the post.
+      let index = this.posts.indexOf(list);
+      // to delete post we use splice method, which index and how many object i've to delete
+      this.posts.splice(index, 1);
     })
   }
 
