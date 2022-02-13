@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PostService } from './services/post.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    PostService,
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

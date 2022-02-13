@@ -11,6 +11,8 @@ import { ServicesComponent } from './pages/services/services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PostService } from 'src/app/services/post.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @NgModule({
@@ -28,6 +30,10 @@ import { FormsModule } from '@angular/forms';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-  ]
+  ],
+  providers: [
+    PostService,
+    AuthService,
+  ],
 })
 export class AdminModule { }

@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,13 +12,14 @@ export class ServicesComponent implements OnInit {
   posts: any = [];
   private urlApi = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http:HttpClient) {
-    http.get(this.urlApi).subscribe(response => {
-      this.posts = response;
-    })
-   }
+  // Good practice is initialization Api responses in LifeCycle Hood.
+  constructor(private http:HttpClient) { }
 
+  // Initialized Api response in LifeCycle Hood.
   ngOnInit(): void {
+    this.http.get(this.urlApi).subscribe(response => {
+      this.posts = response;
+    });
   }
 
 // --------------------------------------------------------------------------------------
@@ -32,7 +33,7 @@ export class ServicesComponent implements OnInit {
 
   //     post.id = response.id;
   //     this.posts.splice(0, 0, post);
-  //   })
+  //   });
   // }
   // --------------------------------------------------------------------------------------
 
@@ -44,9 +45,10 @@ export class ServicesComponent implements OnInit {
       console.log(response);
       body.id = response.id;
       this.posts.splice(0, 0, body);
-    })
+    });
   }
 
+  // This post will update A random value, prototype
   updatePost(list: any) {
     // in patch method we only use object selected properties or few properties which should be modified
 
@@ -54,17 +56,17 @@ export class ServicesComponent implements OnInit {
     this.http.put(this.urlApi + '/' + list.id, JSON.stringify(list)).subscribe((response: any) => {
       console.log(response);
       list.title = 'ksm';
-    })
+    });
   }
 
-  // 
+  // will delete a perticular index of data
   deleteTitle(list: any){
     this.http.delete(this.urlApi + '/' + list.id).subscribe(response => {
       // we can now dlt our post, so that i have to find the index of the post.
       let index = this.posts.indexOf(list);
       // to delete post we use splice method, which index and how many object i've to delete
       this.posts.splice(index, 1);
-    })
+    });
   }
 
 
