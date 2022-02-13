@@ -47,24 +47,24 @@ export class ServicesComponent implements OnInit {
     })
   }
 
-  updatePost(inputBody: HTMLInputElement, inputTitle: HTMLInputElement) {
+  updatePost(list: any) {
     // in patch method we only use object selected properties or few properties which should be modified
-    let updateBody: any = { body: inputBody.value, title: inputTitle.value}
     // this.http.patch(this.urlApi + '/' + updateBody.id, JSON.stringify({ isRead: true})).subscribe((response:any) => {
     //   console.log(response);
     //   updateBody.id = response.id;
     // })
 
     // in put method, entire object goes to server, it is most recomended method & widely supported
-    this.http.put(this.urlApi + '/' + updateBody.id, JSON.stringify(updateBody)).subscribe((response: any) => {
+    this.http.put(this.urlApi + '/' + list.id, JSON.stringify(list)).subscribe((response: any) => {
       console.log(response);
+      list.title = 'ksm';
     })
   }
 
-  deleteTitle(inputTitle: HTMLInputElement){
-    this.http.delete(this.urlApi + '/' + inputTitle.id).subscribe(response => {
-      let index = this.posts.indexOf(inputTitle);
-      this.posts.splice(index, 1);
+  deleteTitle(list: any){
+    this.http.delete(this.urlApi + '/' + list.id).subscribe(response => {
+      let index = list.indexOf(list);
+      list.splice(index, 1);
     })
   }
 
