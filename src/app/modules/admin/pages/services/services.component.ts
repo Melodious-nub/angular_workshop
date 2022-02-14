@@ -43,6 +43,8 @@ export class ServicesComponent implements OnInit {
 //Create New Body and api Propertises for multiple input field from PostService
   createPost(inputBody: HTMLInputElement, inputTitle: HTMLInputElement){
     let body: any = { body: inputBody.value, title: inputTitle.value};
+    inputBody.value = '';
+    inputTitle.value = '';
     this.service.createPost(body).subscribe((response:any) => {
       console.log(response);
       body.id = response.id;
