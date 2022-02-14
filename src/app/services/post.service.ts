@@ -23,7 +23,7 @@ export class PostService {
   }
 
   deletePost(list: any) {
-    return this.http.delete(this.urlApi + '/' + list.id)
+    return this.http.delete(this.urlApi + '/' + list.id);
   }
 
 }
