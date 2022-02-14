@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-services',
@@ -10,14 +10,16 @@ export class ServicesComponent implements OnInit {
 
   // Get Http Data From Api
   posts: any = [];
-  private urlApi = 'https://jsonplaceholder.typicode.com/posts';
+
 
   // Good practice is initialization Api responses in LifeCycle Hood.
-  constructor(private http:HttpClient) { }
+  // Inject the PostService on the constructor and httpClient PostService  
+  constructor(private service: PostService) { }
 
   // Initialized Api response in LifeCycle Hood.
+  // Now I'm getting the data from PostService.
   ngOnInit(): void {
-    this.http.get(this.urlApi).subscribe(response => {
+    this.service.getPosts().subscribe(response => {
       this.posts = response;
     });
   }
@@ -38,30 +40,31 @@ export class ServicesComponent implements OnInit {
   // --------------------------------------------------------------------------------------
 
 
-//Create New Body and api Propertises for multiple input field
+//Create New Body and api Propertises for multiple input field from PostService
   createPost(inputBody: HTMLInputElement, inputTitle: HTMLInputElement){
     let body: any = { body: inputBody.value, title: inputTitle.value};
-    this.http.post(this.urlApi, JSON.stringify(body)).subscribe((response:any) => {
+    this.service.createPost(body).subscribe((response:any) => {
       console.log(response);
       body.id = response.id;
       this.posts.splice(0, 0, body);
     });
   }
 
-  // This post will update A random value, prototype
+  // This post will update A random value, prototype from PostService
   updatePost(list: any) {
+
     // in patch method we only use object selected properties or few properties which should be modified
 
     // in put method, entire object goes to server, it is most recomended method & widely supported
-    this.http.put(this.urlApi + '/' + list.id, JSON.stringify(list)).subscribe((response: any) => {
+    this.service.updatePost(list).subscribe((response: any) => {
       console.log(response);
       list.title = 'ksm';
     });
   }
 
-  // will delete a perticular index of data
+  // will delete a perticular index of data from PostService
   deleteTitle(list: any){
-    this.http.delete(this.urlApi + '/' + list.id).subscribe(response => {
+    this.service.deletePost(list).subscribe(response => {
       // we can now dlt our post, so that i have to find the index of the post.
       let index = this.posts.indexOf(list);
       // to delete post we use splice method, which index and how many object i've to delete
