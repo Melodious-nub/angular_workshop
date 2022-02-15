@@ -26,7 +26,7 @@ export class PostService {
       if (error.status === 400) {
         return throwError( () => new BadInput(error.json()) );
       } else {
-        return throwError( () => new AppError(error.json()))
+        return throwError( () => new AppError(error.json()));
       }
     }));
   }
