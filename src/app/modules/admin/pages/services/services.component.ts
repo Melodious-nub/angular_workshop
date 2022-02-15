@@ -89,7 +89,7 @@ export class ServicesComponent implements OnInit {
 
   // will delete a perticular index of data from PostService
   deletePost(list: any){
-    this.service.deletePost(356).subscribe(response => {
+    this.service.deletePost(list).subscribe(response => {
       // we can now dlt our post, so that i have to find the index of the post.
       let index = this.posts.indexOf(list);
       // to delete post we use splice method, which index and how many object i've to delete
