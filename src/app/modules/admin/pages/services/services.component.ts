@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppError } from 'src/app/common/app-error';
+import { NotFoundError } from 'src/app/common/not-found-error';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -85,15 +87,15 @@ export class ServicesComponent implements OnInit {
   }
 
   // will delete a perticular index of data from PostService
-  deleteTitle(list: any){
+  deletePost(list: any){
     this.service.deletePost(list).subscribe(response => {
       // we can now dlt our post, so that i have to find the index of the post.
       let index = this.posts.indexOf(list);
       // to delete post we use splice method, which index and how many object i've to delete
       this.posts.splice(index, 1);
       // Implementation of unexpected errors
-    }, (error: Response) => {
-      if (error.status === 404) {
+    }, (error: AppError) => {
+      if (error instanceof NotFoundError) {
         alert('This post has already been deleted');
       } else {
         alert('An unexpected error occurred.');
