@@ -25,7 +25,7 @@ export class ServicesComponent implements OnInit {
     }, error => {
       alert('An unexpected error occurred.');
       // in real life project this log goes to db or the server
-      console.log(error);  
+      console.log(error); 
     });
   }
 
@@ -55,8 +55,15 @@ export class ServicesComponent implements OnInit {
       body.id = response.id;
       this.posts.splice(0, 0, body);
       // Implementation of unexpected errors(if api is nott valid throw error)
-    }, error => {
-      alert('An unexpected error occurred.');
+    }, (error: Response) => {
+      if (error.status ===400) {
+        // for handle reactive form and show it bellow form field
+        // this.form.setErrors(error);
+      } else {
+        alert('An unexpected error occurred.');
+        // in real life project this log goes to db or the server
+        console.log(error);
+      }
     });
   }
 
@@ -72,6 +79,8 @@ export class ServicesComponent implements OnInit {
       // Implementation of unexpected errors
     }, error => {
       alert('An unexpected error occurred.');
+        // in real life project this log goes to db or the server
+        console.log(error);
     });
   }
 
@@ -83,8 +92,14 @@ export class ServicesComponent implements OnInit {
       // to delete post we use splice method, which index and how many object i've to delete
       this.posts.splice(index, 1);
       // Implementation of unexpected errors
-    }, error => {
-      alert('An unexpected error occurred.');
+    }, (error: Response) => {
+      if (error.status === 404) {
+        alert('This post has already been deleted');
+      } else {
+        alert('An unexpected error occurred.');
+        // in real life project this log goes to db or the server
+        console.log(error);
+      }
     });
   }
 
