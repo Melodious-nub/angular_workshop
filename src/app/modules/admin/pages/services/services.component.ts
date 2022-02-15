@@ -13,7 +13,7 @@ export class ServicesComponent implements OnInit {
 
 
   // Good practice is initialization Api responses in LifeCycle Hood.
-  // Inject the PostService on the constructor and httpClient PostService  
+  // Inject the PostService on the constructor and httpClient from PostService  
   constructor(private service: PostService) { }
 
   // Initialized Api response in LifeCycle Hood.
@@ -21,6 +21,11 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
     this.service.getPosts().subscribe(response => {
       this.posts = response;
+      // Implementation of unexpected errors
+    }, error => {
+      alert('An unexpected error occurred.');
+      // in real life project this log goes to db or the server
+      console.log(error);  
     });
   }
 
@@ -49,6 +54,9 @@ export class ServicesComponent implements OnInit {
       console.log(response);
       body.id = response.id;
       this.posts.splice(0, 0, body);
+      // Implementation of unexpected errors(if api is nott valid throw error)
+    }, error => {
+      alert('An unexpected error occurred.');
     });
   }
 
@@ -61,6 +69,9 @@ export class ServicesComponent implements OnInit {
     this.service.updatePost(list).subscribe((response: any) => {
       console.log(response);
       list.title = 'ksm';
+      // Implementation of unexpected errors
+    }, error => {
+      alert('An unexpected error occurred.');
     });
   }
 
@@ -71,6 +82,9 @@ export class ServicesComponent implements OnInit {
       let index = this.posts.indexOf(list);
       // to delete post we use splice method, which index and how many object i've to delete
       this.posts.splice(index, 1);
+      // Implementation of unexpected errors
+    }, error => {
+      alert('An unexpected error occurred.');
     });
   }
 
