@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppError } from 'src/app/common/app-error';
+import { BadInput } from 'src/app/common/bad-input';
 import { NotFoundError } from 'src/app/common/not-found-error';
 import { PostService } from 'src/app/services/post.service';
 
@@ -57,10 +58,10 @@ export class ServicesComponent implements OnInit {
       body.id = response.id;
       this.posts.splice(0, 0, body);
       // Implementation of unexpected errors(if api is nott valid throw error)
-    }, (error: Response) => {
-      if (error.status ===400) {
+    }, (error: AppError) => {
+      if ( error instanceof BadInput) {
         // for handle reactive form and show it bellow form field
-        // this.form.setErrors(error);
+        // this.form.setErrors(error.originalError);
       } else {
         alert('An unexpected error occurred.');
         // in real life project this log goes to db or the server
@@ -88,7 +89,7 @@ export class ServicesComponent implements OnInit {
 
   // will delete a perticular index of data from PostService
   deletePost(list: any){
-    this.service.deletePost(list).subscribe(response => {
+    this.service.deletePost(356).subscribe(response => {
       // we can now dlt our post, so that i have to find the index of the post.
       let index = this.posts.indexOf(list);
       // to delete post we use splice method, which index and how many object i've to delete
