@@ -54,7 +54,6 @@ export class ServicesComponent implements OnInit {
     inputBody.value = '';
     inputTitle.value = '';
     this.service.createPost(body).subscribe((response:any) => {
-      console.log(response);
       body.id = response.id;
       this.posts.splice(0, 0, body);
       // Implementation of unexpected errors(if api is nott valid throw error)
@@ -77,7 +76,6 @@ export class ServicesComponent implements OnInit {
 
     // in put method, entire object goes to server, it is most recomended method & widely supported
     this.service.updatePost(list).subscribe((response: any) => {
-      console.log(response);
       list.title = 'ksm';
       // Implementation of unexpected errors
     }, error => {
