@@ -25,10 +25,6 @@ export class ServicesComponent implements OnInit {
     this.service.getPosts().subscribe(response => {
       this.posts = response;
       // Implementation of unexpected errors
-    }, error => {
-      alert('An unexpected error occurred.');
-      // in real life project this log goes to db or the server
-      console.log(error); 
     });
   }
 
@@ -61,11 +57,8 @@ export class ServicesComponent implements OnInit {
       if ( error instanceof BadInput) {
         // for handle reactive form and show it bellow form field
         // this.form.setErrors(error.originalError);
-      } else {
-        alert('An unexpected error occurred.');
-        // in real life project this log goes to db or the server
-        console.log(error);
-      }
+        // reThrow error for catch global error handler
+      } else throw error;
     });
   }
 
@@ -78,10 +71,6 @@ export class ServicesComponent implements OnInit {
     this.service.updatePost(list).subscribe((response: any) => {
       list.title = 'ksm';
       // Implementation of unexpected errors
-    }, error => {
-      alert('An unexpected error occurred.');
-        // in real life project this log goes to db or the server
-        console.log(error);
     });
   }
 
@@ -96,11 +85,8 @@ export class ServicesComponent implements OnInit {
     }, (error: AppError) => {
       if (error instanceof NotFoundError) {
         alert('This post has already been deleted');
-      } else {
-        alert('An unexpected error occurred.');
-        // in real life project this log goes to db or the server
-        console.log(error);
-      }
+        // reThrow error for catch global error handler
+      } else throw error;
     });
   }
 

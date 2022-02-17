@@ -14,6 +14,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
+import { AppErrorHandler } from './common/app-error-handler';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AuthService } from './services/auth.service';
   providers: [
     PostService,
     AuthService,
+    { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })

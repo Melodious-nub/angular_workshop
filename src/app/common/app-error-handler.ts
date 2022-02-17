@@ -2,7 +2,7 @@ import { ErrorHandler } from "@angular/core";
 
 // this is the global errorhandler for unexpected error
 
-class AppErrorHandler implements ErrorHandler {
+ export class AppErrorHandler implements ErrorHandler {
     handleError(error: any) {
         // instead of alert i will use tost in future
       alert('An unexpected error occurred.');
