@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map} from 'rxjs/operators';
 import { AppError } from '../common/app-error';
 import { BadInput } from '../common/bad-input';
 import { NotFoundError } from '../common/not-found-error';
@@ -18,27 +18,37 @@ export class DataService {
 
     // passing on sevice component
     getAll() {
-      return this.http.get(this.urlApi);
+      return this.http.get(this.urlApi)
+      // mapping/transforming response object to array of javascript objects
+      .pipe(map(response => response))
+      // implemented error handler
+      .pipe(catchError(this.handleError));
     }
   
     create(resource: any) {
-      return this.http.post(this.urlApi, JSON.stringify(resource)).
+      return this.http.post(this.urlApi, JSON.stringify(resource))
+      // mapping/transforming response object to array of javascript objects
+      .pipe(map(response => response))      
           // after rendering data from api, piped with errorHandler
-      pipe(catchError(this.handleError));
+      .pipe(catchError(this.handleError));
     }
   
     update(resource: any) {
       return this.http.put(this.urlApi + '/' + resource.id, JSON.stringify(resource))
+      // mapping/transforming response object to array of javascript objects
+      .pipe(map(response => response))      
       // after rendering data from api, piped with errorHandler
       // in this piped catchError we passed The handleError method-Reference
       .pipe(catchError(this.handleError));
     }
   
     delete(id: number) {
-      return this.http.delete(this.urlApi + '/' + id).
+      return this.http.delete(this.urlApi + '/' + id)
+      // mapping/transforming response object to array of javascript objects
+      .pipe(map(response => response))      
       // after rendering data from api, piped with errorHandler
       // in this piped catchError we passed The handleError method-Reference
-      pipe(catchError(this.handleError));
+      .pipe(catchError(this.handleError));
     }
   
     // Re-useable error handling Methods Implementation
