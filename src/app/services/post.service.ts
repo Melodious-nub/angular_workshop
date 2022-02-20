@@ -22,30 +22,36 @@ export class PostService {
   createPost(body: any) {
     return this.http.post(this.urlApi, JSON.stringify(body)).
         // after rendering data from api, piped with errorHandler
-    pipe(catchError((error: Response) => {
-      if (error.status === 400) {
-        return throwError( () => new BadInput(error.json()) );
-      } else {
-        return throwError( () => new AppError(error.json()));
-      }
-    }));
+
+    pipe(catchError(this.handleError));
   }
 
   updatePost(list: any) {
-    return this.http.put(this.urlApi + '/' + list.id, JSON.stringify(list));
+    return this.http.put(this.urlApi + '/' + list.id, JSON.stringify(list))
+    // after rendering data from api, piped with errorHandler
+    // in this piped catchError we passed The handleError method-Reference
+    .pipe(catchError(this.handleError));
   }
 
   deletePost(id: number) {
     return this.http.delete(this.urlApi + '/' + id).
     // after rendering data from api, piped with errorHandler
-    pipe(catchError((error: Response) => {
-      if (error.status === 404){
-        // these are comming from common folder classes
-        return throwError( () => new NotFoundError() );
-      } else {
-        return throwError( () => new AppError(error.json()) );
-      }
-    }));
+    // in this piped catchError we passed The handleError method-Reference
+    pipe(catchError(this.handleError));
+  }
+
+  // Re-useable error handling Methods Implementation
+  private handleError(error: Response) {
+    if (error.status === 404){
+      // these are comming from common folder classes
+      return throwError( () => new NotFoundError() );
+      // implemented badInput error in this method
+    } else if (error.status === 400) {
+      return throwError( () => new BadInput(error.json()) );
+    } else {
+      return throwError( () => new AppError(error.json()) );
+    }
+    
   }
 
 }
