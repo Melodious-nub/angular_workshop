@@ -24,7 +24,6 @@ export class DataService {
     create(resource: any) {
       return this.http.post(this.urlApi, JSON.stringify(resource)).
           // after rendering data from api, piped with errorHandler
-  
       pipe(catchError(this.handleError));
     }
   
