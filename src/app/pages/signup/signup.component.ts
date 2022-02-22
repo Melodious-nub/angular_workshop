@@ -12,6 +12,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Registation Section will update here
   onRegSubmit(registerForm: any){
     console.log(registerForm.value);
   }
