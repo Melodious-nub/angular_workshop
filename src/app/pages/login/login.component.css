@@ -1,4 +1,25 @@
 .create-acc {
     margin-top: 30px !important;
-    margin-left: 60px;
+    margin-left: 15%;
+}
+
+.forgot-pass {
+    margin: 20%;
+    color: #222;
+}
+
+.forgot-pass:hover {
+    color: #0d6efd;
+}
+
+@media (max-width:768px) {
+    img#optionalstuff {
+        display: none;
+    }
+}
+
+@media (max-width:1200px) {
+    .forgot-pass {
+        margin-left: 5%;
+    }
 }
