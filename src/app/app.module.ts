@@ -15,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AppErrorHandler } from './common/app-error-handler';
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    MatInputModule,
   ],
   providers: [
     PostService,
