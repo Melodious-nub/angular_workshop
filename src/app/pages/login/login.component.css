@@ -1,6 +1,6 @@
 .create-acc {
     margin-top: 30px !important;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 
 .forgot-pass {
@@ -16,10 +16,19 @@
     img#optionalstuff {
         display: none;
     }
+    .create-acc {
+        margin-left: 1%;
+    }
 }
 
 @media (max-width:1200px) {
     .forgot-pass {
         margin-left: 5%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .create-acc {
+        margin-left: 10%;
     }
 }

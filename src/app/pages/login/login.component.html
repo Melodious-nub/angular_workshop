@@ -3,11 +3,12 @@
     <div class="container">
         <div class="signin-content">
             <div class="signin-image">
+                <!-- Image Field -->
                 <figure><img id="optionalstuff" src="../../../assets/images/signin-image.jpg" alt="sing up image"></figure>
                 <div class="social-login create-acc">
                     <span class="social-label">Don't have an account?</span>
                     <ul class="socials">
-                        <a routerLink="../signup" class="signup-image-link">Register New</a>
+                        <a routerLink="../signup" class="signup-image-link">Register New!</a>
                     </ul>
                 </div>
             </div>
@@ -25,18 +26,19 @@
                         <input required ngModel #loginName="ngModel" type="text" name="loginName" id="your_name" placeholder="Email Address/User Name" />
                     </div>
 
-
+                    <!-- Password Input Field -->
                     <div class="form-group">
                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                         <input required ngModel #loginPass="ngModel" type="password" name="loginPass" id="your_pass" placeholder="Password" />
                     </div>
 
-
+                    <!-- Remember me Field -->
                     <div class="form-group">
                         <input ngModel #rememberMe="ngModel" type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                         <label for="remember-me" class="label-agree-term"><span><span></span></span>Keep Logged In</label>
                     </div>
 
+                    <!-- Forgot Pass Field -->
                     <div class="form-group form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
                         <a routerLink="../forgot-password" class="forgot-pass">Forgot Password?</a>
