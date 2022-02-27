@@ -7,16 +7,16 @@
                 <!-- Full Form Hander Field -->
                 <form class="register-form" id="register-form" #registerForm="ngForm" (ngSubmit)="onRegSubmit(registerForm)">
 
-                    <!-- UserName Feild -->
+                    <!-- fullName Feild -->
                     <div class="form-group">
-                        <label for="userName"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input required ngModel minlength="3" maxlength="14" type="text" name="userName" id="userName" #userName="ngModel" placeholder="Your Name" />
+                        <label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="Your Full Name" />
                     </div>
 
                     <!-- User name Validation and alert styles -->
-                    <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="userName.touched && !userName.valid">
-                        <div *ngIf="userName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> User name is required.</div>
-                        <div *ngIf="userName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{userName.errors?.['minlength'].requiredLength}} characters.</div>
+                    <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="fullName.touched && !fullName.valid">
+                        <div *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> User name is required.</div>
+                        <div *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.</div>
                     </div>
 
                     <!-- Email Feild -->
@@ -75,7 +75,7 @@
                 </form>
             </div>
             <div class="signup-image">
-                <figure><img src="../../../assets/images/signup-image.jpg" alt="sing up image"></figure>
+                <figure><img id="optionalstuff" src="../../../assets/images/signup-image.jpg" alt="sing up image"></figure>
                 <a routerLink="../login" class="signup-image-link">I am already member</a>
             </div>
         </div>

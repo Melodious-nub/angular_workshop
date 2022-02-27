@@ -31,6 +31,8 @@
                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                         <input required ngModel #loginPass="ngModel" type="password" name="loginPass" id="your_pass" placeholder="Password" />
                     </div>
+                    <a routerLink="../forgot-password" class="float-end forgot-pass">Forgot Password?</a>
+
 
                     <!-- Remember me Field -->
                     <div class="form-group">
@@ -38,10 +40,9 @@
                         <label for="remember-me" class="label-agree-term"><span><span></span></span>Keep Logged In</label>
                     </div>
 
-                    <!-- Forgot Pass Field -->
+                    <!-- Login Button Field -->
                     <div class="form-group form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
-                        <a routerLink="../forgot-password" class="forgot-pass">Forgot Password?</a>
                     </div>
                     <!-- <p>{{loginForm.value | json}}</p> -->
                 </form>

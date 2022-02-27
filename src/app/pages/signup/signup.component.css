@@ -1,4 +1,4 @@
-#userName.ng-pristine.ng-invalid.ng-touched {
+#fullName.ng-pristine.ng-invalid.ng-touched {
     border-bottom: 1px solid red;
 }
 
@@ -15,5 +15,15 @@
 }
 
 .zmdi.zmdi-alert-circle-o {
+    color: red;
+}
+
+@media (max-width:768px) {
+    img#optionalstuff {
+        display: none;
+    }
+}
+
+.alert-modi {
     color: red;
 }
