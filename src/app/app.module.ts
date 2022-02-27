@@ -23,7 +23,7 @@ import {MatInputModule} from '@angular/material/input';
     SignupComponent,
     LoginComponent,
     NotFoundComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
