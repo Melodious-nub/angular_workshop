@@ -1,16 +1,4 @@
-#fullName.ng-pristine.ng-invalid.ng-touched {
-    border-bottom: 1px solid red;
-}
-
-#email.ng-pristine.ng-invalid.ng-touched {
-    border-bottom: 1px solid red;
-}
-
-#companyName.ng-pristine.ng-invalid.ng-touched {
-    border-bottom: 1px solid red;
-}
-
-#pass.ng-pristine.ng-invalid.ng-touched {
+.ng-pristine.ng-invalid.ng-touched {
     border-bottom: 1px solid red;
 }
 

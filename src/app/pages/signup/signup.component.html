@@ -68,18 +68,33 @@
                     <!-- Confirm Password Feild -->
                     <div class="form-group">
                         <label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i></label>
-                        <input ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat your password" />
+                        <input required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat your password" />
                     </div>
 
                     <!-- Confirm Password Feild Validation -->
                     <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="confirmPassword.touched && !confirmPassword.valid">
-                        <div *ngIf="model.confirmPassword !== model.pass"><i class="zmdi zmdi-alert-circle-o"></i>Passwords do not match.</div>
+                        <div *ngIf="(model.confirmPassword !== model.pass) && confirmPassword.touched"><i class="zmdi zmdi-alert-circle-o"></i> Passwords do not match.</div>
+                        <div *ngIf="confirmPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
                     </div>
 
+                    <!-- Group of Users -->
+                    <div class="form-group">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label for="inlineRadio1">1</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                            <label class="form-check-label" for="inlineRadio3">3</label>
+                        </div>
+                    </div>
 
+                    <!-- Terms and service Field -->
                     <div class="form-group">
                         <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        <label for="agree-term" class="label-agree-term-main">I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                     </div>
 
                     <!-- For viewing output -->
