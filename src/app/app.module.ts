@@ -16,6 +16,7 @@ import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import {MatInputModule} from '@angular/material/input';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatInputModule} from '@angular/material/input';
     FontAwesomeModule,
     HttpClientModule,
     MatInputModule,
+    NgxIntlTelInputModule
   ],
   providers: [
     PostService,

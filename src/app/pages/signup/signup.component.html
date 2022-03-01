@@ -19,28 +19,41 @@
                         <div *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.</div>
                     </div>
 
-                    <!-- Email Feild -->
+                    <!-- ------------------------------------------------------------------------------------------ -->
+
+                    <!-- phone number -->
                     <div class="form-group">
-                        <label for="email"><i class="zmdi zmdi-email"></i></label>
-                        <input required ngModel type="email" name="email" id="email" #email="ngModel" [(ngModel)]="model.email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" />
+                        <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[
+                              SearchCountryField.Iso2,
+                              SearchCountryField.Name
+                            ]" [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.Germany" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phone" Placeholder="+" formControlName="phone">
+                        </ngx-intl-tel-input>
                     </div>
 
-                    <!-- Email Validation & Alert Style -->
-                    <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="((email.invalid && email.touched) || email.dirty)">
-                        <div *ngIf="email.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Email address is required.</div>
-                        <div *ngIf="email.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Email pattern is not correct</div>
-                    </div>
-
-                    <!--Re-Enter Email Feild -->
+                    <!-- Password Feild -->
                     <div class="form-group">
-                        <label for="emailRe"><i class="zmdi zmdi-email"></i></label>
-                        <input required ngModel type="email" name="emailRe" id="emailRe" #emailRe="ngModel" [(ngModel)]="model.emailRe" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Re-enter Email Address" />
+                        <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                        <input required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
                     </div>
 
-                    <!-- Re-enter Email Validation & Alert Style -->
-                    <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="((email.invalid && email.touched) || email.dirty)">
-                        <div *ngIf="model.emailRe !== model.email"><i class="zmdi zmdi-alert-circle-o"></i> Email address not match.</div>
+                    <!-- Password validation Feild -->
+                    <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="pass.touched && !pass.valid">
+                        <div *ngIf="pass.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
+                        <div *ngIf="pass.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters.</div>
                     </div>
+
+                    <!-- Confirm Password Feild -->
+                    <div class="form-group">
+                        <label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i></label>
+                        <input required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat your password" />
+                    </div>
+
+                    <!-- Confirm Password Feild Validation -->
+                    <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+                        <div *ngIf="(model.confirmPassword !== model.pass) && confirmPassword.touched"><i class="zmdi zmdi-alert-circle-o"></i> Passwords do not match.</div>
+                        <div *ngIf="confirmPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
+                    </div>
+
 
                     <!-- Group of Users -->
                     <div class="form-group">
@@ -48,60 +61,102 @@
                         <div class="form-row">
                             <div class="p-t-15">
                                 <label class="radio-container m-r-45">Brands
-                                <input type="radio" checked="checked" name="exist">
+                                <input ngModel #brand="ngModel" id="brand" type="radio" checked="checked" name="exist" value="1">
                                 <span class="checkmark"></span>
                             </label>
 
                                 <label class="radio-container m-l-30 m-r-45">Factory
-                                <input type="radio" name="exist">
+                                <input ngModel #factory="ngModel" id="factory" type="radio" name="exist" value="2">
                                 <span class="checkmark"></span>
                             </label>
 
                                 <label class="radio-container m-r-45">Employees
-                                <input type="radio" name="exist">
+                                <input ngModel #employee="ngModel" id="employee" type="radio" name="exist" value="3">
                                 <span class="checkmark"></span>
                             </label>
 
                                 <label class="radio-container m-r-45">Consumers
-                                <input type="radio" name="exist">
+                                <input ngModel #consumer="ngModel" id="consumer" type="radio" name="exist" value="4">
                                 <span class="checkmark"></span>
                             </label>
                             </div>
                         </div>
-                        <!-- brandName Feild -->
+
+                        <!-- Multiple hidden/show fields -->
+                        <!-- Email Feild -->
                         <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input required ngModel type="email" name="email" id="email" #email="ngModel" [(ngModel)]="model.email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" />
+                        </div>
+
+                        <!-- Email Validation & Alert Style -->
+                        <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="((email.invalid && email.touched) || email.dirty)">
+                            <div *ngIf="email.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Email address is required.</div>
+                            <div *ngIf="email.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Email pattern is not correct</div>
+                        </div>
+
+                        <!--Re-Enter Email Feild -->
+                        <div class="form-group">
+                            <label for="emailRe"><i class="zmdi zmdi-email"></i></label>
+                            <input required ngModel type="email" name="emailRe" id="emailRe" #emailRe="ngModel" [(ngModel)]="model.emailRe" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Re-enter Email Address" />
+                        </div>
+
+                        <!-- Re-enter Email Validation & Alert Style -->
+                        <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="((email.invalid && email.touched) || email.dirty)">
+                            <div *ngIf="model.emailRe !== model.email"><i class="zmdi zmdi-alert-circle-o"></i> Email address not match.</div>
+                        </div>
+
+                        <!-- brandName Feild -->
+                        <div class="form-group" [hidden]="!((brand.value == 1) || (employee.value == 3))">
                             <label for="brandName"><i class="zmdi zmdi-store "></i></label>
-                            <input required ngModel type="brandName" name="brandName" id="brandName" #brandName="ngModel" placeholder="Name of Brand" />
+                            <input required ngModel type="text" name="brandName" id="brandName" #brandName="ngModel" placeholder="Name of Brand" />
                         </div>
 
                         <!-- brandName Validation & Alert Style -->
-                        <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="brandName.touched && !brandName.valid">
-                            <div *ngIf="brandName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Company name is required.</div>
+                        <div class="alert-modi" [hidden]="!((brand.value == 1) || (employee.value == 3))" style="margin-top: -20px !important;" *ngIf="brandName.touched && !brandName.valid">
+                            <div *ngIf="brandName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Brand name is required.</div>
                         </div>
 
-                        <!-- Password Feild -->
-                        <div class="form-group">
-                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
+                        <!-- factoryName Feild -->
+                        <div class="form-group" [hidden]="!((factory.value == 2) || (employee.value == 3))">
+                            <label for="factoryName"><i class="zmdi zmdi-store "></i></label>
+                            <input required ngModel type="text" name="factoryName" id="factoryName" #factoryName="ngModel" placeholder="Name of Factory" />
                         </div>
 
-                        <!-- Password validation Feild -->
-                        <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="pass.touched && !pass.valid">
-                            <div *ngIf="pass.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
-                            <div *ngIf="pass.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters.</div>
+                        <!-- factoryName Validation & Alert Style -->
+                        <div class="alert-modi" [hidden]="!((factory.value == 2) || (employee.value == 3))" style="margin-top: -20px !important;" *ngIf="factoryName.touched && !factoryName.valid">
+                            <div *ngIf="factoryName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Factory name is required.</div>
                         </div>
 
-                        <!-- Confirm Password Feild -->
-                        <div class="form-group">
-                            <label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i></label>
-                            <input required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat your password" />
+                        <!-- professionName Feild -->
+                        <div class="form-group" [hidden]="!(consumer.value == 4)">
+                            <label for="professionName"><i class="zmdi zmdi-store "></i></label>
+                            <input required ngModel type="text" name="professionName" id="professionName" #professionName="ngModel" placeholder="Name of your Profession" />
                         </div>
 
-                        <!-- Confirm Password Feild Validation -->
-                        <div class="alert-modi" style="margin-top: -20px !important;" *ngIf="confirmPassword.touched && !confirmPassword.valid">
-                            <div *ngIf="(model.confirmPassword !== model.pass) && confirmPassword.touched"><i class="zmdi zmdi-alert-circle-o"></i> Passwords do not match.</div>
-                            <div *ngIf="confirmPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
+                        <!-- professionName Validation & Alert Style -->
+                        <div class="alert-modi" [hidden]="!(consumer.value == 4)" style="margin-top: -20px !important;" *ngIf="professionName.touched && !professionName.valid">
+                            <div *ngIf="professionName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Profession Name is required.</div>
                         </div>
+
+                        <!-- Gender Field -->
+                        <div class="form-group" [hidden]="!(consumer.value == 4)">
+                            <h4 class="label">Gender</h4>
+                            <div class="form-row">
+                                <div class="p-t-15">
+                                    <label class="radio-container m-r-45">Male
+                                    <input ngModel #gender="ngModel" id="gender" type="radio" checked="checked" name="gender" value="1">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                    <label class="radio-container m-l-30 m-r-45">Female
+                                    <input ngModel #gender="ngModel" id="gender" type="radio" name="gender" value="2">
+                                    <span class="checkmark"></span>
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <!--group closed  -->
                     </div>
@@ -130,3 +185,6 @@
         </div>
     </div>
 </section>
+
+
+<script src="../../../assets/js/main.js"></script>
