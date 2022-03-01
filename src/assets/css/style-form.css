@@ -228,15 +228,6 @@ input[type=checkbox] {
     -ms-appearance: checkbox !important;
 }
 
-
-/* input[type=radio] {
-    appearance: radio !important;
-    -moz-appearance: radio !important;
-    -webkit-appearance: radio !important;
-    -o-appearance: radio !important;
-    -ms-appearance: radio !important;
-} */
-
 img {
     max-width: 100%;
     height: auto;
