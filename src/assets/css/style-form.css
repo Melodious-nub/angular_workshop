@@ -272,7 +272,8 @@ body {
 }
 
 .container {
-    width: 95%;
+    width: 85%;
+    height: 90%;
     background: #fff;
     margin: 0 auto;
     box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
@@ -325,11 +326,11 @@ body {
 }
 
 .signup {
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 .signup-content {
-    padding: 75px 0;
+    padding: 50px 0;
 }
 
 .signup-form,
@@ -341,7 +342,7 @@ body {
 }
 
 .signup-image {
-    margin: 0 55px;
+    margin: 55px;
 }
 
 .form-title {
@@ -589,7 +590,7 @@ label {
         margin-left: 0px;
         margin-right: 0px;
         padding-left: 0px;
-        /* box-sizing: border-box; */
+        box-sizing: border-box;
         padding: 0 30px;
     }
     .signin-image {
@@ -731,7 +732,7 @@ label {
 }
 
 .m-l-30 {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 
@@ -740,9 +741,9 @@ label {
 .radio-container {
     display: inline-block;
     position: relative;
-    padding-left: 30px;
+    padding-left: 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     color: #666;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -789,8 +790,8 @@ label {
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     left: 0;
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     background-color: #e5e5e5;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;

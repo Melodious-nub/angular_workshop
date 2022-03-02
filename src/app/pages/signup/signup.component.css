@@ -37,3 +37,12 @@ h2 {
 .dropdown-phn {
     overflow: unset !important;
 }
+
+ngx-intl-tel-input {
+    width: 100% !important;
+    display: block !important;
+    border: none !important;
+    padding: 5px 0px !important;
+    font-family: Poppins !important;
+    box-sizing: border-box !important;
+}

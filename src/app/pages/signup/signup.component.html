@@ -19,14 +19,6 @@
                         <div *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.</div>
                     </div>
 
-                    <!-- phone number -->
-                    <div class="form-group dropdown-phn">
-                        <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[
-                              SearchCountryField.Iso2,
-                              SearchCountryField.Name
-                            ]" [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.Germany" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phone" Placeholder="+" formControlName="phone">
-                        </ngx-intl-tel-input>
-                    </div>
 
                     <!-- Password Feild -->
                     <div class="form-group">
@@ -81,6 +73,16 @@
                         </div>
 
                         <!-- Multiple hidden/show fields -->
+
+                        <!-- phone number -->
+                        <div class="form-group dropdown-phn">
+                            <ngx-intl-tel-input [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[
+                              SearchCountryField.Iso2,
+                              SearchCountryField.Name
+                            ]" [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.Germany" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phone" Placeholder="+" formControlName="phone">
+                            </ngx-intl-tel-input>
+                        </div>
+
                         <!-- Email Feild -->
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
