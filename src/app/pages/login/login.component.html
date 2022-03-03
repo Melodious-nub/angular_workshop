@@ -22,14 +22,24 @@
 
                     <!-- Login Input Field -->
                     <div class="form-group">
-                        <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input required ngModel #loginName="ngModel" type="text" name="loginName" id="your_name" placeholder="Email Address/User Name" />
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i> Email Address/User Name</mat-label>
+
+                            <input matInput required ngModel #loginName="ngModel" type="text" name="loginName" id="your_name" placeholder="your_mail@email.com">
+                        </mat-form-field>
                     </div>
 
                     <!-- Password Input Field -->
                     <div class="form-group">
-                        <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input required ngModel #loginPass="ngModel" type="password" name="loginPass" id="your_pass" placeholder="Password" />
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label for="your_pass"><i class="zmdi zmdi-lock"></i> Enter your password</mat-label>
+
+                            <input matInput required ngModel #loginPass="ngModel" type="password" name="loginPass" id="your_pass" [type]="hide ? 'password' : 'text'">
+
+                            <!-- visible pass icon will implemented -->
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            </button>
+                        </mat-form-field>
                     </div>
                     <a routerLink="../forgot-password" class="float-end forgot-pass">Forgot Password?</a>
 

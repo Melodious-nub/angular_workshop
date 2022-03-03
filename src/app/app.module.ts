@@ -18,6 +18,9 @@ import { AppErrorHandler } from './common/app-error-handler';
 import {MatInputModule} from '@angular/material/input';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon'
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -38,12 +41,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HttpClientModule,
     MatInputModule,
     NgxIntlTelInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers: [
     PostService,
     AuthService,
-    { provide: ErrorHandler, useClass: AppErrorHandler}
+    { provide: ErrorHandler, useClass: AppErrorHandler},
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
   ],
   bootstrap: [AppComponent]
 })

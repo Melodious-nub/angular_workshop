@@ -415,7 +415,7 @@ figure {
 
 .form-group {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     overflow: hidden;
 }
 
@@ -427,8 +427,8 @@ input {
     width: 100%;
     display: block;
     border: none;
-    border-bottom: 1px solid #999;
-    padding: 6px 30px;
+    /* border-bottom: 1px solid #999; */
+    padding: 0px 0px;
     font-family: Poppins;
     box-sizing: border-box;
 }
@@ -449,7 +449,8 @@ input:-moz-placeholder {
     color: #999;
 }
 
-input:focus {
+
+/* input:focus {
     border-bottom: 1px solid #222;
 }
 
@@ -467,22 +468,21 @@ input:focus:-ms-input-placeholder {
 
 input:focus:-moz-placeholder {
     color: #222;
-}
+} */
 
 .agree-term {
     display: inline-block;
     width: auto;
 }
 
-label {
-    position: absolute;
+mat-label {
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
-    color: #222;
 }
 
 .label-agree-term {

@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  hide = true;
+
   // Passed AuthServices
   constructor(private auth: AuthService, private router: Router) { }
 
