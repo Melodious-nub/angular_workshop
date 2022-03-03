@@ -9,7 +9,11 @@
 
                     <!-- fullName Feild -->
                     <div class="form-group">
+                        <!-- Basic label -->
                         <label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <!-- Error Level -->
+                        <label for="fullName" *ngIf="fullName.touched && !fullName.valid"><i class="zmdi zmdi-account material-icons-name error-icons"></i></label>
+
                         <input required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="Full Name" />
                     </div>
 
@@ -22,7 +26,11 @@
 
                     <!-- Password Feild -->
                     <div class="form-group">
+                        <!-- Basic label -->
                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                        <!-- Error label -->
+                        <label for="pass" *ngIf="pass.touched && !pass.valid"><i class="zmdi zmdi-lock error-icons"></i></label>
+
                         <input required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
                     </div>
 
@@ -34,7 +42,11 @@
 
                     <!-- Confirm Password Feild -->
                     <div class="form-group">
+                        <!-- Basic label -->
                         <label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i></label>
+                        <!-- Error label -->
+                        <label for="confirmPassword" *ngIf="confirmPassword.touched && !confirmPassword.valid"><i class="zmdi zmdi-lock-outline error-icons"></i></label>
+
                         <input required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat your password" />
                     </div>
 
@@ -85,7 +97,11 @@
 
                         <!-- Email Feild -->
                         <div class="form-group">
+                            <!-- Basic label -->
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <!-- Error label -->
+                            <label for="email" *ngIf="((email.invalid && email.touched) || email.dirty)"><i class="zmdi zmdi-email error-icons"></i></label>
+
                             <input required ngModel type="email" name="email" id="email" #email="ngModel" [(ngModel)]="model.email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" />
                         </div>
 
@@ -97,12 +113,15 @@
 
                         <!--Re-Enter Email Feild -->
                         <div class="form-group">
+                            <!-- Basic label -->
                             <label for="emailRe"><i class="zmdi zmdi-email"></i></label>
+                            <!-- Error label -->
+                            <label for="emailRe" *ngIf="((emailRe.invalid && emailRe.touched) || emailRe.dirty)"><i class="zmdi zmdi-email error-icons"></i></label>
                             <input required ngModel type="email" name="emailRe" id="emailRe" #emailRe="ngModel" [(ngModel)]="model.emailRe" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Re-enter Email Address" />
                         </div>
 
                         <!-- Re-enter Email Validation & Alert Style -->
-                        <div class="alert-modi" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="((email.invalid && email.touched) || email.dirty)">
+                        <div class="alert-modi" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="((email.invalid && emailRe.touched) || email.dirty)">
                             <div *ngIf="model.emailRe !== model.email"><i class="zmdi zmdi-alert-circle-o"></i> Email address not match.</div>
                         </div>
 

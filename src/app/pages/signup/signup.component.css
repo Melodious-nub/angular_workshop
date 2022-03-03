@@ -6,6 +6,10 @@
     color: red;
 }
 
+.error-icons {
+    color: red;
+}
+
 @media (max-width:768px) {
     img#optionalstuff {
         display: none;
