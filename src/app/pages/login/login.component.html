@@ -1,5 +1,5 @@
 <!-- Sing in  Form -->
-<section class="sign-in">
+<section class="sign-in container-login100" style="background-image: url('../../../assets/images/bg-02.jpg');">
     <div class="container">
         <div class="signin-content">
             <div class="signin-image">
@@ -38,6 +38,7 @@
 
                             <!-- visible pass icon will implemented -->
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
                         </mat-form-field>
                     </div>

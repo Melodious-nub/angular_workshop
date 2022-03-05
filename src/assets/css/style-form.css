@@ -347,6 +347,7 @@ body {
 
 .form-title {
     margin-bottom: 33px;
+    color: #4292dc;
 }
 
 .signup-image {
@@ -572,7 +573,7 @@ mat-label {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 860px) {
     .signup-content,
     .signin-content {
         flex-direction: column;
