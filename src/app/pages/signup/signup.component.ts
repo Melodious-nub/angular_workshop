@@ -9,8 +9,9 @@ import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-
 })
 export class SignupComponent implements OnInit {
 
+  hide = true;
+  // for phone number input
   model: any = {};
-
   separateDialCode = false;
 	SearchCountryField = SearchCountryField;
 	CountryISO = CountryISO;

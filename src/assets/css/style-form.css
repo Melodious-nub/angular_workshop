@@ -273,7 +273,7 @@ body {
 
 .container {
     width: 85%;
-    height: 90%;
+    height: 100%;
     background: #fff;
     margin: 0 auto;
     box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
@@ -347,7 +347,7 @@ body {
 
 .form-title {
     margin-bottom: 33px;
-    color: #4292dc;
+    color: #93117d;
 }
 
 .signup-image {
@@ -361,7 +361,7 @@ figure {
 
 .form-submit {
     display: inline-block;
-    background: #6dabe4;
+    background: rgba(147, 17, 126, 0.7);
     color: #fff;
     border-bottom: none;
     width: auto;
@@ -376,7 +376,7 @@ figure {
 }
 
 .form-submit:hover {
-    background: #4292dc;
+    background: #93117d;
 }
 
 #signin {
@@ -391,7 +391,7 @@ figure {
 }
 
 .signup-image-link:hover {
-    color: #0d6efd;
+    color: #93117d;
 }
 
 .term-service {
@@ -417,7 +417,7 @@ figure {
 .form-group {
     position: relative;
     margin-bottom: 5px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .form-group:last-child {
@@ -449,27 +449,6 @@ input:-ms-input-placeholder {
 input:-moz-placeholder {
     color: #999;
 }
-
-
-/* input:focus {
-    border-bottom: 1px solid #222;
-}
-
-input:focus::-webkit-input-placeholder {
-    color: #222;
-}
-
-input:focus::-moz-placeholder {
-    color: #222;
-}
-
-input:focus:-ms-input-placeholder {
-    color: #222;
-}
-
-input:focus:-moz-placeholder {
-    color: #222;
-} */
 
 .agree-term {
     display: inline-block;
@@ -732,81 +711,47 @@ mat-label {
     margin-bottom: 55px;
 }
 
-.m-l-30 {
-    margin-left: 20px;
+.m-l-10 {
+    margin-left: 10px;
+}
+
+.m-l-5 {
+    margin-left: -10px;
+}
+
+.m-15 {
+    margin: 0px 45px 3px 0px;
 }
 
 
-/* Radio Container */
+/* Radio Container  and checkbox*/
 
-.radio-container {
-    display: inline-block;
-    position: relative;
-    padding-left: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    color: #666;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #93117d !important;
+    /*inner circle color change*/
 }
 
-.radio-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #93117d !important;
+    /*outer ring color change*/
 }
 
 .radio-container input:checked~.checkmark {
     background-color: #e5e5e5;
 }
 
-.radio-container input:checked~.checkmark:after {
-    display: block;
+
+/* Input Label Color */
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #93117d !important;
 }
 
-.radio-container .checkmark:after {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    background: #0d6efd;
-}
 
-.checkmark {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #e5e5e5;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-    -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-    box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
+/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #93117d !important;
+} */
 
 
 /* Full Width Input form */
@@ -854,7 +799,7 @@ mat-label {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(240, 255, 200, 0.8);
 }
 
 

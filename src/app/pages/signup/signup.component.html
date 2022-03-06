@@ -10,88 +10,73 @@
                     <!-- fullName Feild -->
                     <div class="form-group">
                         <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label>Outline form field</mat-label>
-                            <input matInput placeholder="Placeholder">
-                            <mat-hint>Hint</mat-hint>
+                            <mat-label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i> Your Full Name</mat-label>
+                            <input matInput required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="Placeholder">
+                            <mat-hint>Minimum 3 characters.</mat-hint>
+
+                            <mat-error *ngIf="fullName.touched && !fullName.valid">
+                                <mat-error *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
+                                </mat-error>
+                                <mat-error *ngIf="fullName.errors?.['minlength']">
+                                    User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.
+                                </mat-error>
+                            </mat-error>
                         </mat-form-field>
-                    </div>
-
-
-                    <div class="form-group">
-                        <!-- Basic label -->
-                        <label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <!-- Error Level -->
-                        <label for="fullName" *ngIf="fullName.touched && !fullName.valid"><i class="zmdi zmdi-account material-icons-name error-icons"></i></label>
-
-                        <input required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="Full Name" />
-                    </div>
-
-                    <!-- fullName Validation and alert styles -->
-                    <div class="alert-modi" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="fullName.touched && !fullName.valid">
-                        <div *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> User name is required.</div>
-                        <div *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.</div>
                     </div>
 
 
                     <!-- Password Feild -->
                     <div class="form-group">
-                        <!-- Basic label -->
-                        <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                        <!-- Error label -->
-                        <label for="pass" *ngIf="pass.touched && !pass.valid"><i class="zmdi zmdi-lock error-icons"></i></label>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label for="pass"><i class="zmdi zmdi-lock"></i> Password</mat-label>
+                            <input matInput required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" [type]="hide ? 'password' : 'text'" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                            <mat-hint>Minimum 6 characters.</mat-hint>
 
-                        <input required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
+                            <!-- visible pass icon will implemented -->
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+
+                            <mat-error *ngIf="pass.touched && !pass.valid">
+                                <mat-error *ngIf="pass.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</mat-error>
+                                <mat-error *ngIf="pass.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Must contain at least 1 number, uppercase,lowercase letter, and at least 6 characters.</mat-error>
+                            </mat-error>
+                        </mat-form-field>
                     </div>
 
-                    <!-- Password validation Feild -->
-                    <div class="alert-modi" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="pass.touched && !pass.valid">
-                        <div *ngIf="pass.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
-                        <div *ngIf="pass.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters.</div>
-                    </div>
 
                     <!-- Confirm Password Feild -->
                     <div class="form-group">
-                        <!-- Basic label -->
-                        <label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i></label>
-                        <!-- Error label -->
-                        <label for="confirmPassword" *ngIf="confirmPassword.touched && !confirmPassword.valid"><i class="zmdi zmdi-lock-outline error-icons"></i></label>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i> Repeat your password</mat-label>
+                            <input matInput required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" />
+                            <mat-hint>Password input should be matched.</mat-hint>
 
-                        <input required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat your password" />
+                            <mat-error *ngIf="confirmPassword.touched && !confirmPassword.valid">
+                                <mat-error *ngIf="(model.confirmPassword !== model.pass)"><i class="zmdi zmdi-alert-circle-o"></i> Passwords do not match.</mat-error>
+                                <mat-error *ngIf="confirmPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</mat-error>
+                            </mat-error>
+                        </mat-form-field>
                     </div>
 
-                    <!-- Confirm Password Feild Validation -->
-                    <div class="alert-modi" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="confirmPassword.touched && !confirmPassword.valid">
-                        <div *ngIf="(model.confirmPassword !== model.pass)"><i class="zmdi zmdi-alert-circle-o"></i> Passwords do not match.</div>
-                        <div *ngIf="confirmPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</div>
-                    </div>
 
 
                     <!-- Group of Users -->
                     <div class="form-group">
-                        <h3 class="label">Which group do you belong to?</h3>
-                        <div class="form-row">
-                            <div class="p-t-15">
-                                <label class="radio-container m-r-45">Brands
-                                <input ngModel #brand="ngModel" id="brand" type="radio" checked="checked" name="exist" value="1">
-                                <span class="checkmark"></span>
-                            </label>
+                        <label>Which group do you belong to?</label>
+                        <mat-radio-group class="form-row">
+                            <mat-radio-button class="m-15" ngModel #brand="ngModel" id="brand" type="radio" checked="checked" name="exist" value="1"> Brands
+                            </mat-radio-button>
 
-                                <label class="radio-container m-l-30 m-r-45">Factory
-                                <input ngModel #factory="ngModel" id="factory" type="radio" name="exist" value="2">
-                                <span class="checkmark"></span>
-                            </label>
+                            <mat-radio-button class="m-15" ngModel #employee="ngModel" id="employee" type="radio" name="exist" value="3"> Employees
+                            </mat-radio-button>
 
-                                <label class="radio-container m-r-45">Employees
-                                <input ngModel #employee="ngModel" id="employee" type="radio" name="exist" value="3">
-                                <span class="checkmark"></span>
-                            </label>
+                            <mat-radio-button class="m-15" ngModel #factory="ngModel" id="factory" type="radio" name="exist" value="2"> Factory
+                            </mat-radio-button>
 
-                                <label class="radio-container m-r-45">Consumers
-                                <input ngModel #consumer="ngModel" id="consumer" type="radio" name="exist" value="4">
-                                <span class="checkmark"></span>
-                            </label>
-                            </div>
-                        </div>
+                            <mat-radio-button class="m-15" ngModel #consumer="ngModel" id="consumer" type="radio" name="exist" value="4"> Consumers
+                            </mat-radio-button>
+                        </mat-radio-group>
 
                         <!-- Multiple hidden/show fields -->
 
@@ -106,83 +91,79 @@
 
                         <!-- Email Feild -->
                         <div class="form-group">
-                            <!-- Basic label -->
-                            <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <!-- Error label -->
-                            <label for="email" *ngIf="((email.invalid && email.touched) || email.dirty)"><i class="zmdi zmdi-email error-icons"></i></label>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label for="email"><i class="zmdi zmdi-email"></i> Email Address</mat-label>
+                                <input matInput required ngModel type="email" name="email" id="email" #email="ngModel" [(ngModel)]="model.email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                                <mat-hint> Use your secure mail address.</mat-hint>
 
-                            <input required ngModel type="email" name="email" id="email" #email="ngModel" [(ngModel)]="model.email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" />
+                                <mat-error *ngIf="((email.invalid && email.touched) || email.dirty)">
+                                    <mat-error *ngIf="email.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Email address is required.</mat-error>
+                                    <mat-error *ngIf="email.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Email pattern is not correct</mat-error>
+                                </mat-error>
+                            </mat-form-field>
                         </div>
 
-                        <!-- Email Validation & Alert Style -->
-                        <div class="alert-modi" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="((email.invalid && email.touched) || email.dirty)">
-                            <div *ngIf="email.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Email address is required.</div>
-                            <div *ngIf="email.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Email pattern is not correct</div>
-                        </div>
 
                         <!--Re-Enter Email Feild -->
                         <div class="form-group">
-                            <!-- Basic label -->
-                            <label for="emailRe"><i class="zmdi zmdi-email"></i></label>
-                            <!-- Error label -->
-                            <label for="emailRe" *ngIf="((emailRe.invalid && emailRe.touched) || emailRe.dirty)"><i class="zmdi zmdi-email error-icons"></i></label>
-                            <input required ngModel type="email" name="emailRe" id="emailRe" #emailRe="ngModel" [(ngModel)]="model.emailRe" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Re-enter Email Address" />
-                        </div>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label for="emailRe"><i class="zmdi zmdi-email"></i> Re-enter Email Address</mat-label>
+                                <input matInput required ngModel type="email" name="emailRe" id="emailRe" #emailRe="ngModel" [(ngModel)]="model.emailRe" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                                <mat-hint> Both email must match.</mat-hint>
 
-                        <!-- Re-enter Email Validation & Alert Style -->
-                        <div class="alert-modi" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="((email.invalid && emailRe.touched) || email.dirty)">
-                            <div *ngIf="model.emailRe !== model.email"><i class="zmdi zmdi-alert-circle-o"></i> Email address not match.</div>
+                                <mat-error *ngIf="((email.invalid && emailRe.touched) || email.dirty)">
+                                    <mat-error *ngIf="model.emailRe !== model.email"><i class="zmdi zmdi-alert-circle-o"></i> Email address not match.</mat-error>
+                                </mat-error>
+                            </mat-form-field>
                         </div>
 
                         <!-- brandName Feild -->
-                        <div class="form-group" [hidden]="!((brand.value == 1) || (employee.value == 3))">
-                            <label for="brandName"><i class="zmdi zmdi-store "></i></label>
-                            <input required ngModel type="text" name="brandName" id="brandName" #brandName="ngModel" placeholder="Name of Brand" />
-                        </div>
+                        <div class="form-group" *ngIf="!((brand.value == 1) || (employee.value == 3))">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label for="brandName"><i class="zmdi zmdi-store "></i> Name of Brand</mat-label>
+                                <input matInput required ngModel type="text" name="brandName" id="brandName" #brandName="ngModel" placeholder="" />
 
-                        <!-- brandName Validation & Alert Style -->
-                        <div class="alert-modi" [hidden]="!((brand.value == 1) || (employee.value == 3))" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="brandName.touched && !brandName.valid">
-                            <div *ngIf="brandName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Brand name is required.</div>
+                                <mat-error *ngIf="brandName.touched && !brandName.valid">
+                                    <mat-error *ngIf="brandName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Brand name is required.</mat-error>
+                                </mat-error>
+                            </mat-form-field>
                         </div>
 
                         <!-- factoryName Feild -->
-                        <div class="form-group" [hidden]="!((factory.value == 2) || (employee.value == 3))">
-                            <label for="factoryName"><i class="zmdi zmdi-store "></i></label>
-                            <input required ngModel type="text" name="factoryName" id="factoryName" #factoryName="ngModel" placeholder="Name of Factory" />
-                        </div>
+                        <div class="form-group" *ngIf="!((factory.value == 2) || (employee.value == 3))">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label for="factoryName"><i class="zmdi zmdi-store "></i> Name of Factory</mat-label>
+                                <input matInput required ngModel type="text" name="factoryName" id="factoryName" #factoryName="ngModel" placeholder="" />
 
-                        <!-- factoryName Validation & Alert Style -->
-                        <div class="alert-modi" [hidden]="!((factory.value == 2) || (employee.value == 3))" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="factoryName.touched && !factoryName.valid">
-                            <div *ngIf="factoryName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Factory name is required.</div>
+                                <mat-error [hidden]="!((factory.value == 2) || (employee.value == 3))" *ngIf="factoryName.touched && !factoryName.valid">
+                                    <mat-error *ngIf="factoryName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Factory name is required.</mat-error>
+                                </mat-error>
+                            </mat-form-field>
                         </div>
 
                         <!-- professionName Feild -->
                         <div class="form-group" [hidden]="!(consumer.value == 4)">
-                            <label for="professionName"><i class="zmdi zmdi-store "></i></label>
-                            <input required ngModel type="text" name="professionName" id="professionName" #professionName="ngModel" placeholder="Name of your Profession" />
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label for="professionName"><i class="zmdi zmdi-store "></i> Name of your Profession</mat-label>
+                                <input matInput required ngModel type="text" name="professionName" id="professionName" #professionName="ngModel" placeholder="" />
+
+                                <mat-error [hidden]="!(consumer.value == 4)" *ngIf="professionName.touched && !professionName.valid">
+                                    <mat-error *ngIf="professionName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Profession Name is required.</mat-error>
+                                </mat-error>
+                            </mat-form-field>
                         </div>
 
-                        <!-- professionName Validation & Alert Style -->
-                        <div class="alert-modi" [hidden]="!(consumer.value == 4)" style="margin-top: -20px !important; margin-bottom: 7px;" *ngIf="professionName.touched && !professionName.valid">
-                            <div *ngIf="professionName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Profession Name is required.</div>
-                        </div>
 
                         <!-- Gender Field -->
-                        <div class="form-group" [hidden]="!(consumer.value == 4)">
-                            <h4 class="label">Gender</h4>
-                            <div class="form-row">
-                                <div class="p-t-15">
-                                    <label class="radio-container m-r-45">Male
-                                    <input ngModel #gender="ngModel" id="genderM" type="radio" checked="checked" name="gender" value="1">
-                                    <span class="checkmark"></span>
-                                </label>
+                        <div class="form-group" *ngIf="!(consumer.value == 4)">
+                            <label> Gender</label>
+                            <mat-radio-group class="form-row">
+                                <mat-radio-button class="m-r-45" ngModel #gender="ngModel" id="genderM" type="radio" name="gender" value="1" checked="checked"> Male
+                                </mat-radio-button>
 
-                                    <label class="radio-container m-l-30 m-r-45">Female
-                                    <input ngModel #gender="ngModel" id="genderF" type="radio" name="gender" value="2">
-                                    <span class="checkmark"></span>
-                                </label>
-                                </div>
-                            </div>
+                                <mat-radio-button class="radio-container m-l-30 m-r-45" ngModel #gender="ngModel" id="genderF" type="radio" name="gender" value="2"> Female
+                                </mat-radio-button>
+                            </mat-radio-group>
                         </div>
 
 

@@ -20,6 +20,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 
 
 @NgModule({
@@ -42,13 +43,15 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
     MatInputModule,
     NgxIntlTelInputModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule
   ],
   providers: [
     PostService,
     AuthService,
     { provide: ErrorHandler, useClass: AppErrorHandler},
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
+    {provide: MAT_RADIO_DEFAULT_OPTIONS,useValue: { color: 'accent' },}
   ],
   bootstrap: [AppComponent]
 })
