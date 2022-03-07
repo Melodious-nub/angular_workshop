@@ -10,6 +10,7 @@ import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-
 export class SignupComponent implements OnInit {
 
   hide = true;
+  isCheacked!: boolean;
   // for phone number input
   model: any = {};
   separateDialCode = false;
