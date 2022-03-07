@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i> Your Full Name</mat-label>
-                            <input matInput required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="Placeholder">
+                            <input matInput required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="">
                             <mat-hint>Minimum 3 characters.</mat-hint>
 
                             <mat-error *ngIf="fullName.touched && !fullName.valid">
