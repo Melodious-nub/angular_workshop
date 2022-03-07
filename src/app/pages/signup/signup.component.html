@@ -106,6 +106,7 @@
                             <mat-form-field class="example-full-width" appearance="outline">
                                 <mat-label for="brandName"><i class="zmdi zmdi-store "></i> Name of Brand</mat-label>
                                 <input matInput required ngModel type="text" name="brandName" id="brandName" #brandName="ngModel" placeholder="" />
+                                <mat-hint> Brand name is required.</mat-hint>
 
                                 <mat-error *ngIf="brandName.touched && !brandName.valid">
                                     <mat-error *ngIf="brandName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Brand name is required.</mat-error>
@@ -139,13 +140,13 @@
 
 
                         <!-- Gender Field -->
-                        <div class="form-group" *ngIf="!(consumer.value == 4)">
+                        <div class="form-group" *ngIf="consumer.checked">
                             <label> Gender</label>
                             <mat-radio-group class="form-row">
-                                <mat-radio-button class="m-r-45" ngModel #gender="ngModel" id="genderM" type="radio" name="gender" value="1" checked="checked"> Male
+                                <mat-radio-button class="m-r-45" ngModel #genderM="ngModel" id="genderM" type="radio" name="gender" value="1" checked="checked"> Male
                                 </mat-radio-button>
 
-                                <mat-radio-button class="radio-container m-l-30 m-r-45" ngModel #gender="ngModel" id="genderF" type="radio" name="gender" value="2"> Female
+                                <mat-radio-button class="radio-container m-l-30 m-r-45" ngModel #genderF="ngModel" id="genderF" type="radio" name="gender" value="2"> Female
                                 </mat-radio-button>
                             </mat-radio-group>
                         </div>
@@ -162,7 +163,7 @@
 
                     <!-- For viewing output -->
 
-                    <!-- <p>{{registerForm.value | json}}</p> -->
+                    <p>{{registerForm.value | json}}</p>
 
                     <div class="form-group form-button">
                         <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="!registerForm.valid" />
