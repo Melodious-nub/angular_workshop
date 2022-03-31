@@ -10,7 +10,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 const routes: Routes = [
   { path:'landing', component: LandingComponent},
   { path:'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent, pathMatch: 'full' },
+  { path: 'signup', component: SignupComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   
