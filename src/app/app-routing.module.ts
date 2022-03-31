@@ -27,6 +27,12 @@ const routes: Routes = [
     loadChildren: () => 
     import('./modules/employee/employee.module').then((m) => m.EmployeeModule),
   },
+  // Lazzy Loadind Route 3
+  {
+    path: 'customer',
+    loadChildren: () => 
+    import('./modules/customer/customer.module').then((m) => m.CustomerModule),
+  },
   
   // wildCard for notfound
   { path: '**', component: NotFoundComponent},
