@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
+import { LandingComponent } from './pages/landing/landing.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio
     LoginComponent,
     NotFoundComponent,
     ForgotPasswordComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
