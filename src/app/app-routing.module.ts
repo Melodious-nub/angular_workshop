@@ -14,14 +14,21 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   
-  // Lazzy Loadind Route
+  // Lazzy Loadind Route 1
   {
     path: 'admin',
     canActivate: [AuthGuard],
     loadChildren: () =>
     import('./modules/admin/admin.module').then((m) => m.AdminModule),
   },
+  // Lazzy Loadind Route 2
+  {
+    path: 'employee',
+    loadChildren: () => 
+    import('./modules/employee/employee.module').then((m) => m.EmployeeModule),
+  },
   
+  // wildCard for notfound
   { path: '**', component: NotFoundComponent},
 ];
 
