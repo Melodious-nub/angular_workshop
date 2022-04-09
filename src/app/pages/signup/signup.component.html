@@ -1,9 +1,35 @@
 <!-- Sign up form -->
-<section class="signup">
+<section class="body">
+
+    <!-- Navbar -->
+    <div class="container sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid mt-2">
+                <a class="navbar-brand mb-2" href="#">SUTRA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- nav end -->
+
     <div class="container">
         <div class="signup-content">
             <div class="signup-form">
-                <h2 class="form-title">Sign up</h2>
                 <!-- Full Form Hander Field -->
                 <form class="register-form" id="register-form" #registerForm="ngForm" (ngSubmit)="onRegSubmit(registerForm)">
 
@@ -169,12 +195,8 @@
                         <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="!registerForm.valid" />
                     </div>
                 </form>
-
-
-            </div>
-            <div class="signup-image">
-                <figure><img id="optionalstuff" src="../../../assets/images/signup-image.jpg" alt="sing up image"></figure>
                 <a routerLink="../login" class="signup-image-link">I am already member</a>
+
             </div>
         </div>
     </div>

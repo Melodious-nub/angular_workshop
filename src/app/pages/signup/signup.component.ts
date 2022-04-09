@@ -5,7 +5,7 @@ import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css','../../../assets/css/style-form.css']
+  styleUrls: ['./signup.component.css','../landing/landing.component.css']
 })
 export class SignupComponent implements OnInit {
 
