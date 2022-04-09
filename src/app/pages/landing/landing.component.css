@@ -1,7 +1,7 @@
 .body {
     position: relative;
     height: 1080px;
-    background: url(), #F4D1EE;
+    background: url(), #f5f5f8;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +17,7 @@
     font-style: normal;
     font-weight: 700;
     text-align: center;
+    background-color: #f5f5f8;
 }
 
 .navbar-brand {
