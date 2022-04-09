@@ -51,19 +51,19 @@ ul {
 }
 
 ::selection {
-    background: #1abc9c;
+    background: #777;
     color: #fff;
     text-shadow: none
 }
 
 ::-moz-selection {
-    background: #1abc9c;
+    background: #777;
     color: #fff;
     text-shadow: none
 }
 
 ::-webkit-selection {
-    background: #1abc9c;
+    background: #777;
     color: #fff;
     text-shadow: none
 }
@@ -8373,9 +8373,9 @@ body:not(.device-touch) .button {
 }
 
 .button.button-border {
-    border: 2px solid #444;
+    border: 2px solid #777;
     background-color: transparent;
-    color: #333;
+    color: #777;
     font-weight: 700;
     text-shadow: none
 }
@@ -8389,7 +8389,7 @@ body:not(.device-touch) .button {
 }
 
 .button.button-border:not(.button-fill):hover {
-    background-color: #444;
+    background-color: #777;
     color: #fff;
     border-color: transparent!important;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2)
@@ -8402,7 +8402,7 @@ body:not(.device-touch) .button {
 
 .button.button-border.button-light:hover {
     background-color: #fff;
-    color: #333;
+    color: #777;
     text-shadow: none
 }
 

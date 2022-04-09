@@ -1,6 +1,5 @@
 .body {
-    position: relative;
-    /* height: 1080px; */
+    height: 100vh;
     background: url(), #f5f5f8;
     margin: 0;
     padding: 0;
@@ -50,4 +49,26 @@
     background: #93117D !important;
     box-shadow: -8px -8px 10px rgba(255, 255, 255, 0.5), 8px 8px 10px rgba(95, 12, 81, 0.5) !important;
     border-radius: 101.5px !important;
+}
+
+.font-modi {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 75px;
+    /* or 113% */
+    letter-spacing: -0.03em;
+    color: #93117D;
+}
+
+.p-modi {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 33px;
+    /* or 192% */
+    letter-spacing: -0.03em;
+    color: #93117D;
 }
