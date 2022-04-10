@@ -1,13 +1,10 @@
 .forgot-pass {
     color: #222;
+    margin-top: 5px;
 }
 
 .forgot-pass:hover {
     color: #93117d;
-}
-
-.form-group {
-    overflow: hidden !important;
 }
 
 
@@ -20,7 +17,7 @@
 }
 
 .example-full-width {
-    width: 100%;
+    width: 60%;
 }
 
 
@@ -46,6 +43,20 @@
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
     color: #93117d !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline {
+    width: 65px;
+    height: 45px;
+    line-height: 1.725;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0px 10px 0px 10px;
+}
+
+::ng-deep .mat-form-field-infix {
+    padding: 3px 0 3px 0;
 }
 
 
