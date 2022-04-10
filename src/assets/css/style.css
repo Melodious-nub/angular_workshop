@@ -8292,7 +8292,7 @@ body:not(.device-touch) .button {
 }
 
 .button.button-xlarge {
-    padding: 9px 32px;
+    padding: 12px 30px;
     font-size: 18px;
     letter-spacing: 2px;
     line-height: 34px
@@ -8889,19 +8889,19 @@ body:not(.device-touch) .button.button-full strong {
 }
 
 .button-dirtygreen:not(.button-border) {
-    background-color: #1693a5!important
+    background-color: #777!important
 }
 
 .button-3d.button-dirtygreen:hover,
 .button-border.button-dirtygreen.button-fill::before,
 .button-border.button-dirtygreen:hover,
 .button-reveal.button-dirtygreen:hover {
-    background-color: #1693a5!important
+    background-color: #777!important
 }
 
 .button-border.button-dirtygreen {
-    color: #1693a5;
-    border-color: #1693a5
+    color: #777;
+    border-color: #777;
 }
 
 .button-blue:not(.button-border) {

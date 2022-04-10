@@ -72,3 +72,59 @@
     letter-spacing: -0.03em;
     color: #93117D;
 }
+
+.title-modi {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100 !important;
+    font-size: 60px;
+    line-height: 100px;
+    color: #93117D;
+}
+
+.btn-modi {
+    box-shadow: -5px -5px 10px #FFFFFF, 5px 5px 10px rgba(151, 149, 169, 0.5) !important;
+    border-radius: 54.5px;
+}
+
+@media (max-width: 991px) {
+    .btn-modi {
+        width: 90% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .btn-modi {
+        width: 70% !important;
+    }
+}
+
+@media (min-width: 1299px) {
+    .btn-modi {
+        width: 70% !important;
+    }
+}
+
+.icon-plus-circle {
+    background: #FFFFFF;
+    border-radius: 50%;
+    top: 2px;
+    height: 14px;
+    width: 16px;
+    line-height: 16px;
+}
+
+.icon-modi-1 {
+    color: #93117D;
+    left: 30px;
+}
+
+.icon-modi-2 {
+    color: #497948;
+    left: 50px;
+}
+
+.icon-modi-3 {
+    color: #5360A6;
+    left: 45px;
+}
