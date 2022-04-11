@@ -10,6 +10,8 @@ export class ForgotPasswordComponent implements OnInit {
 
   faLock = faLock;
 
+  email_recovery = 'yourmail@mail.com';
+
   constructor() { }
 
   ngOnInit(): void {
