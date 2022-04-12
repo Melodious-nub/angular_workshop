@@ -16,7 +16,6 @@ import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import {MatInputModule} from '@angular/material/input';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
@@ -43,7 +42,6 @@ import { LandingComponent } from './pages/landing/landing.component';
     FontAwesomeModule,
     HttpClientModule,
     MatInputModule,
-    NgxIntlTelInputModule,
     MatFormFieldModule,
     MatIconModule,
     MatRadioModule
