@@ -14,7 +14,22 @@ export class ForgotPasswordComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // for jquery dynamic loading
+    // this.loadScript('../assets/js/js/jquery.js');
+    // this.loadScript('../assets/js/js/plugins.min.js');
+    // this.loadScript('../assets/js/js/functions.js');
   }
+
+  // for jquery dynamic loading
+//  public loadScript(url: string) {
+//     const body = <HTMLDivElement> document.body;
+//     const script = document.createElement('script');
+//     script.innerHTML = '';
+//     script.src = url;
+//     script.async = true;
+//     script.defer = true;
+//     body.appendChild(script);
+//   }
 
 }
