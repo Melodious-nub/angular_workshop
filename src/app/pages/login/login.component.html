@@ -27,46 +27,60 @@
 
     <div class="container topmargin-lg">
 
-        <!-- Login Form -->
-        <form #loginForm="ngForm" class="register-form  center" id="loginForm" (submit)="onLogin(loginForm)">
+        <div class="tabs mx-auto mb-0" id="tab-login-register">
 
-            <!-- Login Input Field -->
-            <div class="form-group my-5">
-                <mat-form-field class="example-full-width" appearance="outline" style="position: relative;">
-                    <mat-label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i> Email Address/User Name</mat-label>
+            <mat-tab-group class="center">
+                <mat-tab label="First">
+                    <!-- Login Form -->
+                    <form #loginForm="ngForm" class="register-form  center" id="loginForm" (submit)="onLogin(loginForm)">
 
-                    <input matInput required ngModel #loginName="ngModel" type="text" name="loginName" id="your_name" placeholder="your_mail@email.com">
-                </mat-form-field>
-            </div>
+                        <!-- Login Input Field -->
+                        <div class="my-3">
+                            <mat-form-field class="example-full-width" appearance="outline" style="position: relative;">
+                                <mat-label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i> Email Address/User Name</mat-label>
 
-            <!-- Password Input Field -->
-            <div class="form-group">
-                <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label for="your_pass"><i class="zmdi zmdi-lock"></i> Enter your password</mat-label>
+                                <input matInput required ngModel #loginName="ngModel" type="text" name="loginName" id="your_name" placeholder="your_mail@email.com">
+                            </mat-form-field>
+                        </div>
 
-                    <input matInput required ngModel #loginPass="ngModel" type="password" name="loginPass" id="your_pass" [type]="hide ? 'password' : 'text'">
+                        <!-- Password Input Field -->
+                        <div class="my-3">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label for="your_pass"><i class="zmdi zmdi-lock"></i> Enter your password</mat-label>
 
-                    <!-- visible pass icon will implemented -->
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
-                </mat-form-field>
-            </div>
-            <a routerLink="../forgot-password" class="float-end forgot-pass">Forgot Password?</a>
+                                <input matInput required ngModel #loginPass="ngModel" type="password" name="loginPass" id="your_pass" [type]="hide ? 'password' : 'text'">
+
+                                <!-- visible pass icon will implemented -->
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
+                            </mat-form-field>
+                        </div>
+                        <a routerLink="../forgot-password" class="float-end forgot-pass">Forgot Password?</a>
 
 
-            <!-- Remember me Field -->
-            <div class="form-group">
-                <input ngModel #rememberMe="ngModel" type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                <label for="remember-me" class="label-agree-term">Keep Logged In</label>
-            </div>
+                        <!-- Remember me Field -->
+                        <div class="mt-3">
+                            <input ngModel #rememberMe="ngModel" type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                            <label for="remember-me" class="label-agree-term">Keep Logged In</label>
+                        </div>
 
-            <!-- Login Button Field -->
-            <div class="form-group form-button">
-                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
-            </div>
-            <!-- <p>{{loginForm.value | json}}</p> -->
-        </form>
+                        <!-- Login Button Field -->
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                        </div>
+                        <!-- <p>{{loginForm.value | json}}</p> -->
+                    </form>
+                </mat-tab>
+                <!-- mat-tab end -->
+
+                <mat-tab label="Second">
+                    <app-signup></app-signup>
+                </mat-tab>
+                <!-- 2nd tab closed -->
+            </mat-tab-group>
+        </div>
+        <!-- tab div end -->
 
         <div class="social-login create-acc">
             <span class="social-label">Don't have an account?</span>
@@ -77,18 +91,6 @@
 
     </div>
     <!-- div end -->
-
-
-
-
-
-    <div class="tabs mx-auto mb-0 clearfix" id="tab-login-register" style="max-width: 500px;">
-
-        <ul class="tab-nav tab-nav2 center clearfix">
-            <li class="inline-block"><a href="#tab-login">Login</a></li>
-            <li class="inline-block"><a href="#tab-register">Register</a></li>
-        </ul>
-    </div>
 
 </div>
 <!-- body end -->

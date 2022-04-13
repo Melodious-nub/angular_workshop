@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
+import {MatTabsModule} from '@angular/material/tabs';
 import { LandingComponent } from './pages/landing/landing.component';
 
 
@@ -44,7 +45,8 @@ import { LandingComponent } from './pages/landing/landing.component';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTabsModule,
   ],
   providers: [
     PostService,

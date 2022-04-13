@@ -1,195 +1,158 @@
-<!-- Sign up form -->
-<section class="body">
+<!-- Full Form Hander Field -->
+<form class="" id="register-form" #registerForm="ngForm" (ngSubmit)="onRegSubmit(registerForm)">
 
-    <!-- Navbar -->
-    <div class="container sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid mt-2">
-                <a class="navbar-brand mb-2" href="#">SUTRA</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLink="">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <!-- fullName Feild -->
+    <div class="mb-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i> Your Full Name</mat-label>
+            <input matInput required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="">
+            <mat-hint>Minimum 3 characters.</mat-hint>
+
+            <mat-error *ngIf="fullName.touched && !fullName.valid">
+                <mat-error *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
+                </mat-error>
+                <mat-error *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
     </div>
-    <!-- nav end -->
-
-    <div class="container">
-        <div class="signup-content">
-            <div class="signup-form">
-                <!-- Full Form Hander Field -->
-                <form class="register-form" id="register-form" #registerForm="ngForm" (ngSubmit)="onRegSubmit(registerForm)">
-
-                    <!-- fullName Feild -->
-                    <div class="form-group">
-                        <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i> Your Full Name</mat-label>
-                            <input matInput required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="">
-                            <mat-hint>Minimum 3 characters.</mat-hint>
-
-                            <mat-error *ngIf="fullName.touched && !fullName.valid">
-                                <mat-error *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
-                                </mat-error>
-                                <mat-error *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.
-                                </mat-error>
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
 
 
-                    <!-- Password Feild -->
-                    <div class="form-group">
-                        <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label for="pass"><i class="zmdi zmdi-lock"></i> Password</mat-label>
-                            <input matInput required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" [type]="hide ? 'password' : 'text'" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
-                            <mat-hint>Minimum 6 characters.</mat-hint>
+    <!-- Password Feild -->
+    <div class="mb-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label for="pass"><i class="zmdi zmdi-lock"></i> Password</mat-label>
+            <input matInput required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" [type]="hide ? 'password' : 'text'" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+            <mat-hint>Minimum 6 characters.</mat-hint>
 
-                            <!-- visible pass icon will implemented -->
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <!-- visible pass icon will implemented -->
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
 
-                            <mat-error *ngIf="pass.touched && !pass.valid">
-                                <mat-error *ngIf="pass.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</mat-error>
-                                <mat-error *ngIf="pass.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Contain number, uppercase,lowercase letter, and at least 6 characters.</mat-error>
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-
-
-                    <!-- Confirm Password Feild -->
-                    <div class="form-group">
-                        <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i> Repeat your password</mat-label>
-                            <input matInput required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" />
-                            <mat-hint>Password input should be matched.</mat-hint>
-
-                            <mat-error *ngIf="confirmPassword.touched && !confirmPassword.valid">
-                                <mat-error *ngIf="(model.pass !== model.confirmPassword)"><i class="zmdi zmdi-alert-circle-o"></i> Passwords do not match.</mat-error>
-                                <mat-error *ngIf="confirmPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</mat-error>
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-
-
-                    <!-- Group of Users -->
-                    <div class="form-group">
-                        <label>Which group do you belong to?</label>
-                        <mat-radio-group class="form-row">
-                            <mat-radio-button class="m-15" #brand id="brand" type="radio" [checked]="isCheacked" name="exist" value="1"> Brands
-                            </mat-radio-button>
-
-                            <mat-radio-button class="m-15" #employee id="employee" type="radio" [checked]="isCheacked" name="exist" value="3"> Employees
-                            </mat-radio-button>
-
-                            <mat-radio-button class="m-15" #factory id="factory" type="radio" [checked]="isCheacked" name="exist" value="2"> Factory
-                            </mat-radio-button>
-
-                            <mat-radio-button class="m-15" #consumer id="consumer" type="radio" [checked]="isCheacked" name="exist" value="4"> Consumers
-                            </mat-radio-button>
-                        </mat-radio-group>
-
-                        <!-- Multiple hidden/show fields -->
-
-
-                        <!-- Email Feild -->
-                        <div class="form-group">
-                            <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label for="email"><i class="zmdi zmdi-email"></i> Email Address</mat-label>
-                                <input matInput required ngModel type="email" name="email" id="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
-                                <mat-hint> Use your secure mail address.</mat-hint>
-
-                                <mat-error *ngIf="((email.invalid && email.touched) || email.dirty)">
-                                    <mat-error *ngIf="email.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Email address is required.</mat-error>
-                                    <mat-error *ngIf="email.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Email pattern is not correct</mat-error>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-
-                        <!-- brandName Feild -->
-                        <div class="form-group" *ngIf="brand.checked || employee.checked">
-                            <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label for="brandName"><i class="zmdi zmdi-store "></i> Name of Brand</mat-label>
-                                <input matInput required ngModel type="text" name="brandName" id="brandName" #brandName="ngModel" placeholder="" />
-                                <mat-hint> Brand name is required.</mat-hint>
-
-                                <mat-error *ngIf="brandName.touched && !brandName.valid">
-                                    <mat-error *ngIf="brandName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Brand name is required.</mat-error>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-
-                        <!-- factoryName Feild -->
-                        <div class="form-group" *ngIf="factory.checked || employee.checked">
-                            <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label for="factoryName"><i class="zmdi zmdi-store "></i> Name of Factory</mat-label>
-                                <input matInput required ngModel type="text" name="factoryName" id="factoryName" #factoryName="ngModel" placeholder="" />
-
-                                <mat-error *ngIf="factoryName.touched && !factoryName.valid">
-                                    <mat-error *ngIf="factoryName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Factory name is required.</mat-error>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-
-                        <!-- professionName Feild -->
-                        <div class="form-group" *ngIf="consumer.checked">
-                            <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label for="professionName"><i class="zmdi zmdi-store "></i> Name of your Profession</mat-label>
-                                <input matInput required ngModel type="text" name="professionName" id="professionName" #professionName="ngModel" placeholder="" />
-
-                                <mat-error *ngIf="professionName.touched && !professionName.valid">
-                                    <mat-error *ngIf="professionName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Profession Name is required.</mat-error>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-
-
-                        <!-- Gender Field -->
-                        <div class="form-group" *ngIf="consumer.checked">
-                            <label> Gender</label>
-                            <mat-radio-group class="form-row">
-                                <mat-radio-button class="m-r-45" ngModel #genderM="ngModel" id="genderM" type="radio" name="gender" value="1" checked="checked"> Male
-                                </mat-radio-button>
-
-                                <mat-radio-button class="radio-container m-l-30 m-r-45" ngModel #genderF="ngModel" id="genderF" type="radio" name="gender" value="2"> Female
-                                </mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-
-
-                        <!--group closed  -->
-                    </div>
-
-                    <!-- Terms and service Field -->
-                    <div class="form-group">
-                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                        <label for="agree-term" class="label-agree-term-main">I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                    </div>
-
-                    <!-- For viewing output -->
-
-                    <p>{{registerForm.value | json}}</p>
-
-                    <div class="form-group form-button">
-                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="!registerForm.valid" />
-                    </div>
-                </form>
-                <a routerLink="../login" class="signup-image-link">I am already member</a>
-
-            </div>
-        </div>
+            <mat-error *ngIf="pass.touched && !pass.valid">
+                <mat-error *ngIf="pass.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</mat-error>
+                <mat-error *ngIf="pass.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Contain number, uppercase,lowercase letter, and at least 6 characters.</mat-error>
+            </mat-error>
+        </mat-form-field>
     </div>
-</section>
+
+
+    <!-- Confirm Password Feild -->
+    <div class="mb-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i> Repeat your password</mat-label>
+            <input matInput required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" />
+            <mat-hint>Password input should be matched.</mat-hint>
+
+            <mat-error *ngIf="confirmPassword.touched && !confirmPassword.valid">
+                <mat-error *ngIf="(model.pass !== model.confirmPassword)"><i class="zmdi zmdi-alert-circle-o"></i> Passwords do not match.</mat-error>
+                <mat-error *ngIf="confirmPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Password field can not be empty.</mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+
+    <!-- Group of Users -->
+    <div class="mb-3">
+        <label>Which group do you belong to?</label>
+        <mat-radio-group class="form-row">
+            <mat-radio-button class="m-15" #brand id="brand" type="radio" [checked]="isCheacked" name="exist" value="1"> Brands
+            </mat-radio-button>
+
+            <mat-radio-button class="m-15" #employee id="employee" type="radio" [checked]="isCheacked" name="exist" value="3"> Employees
+            </mat-radio-button>
+
+            <mat-radio-button class="m-15" #factory id="factory" type="radio" [checked]="isCheacked" name="exist" value="2"> Factory
+            </mat-radio-button>
+
+            <mat-radio-button class="m-15" #consumer id="consumer" type="radio" [checked]="isCheacked" name="exist" value="4"> Consumers
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <!-- Multiple hidden/show fields -->
+
+
+        <!-- Email Feild -->
+        <div class="mb-3">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label for="email"><i class="zmdi zmdi-email"></i> Email Address</mat-label>
+                <input matInput required ngModel type="email" name="email" id="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                <mat-hint> Use your secure mail address.</mat-hint>
+
+                <mat-error *ngIf="((email.invalid && email.touched) || email.dirty)">
+                    <mat-error *ngIf="email.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Email address is required.</mat-error>
+                    <mat-error *ngIf="email.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"></i> Email pattern is not correct</mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- brandName Feild -->
+        <div class="mb-3" *ngIf="brand.checked || employee.checked">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label for="brandName"><i class="zmdi zmdi-store "></i> Name of Brand</mat-label>
+                <input matInput required ngModel type="text" name="brandName" id="brandName" #brandName="ngModel" placeholder="" />
+                <mat-hint> Brand name is required.</mat-hint>
+
+                <mat-error *ngIf="brandName.touched && !brandName.valid">
+                    <mat-error *ngIf="brandName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Brand name is required.</mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- factoryName Feild -->
+        <div class="mb-3" *ngIf="factory.checked || employee.checked">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label for="factoryName"><i class="zmdi zmdi-store "></i> Name of Factory</mat-label>
+                <input matInput required ngModel type="text" name="factoryName" id="factoryName" #factoryName="ngModel" placeholder="" />
+
+                <mat-error *ngIf="factoryName.touched && !factoryName.valid">
+                    <mat-error *ngIf="factoryName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Factory name is required.</mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- professionName Feild -->
+        <div class=" mb-3" *ngIf="consumer.checked">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label for="professionName"><i class="zmdi zmdi-store "></i> Name of your Profession</mat-label>
+                <input matInput required ngModel type="text" name="professionName" id="professionName" #professionName="ngModel" placeholder="" />
+
+                <mat-error *ngIf="professionName.touched && !professionName.valid">
+                    <mat-error *ngIf="professionName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> Profession Name is required.</mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <!-- Gender Field -->
+        <div class="mb-3" *ngIf="consumer.checked">
+            <label> Gender</label>
+            <mat-radio-group class="form-row">
+                <mat-radio-button class="m-r-45" ngModel #genderM="ngModel" id="genderM" type="radio" name="gender" value="1" checked="checked"> Male
+                </mat-radio-button>
+
+                <mat-radio-button class="radio-container m-l-30 m-r-45" ngModel #genderF="ngModel" id="genderF" type="radio" name="gender" value="2"> Female
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+
+        <!--group closed  -->
+    </div>
+
+    <!-- Terms and service Field -->
+    <div class="">
+        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+        <label for="agree-term" class="label-agree-term-main">I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+    </div>
+
+    <!-- For viewing output -->
+
+    <p>{{registerForm.value | json}}</p>
+
+    <div class="form-group form-button">
+        <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="!registerForm.valid" />
+    </div>
+</form>
+<a routerLink="../login" class="signup-image-link">I am already member</a>
