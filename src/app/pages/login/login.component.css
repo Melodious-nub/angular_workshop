@@ -50,9 +50,10 @@
     height: 45px;
 }
 
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
-    /* padding: 0px 10px 0px 10px; */
-}
+
+/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0px 10px 0px 10px;
+} */
 
 ::ng-deep .mat-form-field-infix {
     padding: 3px 0 3px 0;
