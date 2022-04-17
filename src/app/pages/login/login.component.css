@@ -62,12 +62,6 @@ mat-label {
     font-size: 18px;
 }
 
-.nav-modi {
-    background: #FFFFFF;
-    box-shadow: inset -6px -6px 4px #FFFFFF, inset 6px 6px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 39.5px;
-}
-
 .f-info {
     position: relative;
     background: #FFFFFF;
@@ -171,4 +165,37 @@ mat-label {
     transform-origin: 0% 50%;
     transform: scale3d(1, 1, 1);
     transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+
+/* for tabs */
+
+.nav-modi {
+    background: #FFFFFF;
+    box-shadow: inset -6px -6px 4px #FFFFFF, inset 6px 6px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 39.5px;
+    padding: 2px 3px;
+    width: auto;
+}
+
+.nav-tabs .nav-link.active {
+    color: #FFFFFF;
+    background: #93117D;
+    box-shadow: -5px -5px 10px #FFFFFF, 5px 5px 10px rgba(151, 149, 169, 0.5);
+    border-radius: 39.5px;
+    padding: 9px 25px;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background: 0 0;
+    border: 1px solid transparent;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #93117D;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }

@@ -1,10 +1,10 @@
 <div class="body">
-    <div class="container" style="height: auto;">
+    <div class="container mt-3" style="height: auto;">
         <!-- Full Form Hander Field -->
         <form class="register-form center" id="register-form" #registerForm="ngForm" (ngSubmit)="onRegSubmit(registerForm)">
 
             <!-- fullName Feild -->
-            <div class="mb-3">
+            <div class="mb-5">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label for="fullName"><i class="zmdi zmdi-account material-icons-name"></i> Your Full Name</mat-label>
                     <input matInput required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="">
@@ -21,7 +21,7 @@
 
 
             <!-- Password Feild -->
-            <div class="mb-3">
+            <div class="mb-5">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label for="pass"><i class="zmdi zmdi-lock"></i> Password</mat-label>
                     <input matInput required ngModel #pass="ngModel" [(ngModel)]="model.pass" type="password" name="pass" id="pass" [type]="hide ? 'password' : 'text'" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
@@ -41,7 +41,7 @@
 
 
             <!-- Confirm Password Feild -->
-            <div class="mb-3">
+            <div class="mb-5">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label for="confirmPassword"><i class="zmdi zmdi-lock-outline"></i> Repeat your password</mat-label>
                     <input matInput required ngModel #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" type="password" name="confirmPassword" id="confirmPassword" />
@@ -56,7 +56,7 @@
 
 
             <!-- Group of Users -->
-            <div class="mb-3">
+            <div class="mb-5">
                 <label>Which group do you belong to?</label>
                 <mat-radio-group class="form-row">
                     <mat-radio-button class="m-15" #brand id="brand" type="radio" [checked]="isCheacked" name="exist" value="1"> Brands
@@ -76,7 +76,7 @@
 
 
                 <!-- Email Feild -->
-                <div class="mb-3">
+                <div class="mb-5">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label for="email"><i class="zmdi zmdi-email"></i> Email Address</mat-label>
                         <input matInput required ngModel type="email" name="email" id="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
@@ -90,7 +90,7 @@
                 </div>
 
                 <!-- brandName Feild -->
-                <div class="mb-3" *ngIf="brand.checked || employee.checked">
+                <div class="mb-5" *ngIf="brand.checked || employee.checked">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label for="brandName"><i class="zmdi zmdi-store "></i> Name of Brand</mat-label>
                         <input matInput required ngModel type="text" name="brandName" id="brandName" #brandName="ngModel" placeholder="" />
@@ -103,7 +103,7 @@
                 </div>
 
                 <!-- factoryName Feild -->
-                <div class="mb-3" *ngIf="factory.checked || employee.checked">
+                <div class="mb-5" *ngIf="factory.checked || employee.checked">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label for="factoryName"><i class="zmdi zmdi-store "></i> Name of Factory</mat-label>
                         <input matInput required ngModel type="text" name="factoryName" id="factoryName" #factoryName="ngModel" placeholder="" />
@@ -115,7 +115,7 @@
                 </div>
 
                 <!-- professionName Feild -->
-                <div class=" mb-3" *ngIf="consumer.checked">
+                <div class=" mb-5" *ngIf="consumer.checked">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label for="professionName"><i class="zmdi zmdi-store "></i> Name of your Profession</mat-label>
                         <input matInput required ngModel type="text" name="professionName" id="professionName" #professionName="ngModel" placeholder="" />
@@ -128,7 +128,7 @@
 
 
                 <!-- Gender Field -->
-                <div class="mb-3" *ngIf="consumer.checked">
+                <div class="mb-5" *ngIf="consumer.checked">
                     <label> Gender</label>
                     <mat-radio-group class="form-row">
                         <mat-radio-button class="m-r-45" ngModel #genderM="ngModel" id="genderM" type="radio" name="gender" value="1" checked="checked"> Male
@@ -157,7 +157,6 @@
                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="!registerForm.valid" />
             </div>
         </form>
-        <a routerLink="../login" class="signup-image-link">I am already member</a>
 
     </div>
 </div>

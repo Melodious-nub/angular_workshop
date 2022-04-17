@@ -35,17 +35,17 @@
         <div class="row justify-content-center h-100">
 
             <!-- Login signup tabs -->
-            <ul class="nav nav-tabs tab-nav tab-nav2 mx-auto mb-0 center nav-modi" id="myTab0" style="max-width: 250px;" role="tablist">
+            <ul class="nav nav-tabs mx-auto mb-0 center nav-modi" id="myTab0" role="tablist">
                 <!-- first Tab Login -->
                 <li class="nav-item link-modi" role="presentation">
-                    <button class="nav-link inline-block active" id="home-tab0" data-bs-toggle="tab" data-bs-target="#home0" type="button" role="tab" aria-controls="home" aria-selected="true">
-                Login
+                    <button class="nav-link active" id="home-tab0" data-bs-toggle="tab" data-bs-target="#home0" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <b>Login</b>
               </button>
                 </li>
                 <!-- second tab signup -->
                 <li class="nav-item link-modi" role="presentation">
-                    <button class="nav-link inline-block" id="profile-tab0" data-bs-toggle="tab" data-bs-target="#profile0" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                Sign up
+                    <button class="nav-link " id="profile-tab0" data-bs-toggle="tab" data-bs-target="#profile0" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                <b>Sign up</b>
               </button>
                 </li>
             </ul>
@@ -70,14 +70,17 @@
                             <!-- visible pass icon will implemented -->
                             <div class="">
                                 <button mat-icon-button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                                            <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
                             </div>
                             <!-- Login Button Field -->
-                            <input type="submit" name="signin" id="signin" class="button button-medium button-border button-rounded w-45 b-info" value="Log in" />
+                            <input type="submit" name="signin" id="signin" class="button button-medium button-border button-rounded b-info" value="Log in" />
+                            <!-- forgot pass field -->
+                            <div class="text-center mt-2">
+                                <a class="link link-6" routerLink="../forgot-password"> <span>Forgot Password?</span></a>
+                            </div>
 
                         </div>
-                        <a routerLink="../forgot-password" class="center"></a>
 
 
 
@@ -91,9 +94,6 @@
                 </div>
             </div>
             <!-- tab div end -->
-            <div class="text-center">
-                <a class="link link-6" routerLink="../forgot-password"> <span>Forgot Password?</span></a>
-            </div>
 
         </div>
         <!-- div end -->
