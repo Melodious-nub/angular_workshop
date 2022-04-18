@@ -1,19 +1,32 @@
 <div class="body">
-    <div class="container mt-3" style="height: auto !important;">
+    <div class="container width mt-3" style="height: auto !important;">
         <!-- Full Form Hander Field -->
         <form class="center" id="register-form" #registerForm="ngForm" (ngSubmit)="onRegSubmit(registerForm)">
 
             <!-- firstName Feild -->
-            <div class="mb-3">
-                <input required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="  First name:" class="form-control f-info">
-            </div>
+            <div class="mb-3 row">
+                <div class="col-md-6">
+                    <input required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="  First name:" class="form-control f-info">
 
-            <mat-error *ngIf="fullName.touched && !fullName.valid">
-                <mat-error *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
-                </mat-error>
-                <mat-error *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.
-                </mat-error>
-            </mat-error>
+                    <mat-error *ngIf="fullName.touched && !fullName.valid">
+                        <mat-error *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
+                        </mat-error>
+                        <mat-error *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.
+                        </mat-error>
+                    </mat-error>
+                </div>
+
+                <div class="col-md-6">
+                    <input required ngModel minlength="3" type="text" name="fullName" id="fullName" #fullName="ngModel" placeholder="  First name:" class="form-control f-info">
+
+                    <mat-error *ngIf="fullName.touched && !fullName.valid">
+                        <mat-error *ngIf="fullName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
+                        </mat-error>
+                        <mat-error *ngIf="fullName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"></i> User name should be minimum {{fullName.errors?.['minlength'].requiredLength}} characters.
+                        </mat-error>
+                    </mat-error>
+                </div>
+            </div>
 
 
 
@@ -46,6 +59,7 @@
 
             <!-- Group of Users -->
             <div class="mb-5">
+
                 <!-- <label>Which group do you belong to?</label>
                 <mat-radio-group class="form-row">
                     <mat-radio-button class="m-15" #brand id="brand" type="radio" [checked]="isCheacked" name="exist" value="1"> Brands
