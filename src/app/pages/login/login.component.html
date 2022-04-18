@@ -63,30 +63,34 @@
                         </div>
 
                         <!-- Password Input Field -->
-                        <div class="mt-4 ">
+                        <div class="mt-4">
 
-                            <input required ngModel #loginPass="ngModel" type="password" placeholder="   Password:" name="loginPass" id="your_pass" [type]="hide ? 'password' : 'text'" class="form-control f-info">
+                            <input required ngModel #loginPass="ngModel" type="password" placeholder="   Password:" name="loginPass" id="your_pass" [type]="hide ? 'password' : 'text'" class="form-control f-info" onmousedown="this.type='text'" onmouseup="this.type='password'" onmousemove="this.type='password'">
 
                             <!-- visible pass icon will implemented -->
-                            <div class="">
-                                <button mat-icon-button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <button class="float-center" mat-icon-button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
-                            </div>
-                            <!-- Login Button Field -->
-                            <input type="submit" name="signin" id="signin" class="button button-medium button-border button-rounded b-info" value="Log in" />
-                            <!-- forgot pass field -->
-                            <div class="text-center mt-2">
-                                <a class="link link-6" routerLink="../forgot-password"> <span>Forgot Password?</span></a>
-                            </div>
-
                         </div>
+
+                        <!-- Login Button Field -->
+                        <div class="">
+                            <input type="submit" name="signin" id="signin" class="button button-medium button-border button-rounded b-info" value="Log in" />
+                        </div>
+
+                        <!-- forgot pass field -->
+                        <div class="text-center mt-2">
+                            <a class="link link-6" routerLink="../forgot-password"> <span>Forgot Password?</span></a>
+                        </div>
+
+
 
 
 
                         <!-- <p>{{loginForm.value | json}}</p> -->
                     </form>
                 </div>
+                <!-- end tab login -->
 
                 <!-- tab content signup come from sign up page -->
                 <div class="tab-pane fade" id="profile0" role="tabpanel" aria-labelledby="profile-tab0">
