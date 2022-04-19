@@ -22,6 +22,7 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import {MatTabsModule} from '@angular/material/tabs';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { LandingComponent } from './pages/landing/landing.component';
     NotFoundComponent,
     ForgotPasswordComponent,
     LandingComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
