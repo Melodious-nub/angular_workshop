@@ -4,7 +4,7 @@
         <form class="center" id="register-form" #registerForm="ngForm" (ngSubmit)="onRegSubmit(registerForm)">
 
             <!-- firstName Feild -->
-            <div class="mb-3 row">
+            <div class="mb-3 row col-md-12">
                 <div class="col-md-6 mb-3">
                     <input required ngModel minlength="2" type="text" name="fName" id="fName" #fName="ngModel" placeholder="  First name:" class="form-control f-info">
 
@@ -132,11 +132,30 @@
                 <p>{{registerForm.value | json}}</p>
 
                 <div class="form-group form-button">
-                    <input type="submit" name="signup" id="signup" class="form-submit button button-medium button-border button-rounded b-info" value="register" [disabled]="!registerForm.valid" />
+                    <input type="submit" name="signup" id="signup" class="form-submit button button-medium button-border button-rounded b-info" value="register" [disabled]="!registerForm.valid" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
                 </div>
             </div>
             <!-- end row -->
         </form>
 
     </div>
+    <!-- container end -->
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 p-md-5 rounded text-center align-items-center shadow-lg border-0" style="background-color: #F1F1F1;">
+                <img src="../../../assets/images/popups/recovery-email.svg" alt="Svg" height="200" class="mb-4">
+                <h2>Hi, {{fName.value}} {{lName.value}}</h2>
+                <h3>Confirmation link Sent to {{email.value}}</h3>
+                <p>Please, Check your email inbox and click the link to activate your account.</p>
+
+                <!-- Trigger -->
+                <div>
+                    <a href="#" class="button button-circle button-3d button-dirtygreen mt-4" data-bs-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end -->
 </div>
+<!-- body end -->

@@ -23,6 +23,7 @@ import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio
 import {MatTabsModule} from '@angular/material/tabs';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     ForgotPasswordComponent,
     LandingComponent,
     ResetPasswordComponent,
+    ConfirmAccountComponent,
   ],
   imports: [
     BrowserModule,
