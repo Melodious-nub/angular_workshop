@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PostService } from 'src/app/services/post.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { AppComponent } from 'src/app/app.component';
 
 
 @NgModule({
@@ -35,5 +36,6 @@ import { AuthService } from 'src/app/services/auth.service';
     PostService,
     AuthService,
   ],
+  bootstrap: [AppComponent]
 })
 export class AdminModule { }
