@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostService } from 'src/app/services/post.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { AppComponent } from 'src/app/app.component';
+import { SurveyComponent } from './pages/survey/survey.component';
+import { CompanyDataComponent } from './pages/survey/company-data/company-data.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { AppComponent } from 'src/app/app.component';
     FooterComponent,
     AboutComponent,
     NavbarComponent,
-    ServicesComponent
+    ServicesComponent,
+    SurveyComponent,
+    CompanyDataComponent
   ],
   imports: [
     CommonModule,
