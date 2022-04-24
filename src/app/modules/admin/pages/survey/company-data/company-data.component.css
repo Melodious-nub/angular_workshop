@@ -1,0 +1,49 @@
+.con-modi {
+    border: 2px solid #93117D;
+    box-sizing: border-box;
+    filter: drop-shadow(-5px -5px 10px #FFFFFF) drop-shadow(5px 5px 10px rgba(151, 149, 169, 0.5));
+    border-radius: 25px;
+}
+
+.nav-link {
+    border: 2px solid #777;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: #777;
+    padding: 14px 0px;
+}
+
+.nav-link.active {
+    background: #777;
+    box-shadow: -1px -1px 1px #FFFFFF, 1px 1px 1px rgba(151, 149, 169, 0.5);
+    border-radius: 15px;
+    color: #FFFFFF;
+}
+
+textarea {
+    background: #FFFFFF;
+    box-shadow: inset -6px -6px 4px #FFFFFF, inset 6px 6px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+textarea:focus {
+    background: #FFFFFF;
+    box-shadow: inset -6px -6px 4px #FFFFFF, inset 6px 6px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+input {
+    background: #FFFFFF;
+    box-shadow: inset -6px -6px 4px #FFFFFF, inset 6px 6px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+input:focus {
+    background: #FFFFFF;
+    box-shadow: inset -6px -6px 4px #FFFFFF, inset 6px 6px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.hint {
+    color: rgba(170, 0, 0, 0.6);
+}
