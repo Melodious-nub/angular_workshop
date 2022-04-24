@@ -5,6 +5,10 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { HomeComponent } from './pages/home/home.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { CompanyDataComponent } from './pages/survey/company-data/company-data.component';
+import { CompanyInfoComponent } from './pages/survey/company-info/company-info.component';
+import { PoliciesComponent } from './pages/survey/policies/policies.component';
+import { ResourceManagementComponent } from './pages/survey/resource-management/resource-management.component';
+import { SupplyChainComponent } from './pages/survey/supply-chain/supply-chain.component';
 import { SurveyComponent } from './pages/survey/survey.component';
 
 const routes: Routes = [
@@ -20,6 +24,10 @@ const routes: Routes = [
       { path: 'survey', component: SurveyComponent,
       children: [
         { path: 'company-data', component: CompanyDataComponent},
+        { path: 'policies', component: PoliciesComponent},
+        { path: 'company-info', component: CompanyInfoComponent},
+        { path: 'supply-chain', component: SupplyChainComponent},
+        { path: 'resource-management', component: ResourceManagementComponent},
       ]
     
     },

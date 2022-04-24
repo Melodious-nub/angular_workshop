@@ -1,1 +1,51 @@
-<router-outlet></router-outlet>
+<div class="body" style="background-color: #f5f5f8; height: auto;">
+    <!-- div container start -->
+    <section>
+        <div class="container pt-5">
+            <div class="row justify-content-center h-100">
+
+                <!-- Login signup tabs -->
+                <ul class="nav nav-tabs mx-auto mb-0 center nav-modi" id="myTab0" role="tablist">
+                    <!-- Company Tab  -->
+                    <li class="nav-item link-modi" role="presentation">
+                        <button class="nav-link" routerLink="company-data" data-bs-toggle="tab" type="button" role="tab" routerLinkActive="active">
+                <b>Company Data</b>
+              </button>
+                    </li>
+                    <!-- Policies tab signup -->
+                    <li class="nav-item link-modi" role="presentation">
+                        <button class="nav-link " routerLink="policies" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
+                <b>Policies</b>
+              </button>
+                    </li>
+                    <!-- Company info  Tab-->
+                    <li class="nav-item link-modi" role="presentation">
+                        <button class="nav-link " routerLink="company-info" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
+                <b>Company Info</b>
+              </button>
+                    </li>
+                    <!-- Company info  Tab-->
+                    <li class="nav-item link-modi" role="presentation">
+                        <button class="nav-link " routerLink="supply-chain" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
+                           <b>Supply Chain</b>
+                         </button>
+                    </li>
+                    <!-- Company info  Tab-->
+                    <li class="nav-item link-modi" role="presentation">
+                        <button class="nav-link " routerLink="resource-management" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
+                        <b>Resource Management</b>
+                      </button>
+                    </li>
+
+                </ul>
+                <!-- end tab ul -->
+
+            </div>
+            <!-- div end -->
+
+        </div>
+    </section>
+    <!-- container div end -->
+
+    <router-outlet></router-outlet>
+</div>

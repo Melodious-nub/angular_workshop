@@ -16,6 +16,10 @@ import { AuthService } from 'src/app/services/auth.service';
 import { AppComponent } from 'src/app/app.component';
 import { SurveyComponent } from './pages/survey/survey.component';
 import { CompanyDataComponent } from './pages/survey/company-data/company-data.component';
+import { PoliciesComponent } from './pages/survey/policies/policies.component';
+import { CompanyInfoComponent } from './pages/survey/company-info/company-info.component';
+import { SupplyChainComponent } from './pages/survey/supply-chain/supply-chain.component';
+import { ResourceManagementComponent } from './pages/survey/resource-management/resource-management.component';
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { CompanyDataComponent } from './pages/survey/company-data/company-data.c
     NavbarComponent,
     ServicesComponent,
     SurveyComponent,
-    CompanyDataComponent
+    CompanyDataComponent,
+    PoliciesComponent,
+    CompanyInfoComponent,
+    SupplyChainComponent,
+    ResourceManagementComponent
   ],
   imports: [
     CommonModule,
