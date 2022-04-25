@@ -47,3 +47,20 @@ input:focus {
 .hint {
     color: rgba(170, 0, 0, 0.6);
 }
+
+label {
+    color: #93117D;
+    font-size: smaller !important;
+}
+
+.tab-modi {
+    border: 1px solid #ABA9BF;
+    box-sizing: border-box;
+    border-radius: 13px;
+}
+
+.b-info {
+    box-shadow: -5px -5px 10px #FFFFFF, 5px 5px 10px rgba(151, 149, 169, 0.5);
+    border-radius: 16px;
+    padding: 10px 40px;
+}
