@@ -29,64 +29,64 @@
                             <div class="row">
                                 <!-- vission field -->
                                 <div class="col-md-4 mb-2">
-                                    <label for="companyVision" class="form-label">Company vision :</label>
+                                    <label for="companyVision" class="form-label">Company vision:</label>
                                     <textarea class="form-control" id="companyVision" rows="3"></textarea>
                                     <p class="hint"> *Maximum 200 characters</p>
                                 </div>
                                 <!-- col-4-end & mission field start -->
                                 <div class="col-md-4 mb-2">
-                                    <label for="companyMission" class="form-label">Company mission :</label>
+                                    <label for="companyMission" class="form-label">Company mission:</label>
                                     <textarea class="form-control" id="companyMission" rows="3"></textarea>
                                     <p class="hint"> *Maximum 200 characters</p>
                                 </div>
                                 <!-- col-4-end highlight field start  -->
                                 <div class="col-md-4 mb-2">
-                                    <label for="companyHighlights" class="form-label">Company highlights :</label>
+                                    <label for="companyHighlights" class="form-label">Company highlights:</label>
                                     <textarea class="form-control" id="companyHighlights" rows="3"></textarea>
                                     <p class="hint"> *Maximum 200 characters</p>
                                 </div>
                                 <!-- col-4-end & contact info start  -->
 
                                 <div class="col-md-12 mb-2">
-                                    <label for="companyName" class="form-label">Contact info :</label>
-                                    <input type="text" class="form-control" id="companyName" placeholder="Company name :">
+                                    <label for="companyName" class="form-label">Contact info:</label>
+                                    <input type="text" class="form-control" id="companyName" placeholder="Company name:">
                                 </div>
                                 <!-- end col-12 -->
                                 <!-- start sub col-4*3 -->
                                 <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="countryName" placeholder="Country :">
+                                    <input type="text" class="form-control" id="countryName" placeholder="Country:">
                                 </div>
                                 <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="districtName" placeholder="District :">
+                                    <input type="text" class="form-control" id="districtName" placeholder="District:">
                                 </div>
                                 <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="cityName" placeholder="City :">
+                                    <input type="text" class="form-control" id="cityName" placeholder="City:">
                                 </div>
                                 <!-- end sub col-4 -->
                                 <!-- start new sub col-4*3 -->
                                 <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="streetName" placeholder="Street :">
+                                    <input type="text" class="form-control" id="streetName" placeholder="Street:">
                                 </div>
                                 <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="contactNo" placeholder="Contact no :">
+                                    <input type="text" class="form-control" id="contactNo" placeholder="Contact no:">
                                 </div>
                                 <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="faxNo" placeholder="Fax no :">
+                                    <input type="text" class="form-control" id="faxNo" placeholder="Fax no:">
                                 </div>
                                 <!-- end new sub col-4 & contact info end-->
 
                                 <!-- GpsLat Field -->
-                                <label for="gpsLat" class="form-label mb-2">Gps co-ordinate :</label>
+                                <label for="gpsLat" class="form-label mb-2">Gps co-ordinate:</label>
                                 <div class="col-md-6 mb-2">
-                                    <input type="text" class="form-control" id="gpsLat" placeholder="Latitude :">
+                                    <input type="text" class="form-control" id="gpsLat" placeholder="Latitude:">
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <input type="text" class="form-control" id="gpsLong" placeholder="Longitude :">
+                                    <input type="text" class="form-control" id="gpsLong" placeholder="Longitude:">
                                 </div>
                                 <!-- group of company field -->
                                 <div class="col-md-12 mb-2">
                                     <label for="groupofCompany" class="form-label mb-2">Belonging to group of companies? </label>
-                                    <input type="text" class="form-control" id="groupofCompany" placeholder="Company name :">
+                                    <input type="text" class="form-control" id="groupofCompany" placeholder="Company name:">
                                 </div>
                                 <!-- button save -->
                                 <div class="text-end mt-2">
@@ -98,11 +98,60 @@
                         </div>
                         <!-- end about section -->
 
-                        <!-- General Data section -->
-                        <div class="tab-pane fade" id="generalData-tab" role="tabpanel" aria-labelledby="generalData-tab-tab">
-                            <h2 class="h1 mb-4">65+ One-Page Demos for a Quick & Effective Landing Page.</h2>
 
-                            <p class="text-larger op-07 mb-5">Dramatically synergize pandemic content for open-source niches. Synergistically maximize cooperative e-markets before intermandated networks.</p>
+
+                        <!-- General Data section -->
+                        <div class="tab-pane fade tab-modi py-3 px-3" id="generalData-tab" role="tabpanel" aria-labelledby="generalData-tab-tab">
+                            <div class="row">
+                                <!-- type of company select radio as button -->
+                                <div class="col-md-12 mb-2">
+                                    <p class="label center mb-3">Type of company:</p>
+                                    <!-- radio selects as buttons -->
+                                    <div class="center">
+                                        <input type="radio" class="btn-check" name="options-outlined" id="soleProprietorship" autocomplete="off">
+                                        <label class="btn btn-outline-secondary bn-info" for="soleProprietorship">Sole Proprietorship</label>
+
+                                        <input type="radio" class="btn-check" name="options-outlined" id="partnership" autocomplete="off">
+                                        <label class="btn btn-outline-secondary bn-info" for="partnership">Partnership</label>
+
+                                        <input type="radio" class="btn-check" name="options-outlined" id="privateLimited" autocomplete="off">
+                                        <label class="btn btn-outline-secondary bn-info" for="privateLimited">Private Limited</label>
+
+                                        <input type="radio" class="btn-check" name="options-outlined" id="publicLimited" autocomplete="off">
+                                        <label class="btn btn-outline-secondary bn-info" for="publicLimited">Public Limited</label>
+                                    </div>
+                                </div>
+                                <!-- end col-12 & type of company -->
+
+                                <!-- Investor/Shareholder Field -->
+                                <label for="ownerShip" class="form-label mb-2">Investors / Shareholder details:</label>
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" id="nameownerShip" placeholder="Name of Investors / Shareholder:">
+                                </div>
+                                <!-- this field will be select dropdown field i will added latter and plus btton field -->
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" id="originownerShip" placeholder="Origin of Investors / Shareholder:">
+                                </div>
+
+                                <!-- Company details field -->
+                                <label for="companyDetails" class="form-label mb-2">Company details:</label>
+                                <div class="col-md-6 mb-2">
+                                    <input type="number" class="form-control" id="companyYear" placeholder="Year of foundation:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Tax ID:" aria-label="Tax ID:" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button"><i class="zmdi zmdi-attachment-alt"></i> Attach document</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <!-- end row -->
                         </div>
                         <!-- end general data -->
 
