@@ -82,3 +82,10 @@ label {
     padding: 10px 20px;
     margin-inline: 10px;
 }
+
+.btn-size {
+    padding: 7px 43px 7px 43px !important;
+    border-radius: 6px !important;
+    margin: 10px 20px!important;
+    width: 150px !important;
+}
