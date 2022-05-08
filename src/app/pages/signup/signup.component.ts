@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   hide = true;
-  isCheacked!: boolean;
+  isChecked!: boolean;
   // for phone number input
   model: any = {};
 
