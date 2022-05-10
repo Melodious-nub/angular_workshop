@@ -109,7 +109,7 @@
                                                 <input ngModel #fwf="ngModel" type="checkbox" class="btn-check" name="fwf" id="fwf">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="fwf">FWF</label>
                                                 <div class="input-add" *ngIf="fwf.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #fwfMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="fwfMid" id="fwfMid">
                                                 </div>
                                             </div>
 
@@ -117,7 +117,7 @@
                                                 <input ngModel #fla="ngModel" type="checkbox" class="btn-check" name="fla" id="fla">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="fla">FLA</label>
                                                 <div class="input-add" *ngIf="fla.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #flaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="flaMid" id="flaMid">
                                                 </div>
                                             </div>
 
@@ -125,7 +125,7 @@
                                                 <input ngModel #bsci="ngModel" type="checkbox" class="btn-check" name="bsci" id="bsci">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="bsci">BSCI</label>
                                                 <div class="input-add" *ngIf="bsci.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #bsciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bsciMid" id="bsciMid">
                                                 </div>
                                             </div>
 
@@ -133,7 +133,7 @@
                                                 <input ngModel #textilBundnis="ngModel" type="checkbox" class="btn-check" name="textilBundnis" id="textilBundnis">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="textilBundnis">Textilbündnis</label>
                                                 <div class="input-add" *ngIf="textilBundnis.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #textilBundnisMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="textilBundnisMid" id="textilBundnisMid">
                                                 </div>
                                             </div>
 
@@ -141,7 +141,7 @@
                                                 <input ngModel #leatherWG="ngModel" type="checkbox" class="btn-check" name="leatherWG" id="leatherWG">
                                                 <label class="btn btn-outline-secondary btn-size py-2" for="leatherWG">Leather Working Group</label>
                                                 <div class="input-add" *ngIf="leatherWG.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #leatherWGMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="leatherWGMid" id="leatherWGMid">
                                                 </div>
                                             </div>
 
@@ -149,7 +149,7 @@
                                                 <input ngModel #globalCompact="ngModel" type="checkbox" class="btn-check" name="globalCompact" id="globalCompact">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="globalCompact">Global Compact</label>
                                                 <div class="input-add" *ngIf="globalCompact.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #globalCompactMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="globalCompactMid" id="globalCompactMid">
                                                 </div>
                                             </div>
 
@@ -157,7 +157,7 @@
                                                 <input ngModel #bgmea="ngModel" type="checkbox" class="btn-check" name="bgmea" id="bgmea">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="bgmea">BGMEA</label>
                                                 <div class="input-add" *ngIf="bgmea.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #bgmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bgmeaMid" id="bgmeaMid">
                                                 </div>
                                             </div>
 
@@ -165,7 +165,7 @@
                                                 <input ngModel #bkmea="ngModel" type="checkbox" class="btn-check" name="bkmea" id="bkmea">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="bkmea">BKMEA</label>
                                                 <div class="input-add" *ngIf="bkmea.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #bkmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bkmeaMid" id="bkmeaMid">
                                                 </div>
                                             </div>
 
@@ -173,7 +173,7 @@
                                                 <input ngModel #btmea="ngModel" type="checkbox" class="btn-check" name="btmea" id="btmea">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="btmea">BTMEA</label>
                                                 <div class="input-add" *ngIf="btmea.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #btmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="btmeaMid" id="btmeaMid">
                                                 </div>
                                             </div>
 
@@ -181,7 +181,7 @@
                                                 <input ngModel #bgcci="ngModel" type="checkbox" class="btn-check" name="bgcci" id="bgcci">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="bgcci">BGCCI</label>
                                                 <div class="input-add" *ngIf="bgcci.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #bgcciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bgcciMid" id="bgcciMid">
                                                 </div>
                                             </div>
 
@@ -189,15 +189,15 @@
                                                 <input ngModel #dcci="ngModel" type="checkbox" class="btn-check" name="dcci" id="dcci">
                                                 <label class="btn btn-outline-secondary btn-size py-3" for="dcci">DCCI</label>
                                                 <div class="input-add" *ngIf="dcci.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                    <input ngModel #dcciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="dcciMid" id="dcciMid">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3 mb-3">
-                                                <input ngModel #dummy="ngModel" type="checkbox" class="btn-check" name="dummy" id="dummy">
-                                                <label class="btn btn-outline-secondary btn-size py-3" for="dummy">Dummy</label>
-                                                <div class="input-add" *ngIf="dummy.value == true">
-                                                    <input type="text" class="input-size" placeholder="Membership ID:">
+                                                <input ngModel #tba="ngModel" type="checkbox" class="btn-check" name="tba" id="tba">
+                                                <label class="btn btn-outline-secondary btn-size py-3" for="tba">TBA</label>
+                                                <div class="input-add" *ngIf="tba.value == true">
+                                                    <input ngModel #tbaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="tbaMid" id="tbaMid">
                                                 </div>
                                             </div>
 
@@ -259,13 +259,17 @@
 
                                 <div class="col-md-6 mb-2">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Tax ID:" aria-label="Tax ID:" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control" placeholder="Tax ID:">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button"><i class="zmdi zmdi-attachment-alt"></i> Attach document</button>
+                                            <a class="btn btn-outline-secondary">
+                                                <input class="multfile" type="file" onchange="$('#multfile-label').html(
+                                                        (this.files.length == 1) ? this.files[0].name : this.files.length + ' files');
+                                                        $(this).parent().addClass('btn-success-s')">
+                                                <span id="multfile-label"><i class="zmdi zmdi-attachment-alt"></i> Attach document</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-
 
 
                             </div>
@@ -312,3 +316,9 @@
 
 </div>
 <!-- end body -->
+
+<script>
+    $(":file").filestyle({
+        badge: true
+    });
+</script>
