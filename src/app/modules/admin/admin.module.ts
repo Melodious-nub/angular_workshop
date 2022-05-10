@@ -20,6 +20,12 @@ import { PoliciesComponent } from './pages/survey/policies/policies.component';
 import { CompanyInfoComponent } from './pages/survey/company-info/company-info.component';
 import { SupplyChainComponent } from './pages/survey/supply-chain/supply-chain.component';
 import { ResourceManagementComponent } from './pages/survey/resource-management/resource-management.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -40,10 +46,17 @@ import { ResourceManagementComponent } from './pages/survey/resource-management/
   imports: [
     CommonModule,
     AdminRoutingModule,
+    MatButtonModule,
+    AdminRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatRadioModule,
+    MatTabsModule,
   ],
   providers: [
     PostService,

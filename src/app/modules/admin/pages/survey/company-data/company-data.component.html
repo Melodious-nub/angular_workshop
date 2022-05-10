@@ -226,17 +226,19 @@
                                     <p class="label center mb-3">Type of company:</p>
                                     <!-- radio selects as buttons -->
                                     <div class="center">
-                                        <input type="radio" class="btn-check" name="options-outlined" id="soleProprietorship">
-                                        <label class="btn btn-outline-secondary bn-info" for="soleProprietorship">Sole Proprietorship</label>
+                                        <mat-radio-group class="form-row">
+                                            <mat-radio-button class="m-15" #brand id="brand" type="radio" name="exist" value="1"> Brands
+                                            </mat-radio-button>
 
-                                        <input type="radio" class="btn-check" name="options-outlined" id="partnership">
-                                        <label class="btn btn-outline-secondary bn-info" for="partnership">Partnership</label>
+                                            <mat-radio-button class="m-15" #employee id="employee" type="radio" name="exist" value="3"> Employees
+                                            </mat-radio-button>
 
-                                        <input type="radio" class="btn-check" name="options-outlined" id="privateLimited">
-                                        <label class="btn btn-outline-secondary bn-info" for="privateLimited">Private Limited</label>
+                                            <mat-radio-button class="m-15" #factory id="factory" type="radio" name="exist" value="2"> Factory
+                                            </mat-radio-button>
 
-                                        <input type="radio" class="btn-check" name="options-outlined" id="publicLimited">
-                                        <label class="btn btn-outline-secondary bn-info" for="publicLimited">Public Limited</label>
+                                            <mat-radio-button class="m-15" #consumer id="consumer" type="radio" name="exist" value="4"> Consumers
+                                            </mat-radio-button>
+                                        </mat-radio-group>
                                     </div>
                                 </div>
                                 <!-- end col-12 & type of company -->

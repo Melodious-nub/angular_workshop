@@ -120,3 +120,21 @@ label {
     background-color: transparent;
     color: transparent;
 }
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: #93117D !important;
+}
+
+ ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #93117D!important;
+    /*inner circle color change*/
+}
+
+ ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #93117D!important;
+    /*outer ring color change*/
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 30px;
+}
