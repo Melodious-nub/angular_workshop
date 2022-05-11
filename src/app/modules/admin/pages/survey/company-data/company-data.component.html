@@ -208,7 +208,12 @@
                                     <!-- button save -->
                                     <div class="text-end mt-2">
                                         <button class="button button-small button-border button-rounded b-info" type="submit" name="save" id="save" value="save">Save</button>
+
+                                        <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i>
+                                        </button>
                                     </div>
+
+
 
                                 </div>
                                 <!-- row end -->
@@ -224,19 +229,19 @@
                                 <!-- type of company select radio as button -->
                                 <div class="col-md-12 mb-2">
                                     <p class="label center mb-3">Type of company:</p>
-                                    <!-- radio selects as buttons -->
+                                    <!-- radio buttons -->
                                     <div class="center">
                                         <mat-radio-group class="form-row">
-                                            <mat-radio-button class="m-15" #brand id="brand" type="radio" name="exist" value="1"> Brands
+                                            <mat-radio-button class="m-15 me-3 label" #brand id="brand" type="radio" name="exist" value="1"> Sole Proprietorship
                                             </mat-radio-button>
 
-                                            <mat-radio-button class="m-15" #employee id="employee" type="radio" name="exist" value="3"> Employees
+                                            <mat-radio-button class="m-15 me-3" #employee id="employee" type="radio" name="exist" value="3"> Partnership
                                             </mat-radio-button>
 
-                                            <mat-radio-button class="m-15" #factory id="factory" type="radio" name="exist" value="2"> Factory
+                                            <mat-radio-button class="m-15 me-3" #factory id="factory" type="radio" name="exist" value="2"> Private Limited
                                             </mat-radio-button>
 
-                                            <mat-radio-button class="m-15" #consumer id="consumer" type="radio" name="exist" value="4"> Consumers
+                                            <mat-radio-button class="m-15 me-3" #consumer id="consumer" type="radio" name="exist" value="4"> Public Limited
                                             </mat-radio-button>
                                         </mat-radio-group>
                                     </div>

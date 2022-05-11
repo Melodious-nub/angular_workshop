@@ -135,6 +135,20 @@ label {
     /*outer ring color change*/
 }
 
-.mat-radio-button~.mat-radio-button {
-    margin-left: 30px;
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    color: #93117D !important;
+    border-color: #93117D !important;
+}
+
+.btn-circle:hover {
+    background: #93117D !important;
+    border-color: #93117D !important;
+    color: #FFFFFF !important;
 }
