@@ -50,13 +50,14 @@ input:focus {
 
 label {
     color: #93117D;
-    font-size: smaller !important;
+    font-size: small !important;
     /* text-align: center !important; */
+    letter-spacing: 1px;
     text-transform: capitalize;
 }
 
 .label {
-    font-size: 13px;
+    font-size: small;
     font-weight: 700;
     font-family: Poppins, sans-serif;
     text-transform: uppercase;
