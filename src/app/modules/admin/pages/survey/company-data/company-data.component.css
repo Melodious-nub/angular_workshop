@@ -51,7 +51,8 @@ input:focus {
 label {
     color: #93117D;
     font-size: smaller !important;
-    text-align: center !important;
+    /* text-align: center !important; */
+    text-transform: capitalize;
 }
 
 .label {
@@ -107,6 +108,11 @@ label {
     max-width: 200px !important;
     max-height: 38px;
     overflow: hidden;
+}
+
+.btn-success-s2 {
+    color: #fff;
+    background: #93117D;
 }
 
 .multfile {

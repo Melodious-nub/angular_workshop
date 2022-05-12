@@ -101,6 +101,19 @@
                                         <input ngModel #groupofCompany="ngModel" type="text" class="form-control" name="groupofCompany" id="groupofCompany" placeholder="Company name:">
                                     </div>
 
+                                    <!-- upload company photos -->
+                                    <label for="companyPhotos" class="center mt-3 mb-3">Upload photos of your company:</label>
+                                    <div class="col-md-12 center">
+                                        <label class="btn btn-secondary p-2" style="color: #fff; width: 55%;" for="companyPhotos">
+                                            <input id="companyPhotos" type="file" multiple="multiple" style="display:none" accept="image/*"
+                                                onchange="$('#companyPhotos-label').html(
+                                                    (this.files.length == 1) ? this.files[0].name : this.files.length + ' images');
+                                                    $(this).parent().addClass('btn-success-s2')">
+                                            <span id="companyPhotos-label"><i class="icon-picture pe-2"></i>Upload photo</span>
+                                        </label>
+                                        <p class="hint"> *Can upload multiple images</p>
+                                    </div>
+
                                     <!-- Membership field -->
                                     <label for="membership" class="center mt-3 mb-3" style="font-size: 16px !important;">Membership</label>
                                     <div class="col-md-12 mb-2 center">
@@ -202,15 +215,33 @@
                                             </div>
 
                                         </div>
-                                        <!-- end member eaw -->
+                                        <!-- end member raw -->
                                     </div>
-                                    <p class="center">{{aboutForm.value | json}}</p>
+
+                                    <!-- MemberShip Dynamic-adding field -->
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <div class="row">
+                                            <div class="col-md-1 py-2">
+                                                <label class="form-label">Others</label>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" name="companyName" id="companyName" placeholder="Membership Name:">
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" name="companyName" id="companyName" placeholder="Membership ID:">
+                                            </div>
+                                            <div class="col-md-1 py-1">
+                                                <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i>
+                                        </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <p class="center">{{aboutForm.value | json}}</p> -->
                                     <!-- button save -->
                                     <div class="text-end mt-2">
                                         <button class="button button-small button-border button-rounded b-info" type="submit" name="save" id="save" value="save">Save</button>
-
-                                        <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i>
-                                        </button>
                                     </div>
 
 

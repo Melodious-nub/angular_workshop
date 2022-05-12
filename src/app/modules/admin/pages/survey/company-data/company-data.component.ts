@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyDataComponent implements OnInit {
 
+  form: File | null;
+
   constructor() { }
 
   ngOnInit(): void {
