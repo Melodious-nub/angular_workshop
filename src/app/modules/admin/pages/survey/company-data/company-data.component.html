@@ -231,8 +231,7 @@
                                                 <input type="text" class="form-control" name="companyName" id="companyName" placeholder="Membership ID:">
                                             </div>
                                             <div class="col-md-1 py-1">
-                                                <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i>
-                                        </button>
+                                                <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -281,13 +280,27 @@
 
                                 <!-- Investor/Shareholder Field -->
                                 <label for="ownerShip" class="form-label mb-2">Investors / Shareholder details:</label>
-                                <div class="col-md-6 mb-2">
+                                <div class="col-md-4 mb-2">
                                     <input type="text" class="form-control" id="nameownerShip" placeholder="Name of Investors / Shareholder:">
                                 </div>
                                 <!-- this field will be select dropdown field i will added latter and plus btton field -->
-                                <div class="col-md-6 mb-2">
+                                <div class="col-md-4 mb-2">
                                     <input type="text" class="form-control" id="originownerShip" placeholder="Origin of Investors / Shareholder:">
                                 </div>
+
+                                <div class="col-md-3 mb-2">
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" id="originownerShip" placeholder="% of share:">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1 py-1">
+                                    <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i></button>
+                                </div>
+                                <!-- end Investor field -->
 
                                 <!-- Company details field -->
                                 <label for="companyDetails" class="form-label mb-2">Company details:</label>
@@ -299,7 +312,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Tax ID:">
                                         <div class="input-group-append">
-                                            <a class="btn btn-outline-secondary">
+                                            <a class="btn btn-secondary">
                                                 <input class="multfile" type="file" onchange="$('#multfile-label').html(
                                                         (this.files.length == 1) ? this.files[0].name : this.files.length + ' files');
                                                         $(this).parent().addClass('btn-success-s')">
@@ -308,6 +321,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- end company details input -->
+
+                                <!-- Business license Field -->
+                                <label for="companyDetails" class="form-label mb-2">Business License:</label>
+                                <div class="col-md-4 mb-2">
+                                    <input type="number" class="form-control" id="companyYear" placeholder="Business License no:">
+                                </div>
+
+                                <div class="col-md-4 mb-2">
+                                    <label class="btn btn-secondary" style="color: #fff; width: 100%;" for="bnLicenseNo">
+                                        <input id="bnLicenseNo" type="file" style="display:none" accept="image/*"
+                                            onchange="$('#bnLicenseNo-label').html(
+                                                (this.files.length == 1) ? this.files[0].name : this.files.length + ' images');
+                                                $(this).parent().addClass('btn-success-s')">
+                                        <span id="bnLicenseNo-label"><i class="zmdi zmdi-attachment-alt pe-2"></i>Attach document</span>
+                                    </label>
+                                </div>
+
+                                <div class="col-md-4 mb-2">
+                                    <input type="number" class="form-control" id="companyYear" placeholder="Business License no:">
+                                </div>
+                                <!-- end business license field -->
 
 
                             </div>
@@ -315,7 +350,8 @@
                         </div>
                         <!-- end general data -->
 
-                        <!-- product section -->
+
+                        <!-- product section start -->
                         <div class="tab-pane fade" id="product-tab" role="tabpanel" aria-labelledby="product-tab-tab">
                             <h2 class="h1 mb-4">Lot of Addition Blocks Options with new Features.</h2>
 
