@@ -115,7 +115,7 @@
                                     </div>
 
                                     <!-- Membership field -->
-                                    <label for="membership" class="center mt-3 mb-3" style="font-size: 16px !important;">Membership</label>
+                                    <label for="membership" class="center mt-3 mb-3" style="font-size: 16px !important;">Membership:</label>
                                     <div class="col-md-12 mb-2 center">
                                         <div class="row">
                                             <div class="col-md-3 mb-3">
@@ -309,7 +309,7 @@
 
                                 <div class="col-md-6 mb-2">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Tax ID:">
+                                        <input type="text" class="form-control" id="companyTid" placeholder="Tax ID:">
                                         <div class="input-group-append">
                                             <a class="btn btn-secondary">
                                                 <input class="multfile" type="file" onchange="$('#taxId-label').html(
@@ -325,21 +325,21 @@
                                 <!-- Business license Field -->
                                 <label for="companyDetails" class="form-label mb-2">Business License:</label>
                                 <div class="col-md-4 mb-2">
-                                    <input type="number" class="form-control" id="companyYear" placeholder="Business License no:">
+                                    <input type="text" class="form-control" id="bnLicenseNoInp" placeholder="Business License no:">
                                 </div>
 
                                 <div class="col-md-4 mb-2">
                                     <label class="btn btn-secondary" style="color: #fff; width: 100%;" for="bnLicenseNo">
-                                        <input id="bnLicenseNo" type="file" style="display:none" accept="image/*"
+                                        <input id="bnLicenseNo" type="file" style="display:none" 
                                             onchange="$('#bnLicenseNo-label').html(
-                                                (this.files.length == 1) ? this.files[0].name : this.files.length + ' images');
+                                                (this.files.length == 1) ? this.files[0].name : this.files.length + ' files');
                                                 $(this).parent().addClass('btn-success-s')">
                                         <span id="bnLicenseNo-label"><i class="zmdi zmdi-attachment-alt pe-2"></i>Attach document</span>
                                     </label>
                                 </div>
 
                                 <div class="col-md-4 mb-2">
-                                    <input type="number" class="form-control" id="companyYear" placeholder="Business License no:">
+                                    <input type="date" class="form-control" id="bnLicenseNoDate" placeholder="Date of expire:">
                                 </div>
                                 <!-- end business license field -->
 
@@ -348,12 +348,138 @@
                                     <input type="radio" class="btn-check" name="statusApply" id="nyApplied">
                                     <label class="btn btn-outline-secondary btn-avail" for="nyApplied">Not yet applied</label>
                                 </div>
-
                                 <div class="col-md-6 mb-2 center">
                                     <input type="radio" class="btn-check" name="statusApply" id="iaProcess">
                                     <label class="btn btn-outline-secondary btn-avail" for="iaProcess">In application process</label>
                                 </div>
+                                <!-- end apply field -->
 
+                                <!-- Trade License Field -->
+                                <label for="tradeLicenseNoInp" class="form-label mb-2">Trade License:</label>
+                                <div class="col-md-4 mb-2">
+                                    <input type="number" class="form-control" id="tradeLicenseNoInp" placeholder="Trade License no:">
+                                </div>
+
+                                <div class="col-md-4 mb-2">
+                                    <label class="btn btn-secondary" style="color: #fff; width: 100%;" for="tradeLicenseNo">
+                                        <input id="tradeLicenseNo" type="file" style="display:none" 
+                                            onchange="$('#tradeLicenseNo-label').html(
+                                                (this.files.length == 1) ? this.files[0].name : this.files.length + ' files');
+                                                $(this).parent().addClass('btn-success-s')">
+                                        <span id="tradeLicenseNo-label"><i class="zmdi zmdi-attachment-alt pe-2"></i>Attach document</span>
+                                    </label>
+                                </div>
+
+                                <div class="col-md-4 mb-2">
+                                    <input type="date" class="form-control" id="tradeLicenseExp" placeholder="Date of expire:">
+                                </div>
+                                <!-- end Trade License field -->
+
+                                <!-- economic field -->
+                                <div class="col-md-12 mb-2">
+                                    <label for="economicSec" class="form-label">Economic Sector:</label>
+                                    <input type="text" class="form-control" name="economicSec" id="economicSec" placeholder="Economic Sector:">
+                                </div>
+
+                                <!-- numof employee field -->
+                                <label for="empMale" class="form-label mb-2">Total Number of employees:</label>
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" name="empMale" id="empMale" placeholder="Male:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" name="empFemale" id="empFemale" placeholder="Female:">
+                                </div>
+                                <!-- end employee field -->
+
+                                <!-- Department field -->
+                                <label for="dept" class="center mt-3 mb-3" style="font-size: 16px !important;">Department:</label>
+                                <div class="col-md-12 mb-2 center">
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="finance" id="finance">
+                                            <label class="btn btn-outline-secondary btn-size py-3" for="finance">Finance</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="production" id="production">
+                                            <label class="btn btn-outline-secondary btn-size py-3" for="production">Production</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="logistics" id="logistics">
+                                            <label class="btn btn-outline-secondary btn-size py-3" for="logistics">Logistics</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="humanResource" id="humanResource">
+                                            <label class="btn btn-outline-secondary btn-size" for="humanResource">Human Resources</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="resandDev" id="resandDev">
+                                            <label class="btn btn-outline-secondary btn-size" for="resandDev">Research & Development</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="sampleDept" id="sampleDept">
+                                            <label class="btn btn-outline-secondary btn-size" for="sampleDept">Sample Department</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="marketing" id="marketing">
+                                            <label class="btn btn-outline-secondary btn-size py-3" for="marketing">Marketing</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="merchandising" id="merchandising">
+                                            <label class="btn btn-outline-secondary btn-size py-3" for="merchandising">Merchandising</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="sales" id="sales">
+                                            <label class="btn btn-outline-secondary btn-size py-3" for="sales">Sales</label>
+                                        </div>
+
+                                        <div class="col-md-3 mb-3">
+                                            <input type="checkbox" class="btn-check" name="warehouse" id="warehouse">
+                                            <label class="btn btn-outline-secondary btn-size py-3" for="warehouse">Warehouse</label>
+                                        </div>
+
+                                    </div>
+                                    <!-- end member raw -->
+                                </div>
+
+                                <!-- -------work from here -->
+
+                                <!-- invite field -->
+                                <div class="col-md-12">
+                                    <div class="input-group mb-3" style="width: 60%;">
+                                        <input type="text" class="form-control" placeholder="E-mail address">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button">Invite to Join</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- add own brands field -->
+                                <label for="companyDetails" class="form-label mb-2">Own Brands:</label>
+                                <div class="col-md-12 mb-2">
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <input type="text" class="form-control" name="companyName" id="companyName" placeholder="Membership Name:">
+                                        </div>
+                                        <div class="col-md-1 py-1">
+                                            <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- button save -->
+                                <div class="text-end mt-2">
+                                    <button class="button button-small button-border button-rounded b-info" type="submit" name="save" id="save" value="save">Save</button>
+                                </div>
 
                             </div>
                             <!-- end row -->
