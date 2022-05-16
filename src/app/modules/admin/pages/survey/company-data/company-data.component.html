@@ -244,7 +244,6 @@
                                     </div>
 
 
-
                                 </div>
                                 <!-- row end -->
                             </form>
@@ -313,10 +312,10 @@
                                         <input type="text" class="form-control" placeholder="Tax ID:">
                                         <div class="input-group-append">
                                             <a class="btn btn-secondary">
-                                                <input class="multfile" type="file" onchange="$('#multfile-label').html(
+                                                <input class="multfile" type="file" onchange="$('#taxId-label').html(
                                                         (this.files.length == 1) ? this.files[0].name : this.files.length + ' files');
                                                         $(this).parent().addClass('btn-success-s')">
-                                                <span id="multfile-label"><i class="zmdi zmdi-attachment-alt"></i> Attach document</span>
+                                                <span id="taxId-label"><i class="zmdi zmdi-attachment-alt"></i> Attach document</span>
                                             </a>
                                         </div>
                                     </div>
@@ -344,6 +343,17 @@
                                 </div>
                                 <!-- end business license field -->
 
+                                <!-- application apply field -->
+                                <div class="col-md-6 mb-2 center">
+                                    <input type="radio" class="btn-check" name="statusApply" id="nyApplied">
+                                    <label class="btn btn-outline-secondary btn-avail" for="nyApplied">Not yet applied</label>
+                                </div>
+
+                                <div class="col-md-6 mb-2 center">
+                                    <input type="radio" class="btn-check" name="statusApply" id="iaProcess">
+                                    <label class="btn btn-outline-secondary btn-avail" for="iaProcess">In application process</label>
+                                </div>
+
 
                             </div>
                             <!-- end row -->
@@ -358,6 +368,7 @@
                             <p class="text-larger op-07 mb-5">Seamlessly synergize resource maximizing initiatives after enterprise-wide strategic theme areas. Continually fashion seamless experiences visa high-payoff action items. </p>
                         </div>
                         <!-- end product section -->
+
 
                         <!-- production section -->
                         <div class="tab-pane fade" id="production-tab" role="tabpanel" aria-labelledby="production-tab-tab">
@@ -390,9 +401,3 @@
 
 </div>
 <!-- end body -->
-
-<script>
-    $(":file").filestyle({
-        badge: true
-    });
-</script>
