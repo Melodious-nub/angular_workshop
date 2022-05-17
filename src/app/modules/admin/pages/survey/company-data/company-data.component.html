@@ -260,10 +260,10 @@
                                             <mat-radio-button class="m-15 me-3" #brand id="brand" type="radio" name="exist" value="1"> Sole Proprietorship
                                             </mat-radio-button>
 
-                                            <mat-radio-button class="m-15 me-3" #employee id="employee" type="radio" name="exist" value="3"> Partnership
+                                            <mat-radio-button class="m-15 me-3" #employee id="employee" type="radio" name="exist" value="2"> Partnership
                                             </mat-radio-button>
 
-                                            <mat-radio-button class="m-15 me-3" #factory id="factory" type="radio" name="exist" value="2"> Private Limited
+                                            <mat-radio-button class="m-15 me-3" #factory id="factory" type="radio" name="exist" value="3"> Private Limited
                                             </mat-radio-button>
 
                                             <mat-radio-button class="m-15 me-3" #consumer id="consumer" type="radio" name="exist" value="4"> Public Limited
@@ -274,26 +274,28 @@
                                 <!-- end col-12 & type of company -->
 
                                 <!-- Investor/Shareholder Field -->
-                                <label for="ownerShip" class="form-label mb-2">Investors / Shareholder details:</label>
-                                <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="nameownerShip" placeholder="Name of Investors / Shareholder:">
-                                </div>
-                                <!-- this field will be select dropdown field i will added latter and plus btton field -->
-                                <div class="col-md-4 mb-2">
-                                    <input type="text" class="form-control" id="originownerShip" placeholder="Origin of Investors / Shareholder:">
-                                </div>
+                                <div class="row">
+                                    <label for="ownerShip" class="form-label mb-2">Investors / Shareholder details:</label>
+                                    <div class="col-md-4 mb-2">
+                                        <input type="text" class="form-control" id="nameownerShip" placeholder="Name of Investors / Shareholder:">
+                                    </div>
+                                    <!-- this field will be select dropdown field i will added latter and plus btton field -->
+                                    <div class="col-md-4 mb-2">
+                                        <input type="text" class="form-control" id="originownerShip" placeholder="Origin of Investors / Shareholder:">
+                                    </div>
 
-                                <div class="col-md-3 mb-2">
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control" id="originownerShip" placeholder="% of share:">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">%</span>
+                                    <div class="col-md-3 mb-2">
+                                        <div class="input-group mb-3">
+                                            <input type="number" class="form-control" id="originownerShip" placeholder="% of share:">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">%</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col-md-1 py-1">
-                                    <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i></button>
+                                    <div class="col-md-1 py-1">
+                                        <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i></button>
+                                    </div>
                                 </div>
                                 <!-- end Investor field -->
 
@@ -480,8 +482,10 @@
                         </div>
                         <!-- end general data -->
 
+
                         <!-- customer section -->
                         <div class="tab-pane fade tab-modi py-3 px-3" id="customer-tab" role="tabpanel" aria-labelledby="customer-tab-tab">
+                            <!-- customer input field start -->
                             <div class="row field-modi py-2">
                                 <div class="col-md-3 mb-2">
                                     <input type="text" class="form-control" name="customerName" id="customerName" placeholder="Customer name:">
@@ -527,24 +531,100 @@
                                 </div>
 
                                 <div class="col-md-6 mb-2">
-                                    <button class="btn btn-outline-secondary" style="width: 100%;" type="submit" name="save" id="save" value="save">Send invitation to join</button>
+                                    <button class="btn btn-outline-secondary" style="width: 100%;" type="submit" name="sendInvite" id="sendInvite" value="sendInvite">Send invitation to join</button>
                                 </div>
                             </div>
                             <!-- end row -->
+                            <!-- end customer input field -->
 
+                            <!-- addMore Button -->
                             <div class="row">
                                 <div class="col-md-12 mt-4 mb-3 center">
-                                    <button class="btn btn-outline-secondary" style="width: 20%;" type="submit" name="save" id="save" value="save"><i class="zmdi zmdi-plus"></i> Add More</button>
+                                    <button class="btn btn-outline-secondary" style="width: 20%;" type="submit" name="addMore" id="addMore" value="addMore"><i class="zmdi zmdi-plus"></i> Add More</button>
                                 </div>
                             </div>
+
+                            <!-- alternative excel Feild -->
+                            <div class="container field-modi" style="width: 50%;">
+                                <div class="row py-3 px-3">
+                                    <label class="center">Or,</label>
+                                    <div class="col-md-12 mb-2 center">
+                                        <button class="btn btn-secondary" style="width: 40%;">Download Excel Template to fill up the data</button>
+                                    </div>
+
+                                    <div class="col-md-12 mb-2 center">
+                                        <button class=" btn btn-secondary ">Download Excel Template to fill up the data</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end alternative excel field -->
+
+
                         </div>
-                        <!-- end supplier section -->
+                        <!-- end customer section -->
+
 
                         <!-- supplier section -->
-                        <div class="tab-pane fade" id="supplier-tab" role="tabpanel" aria-labelledby="supplier-tab-tab">
-                            <h2 class="h1 mb-4">Lot of Addition Blocks Options with new Features.</h2>
+                        <div class="tab-pane fade tab-modi py-3 px-3" id="supplier-tab" role="tabpanel" aria-labelledby="supplier-tab-tab">
+                            <!-- supplier input field Start -->
+                            <div class="row field-modi py-2">
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="supplierName" id="supplierName" placeholder="Supplier name:">
+                                </div>
 
-                            <p class="text-larger op-07 mb-5">Seamlessly synergize resource maximizing initiatives after enterprise-wide strategic theme areas. Continually fashion seamless experiences visa high-payoff action items. </p>
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="supplierId" id="supplierId" placeholder="Supplier ID:">
+                                </div>
+
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="supplierCountry" id="supplierCountry" placeholder="Country:">
+                                </div>
+
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="relationShipSup" id="relationShipSup" placeholder="Relationship Since:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" name="productOrService" id="productOrService" placeholder="Product/ Service:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" name="volume" id="volume" placeholder="Volume:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" name="contactEmailSup" id="contactEmailSup" placeholder="Contact email:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <button class="btn btn-outline-secondary" style="width: 100%;" type="submit" name="sendInvite" id="sendInvite" value="sendInvite">Send invitation to join</button>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                            <!-- end supplier input field -->
+
+                            <!-- addmore btn -->
+                            <div class="row">
+                                <div class="col-md-12 mt-4 mb-3 center">
+                                    <button class="btn btn-outline-secondary" style="width: 20%;" type="submit" name="addMore" id="addMore" value="addMore"><i class="zmdi zmdi-plus"></i> Add More</button>
+                                </div>
+                            </div>
+
+                            <!-- alternative excel Feild -->
+                            <div class="container field-modi" style="width: 50%;">
+                                <div class="row py-3 px-3">
+                                    <label class="center">Or,</label>
+                                    <div class="col-md-12 mb-2 center">
+                                        <button class="btn btn-secondary" style="width: 40%;">Download Excel Template to fill up the data</button>
+                                    </div>
+
+                                    <div class="col-md-12 mb-2 center">
+                                        <button class=" btn btn-secondary ">Download Excel Template to fill up the data</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end alternative excel field -->
+
                         </div>
                         <!-- end supplier section -->
 
