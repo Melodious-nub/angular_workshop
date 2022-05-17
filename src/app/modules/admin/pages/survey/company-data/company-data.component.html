@@ -10,13 +10,9 @@
 
                         <a class="nav-link mb-2" id="generalData-tab-tab" data-bs-toggle="pill" href="#generalData-tab" role="tab" aria-controls="generalData-tab" aria-selected="false">General Data</a>
 
-                        <a class="nav-link mb-2" id="product-tab-tab" data-bs-toggle="pill" href="#product-tab" role="tab" aria-controls="product-tab" aria-selected="false">Product</a>
-
-                        <a class="nav-link mb-2" id="production-tab-tab" data-bs-toggle="pill" href="#production-tab" role="tab" aria-controls="production-tab" aria-selected="false">Production process</a>
+                        <a class="nav-link mb-2" id="customer-tab-tab" data-bs-toggle="pill" href="#customer-tab" role="tab" aria-controls="customer-tab" aria-selected="false">Customer</a>
 
                         <a class="nav-link mb-2" id="supplier-tab-tab" data-bs-toggle="pill" href="#supplier-tab" role="tab" aria-controls="Supplier-tab" aria-selected="false">Supplier</a>
-
-                        <a class="nav-link mb-2" id="customer-tab-tab" data-bs-toggle="pill" href="#customer-tab" role="tab" aria-controls="customer-tab" aria-selected="false">Customer</a>
 
                     </div>
                 </div>
@@ -261,7 +257,7 @@
                                     <!-- radio buttons -->
                                     <div class="center">
                                         <mat-radio-group class="form-row">
-                                            <mat-radio-button class="m-15 me-3 label" #brand id="brand" type="radio" name="exist" value="1"> Sole Proprietorship
+                                            <mat-radio-button class="m-15 me-3" #brand id="brand" type="radio" name="exist" value="1"> Sole Proprietorship
                                             </mat-radio-button>
 
                                             <mat-radio-button class="m-15 me-3" #employee id="employee" type="radio" name="exist" value="3"> Partnership
@@ -450,10 +446,8 @@
                                     <!-- end member raw -->
                                 </div>
 
-                                <!-- -------work from here -->
-
                                 <!-- invite field -->
-                                <div class="col-md-12">
+                                <div class="col-md-12 d-flex justify-content-center">
                                     <div class="input-group mb-3" style="width: 60%;">
                                         <input type="text" class="form-control" placeholder="E-mail address">
                                         <div class="input-group-append">
@@ -486,23 +480,65 @@
                         </div>
                         <!-- end general data -->
 
+                        <!-- customer section -->
+                        <div class="tab-pane fade tab-modi py-3 px-3" id="customer-tab" role="tabpanel" aria-labelledby="customer-tab-tab">
+                            <div class="row field-modi py-2">
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="customerName" id="customerName" placeholder="Customer name:">
+                                </div>
 
-                        <!-- product section start -->
-                        <div class="tab-pane fade" id="product-tab" role="tabpanel" aria-labelledby="product-tab-tab">
-                            <h2 class="h1 mb-4">Lot of Addition Blocks Options with new Features.</h2>
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="customerId" id="customerId" placeholder="Customer ID:">
+                                </div>
 
-                            <p class="text-larger op-07 mb-5">Seamlessly synergize resource maximizing initiatives after enterprise-wide strategic theme areas. Continually fashion seamless experiences visa high-payoff action items. </p>
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="customerCountry" id="customerCountry" placeholder="Country:">
+                                </div>
+
+                                <div class="col-md-3 mb-2">
+                                    <input type="text" class="form-control" name="relationShip" id="relationShip" placeholder="Relationship Since:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" name="volOflastYr" id="volOflastYr" placeholder="Volume for last year:">
+                                </div>
+
+                                <div class="col-md-6 mt-2 mb-2">
+                                    <mat-radio-group class="form-row">
+                                        <mat-radio-button class="m-15 me-1" #pcs id="pcs" type="radio" name="quantity" value="1">pcs
+                                        </mat-radio-button>
+
+                                        <mat-radio-button class="m-15 me-1" #tons id="tons" type="radio" name="quantity" value="2">Tons
+                                        </mat-radio-button>
+
+                                        <mat-radio-button class="m-15 me-1" #yards id="yards" type="radio" name="quantity" value="3">Yards
+                                        </mat-radio-button>
+
+                                        <mat-radio-button class="m-15 me-1" #pairs id="pairs" type="radio" name="quantity" value="4">Pairs
+                                        </mat-radio-button>
+
+                                        <mat-radio-button class="m-15 me-1" #dozens id="dozens" type="radio" name="quantity" value="5">Dozens
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control" name="contactEmail" id="contactEmail" placeholder="Contact email:">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <button class="btn btn-outline-secondary" style="width: 100%;" type="submit" name="save" id="save" value="save">Send invitation to join</button>
+                                </div>
+                            </div>
+                            <!-- end row -->
+
+                            <div class="row">
+                                <div class="col-md-12 mt-4 mb-3 center">
+                                    <button class="btn btn-outline-secondary" style="width: 20%;" type="submit" name="save" id="save" value="save"><i class="zmdi zmdi-plus"></i> Add More</button>
+                                </div>
+                            </div>
                         </div>
-                        <!-- end product section -->
-
-
-                        <!-- production section -->
-                        <div class="tab-pane fade" id="production-tab" role="tabpanel" aria-labelledby="production-tab-tab">
-                            <h2 class="h1 mb-4">Lot of Addition Blocks Options with new Features.</h2>
-
-                            <p class="text-larger op-07 mb-5">Seamlessly synergize resource maximizing initiatives after enterprise-wide strategic theme areas. Continually fashion seamless experiences visa high-payoff action items. </p>
-                        </div>
-                        <!-- end production section -->
+                        <!-- end supplier section -->
 
                         <!-- supplier section -->
                         <div class="tab-pane fade" id="supplier-tab" role="tabpanel" aria-labelledby="supplier-tab-tab">
