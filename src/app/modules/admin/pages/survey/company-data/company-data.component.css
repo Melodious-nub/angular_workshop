@@ -3,6 +3,7 @@
     box-sizing: border-box;
     filter: drop-shadow(-5px -5px 10px #FFFFFF) drop-shadow(5px 5px 10px rgba(151, 149, 169, 0.5));
     border-radius: 25px;
+    width: 85% !important;
 }
 
 .nav-link {
