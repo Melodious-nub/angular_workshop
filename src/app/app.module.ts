@@ -12,9 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
-import { AppErrorHandler } from './common/app-error-handler';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
@@ -24,6 +22,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account.component';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -53,9 +52,8 @@ import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account
     MatTabsModule,
   ],
   providers: [
-    PostService,
+    DataService,
     AuthService,
-    { provide: ErrorHandler, useClass: AppErrorHandler},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
     {provide: MAT_RADIO_DEFAULT_OPTIONS,useValue: { color: 'accent' },}
   ],

@@ -11,7 +11,6 @@ import { ServicesComponent } from './pages/services/services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PostService } from 'src/app/services/post.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { AppComponent } from 'src/app/app.component';
 import { SurveyComponent } from './pages/survey/survey.component';
@@ -26,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import { DataService } from 'src/app/services/data.service';
 
 
 @NgModule({
@@ -59,7 +59,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatTabsModule,
   ],
   providers: [
-    PostService,
+    DataService,
     AuthService,
   ],
   bootstrap: [AppComponent]

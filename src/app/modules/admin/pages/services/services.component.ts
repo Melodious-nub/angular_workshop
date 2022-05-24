@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppError } from 'src/app/common/app-error';
-import { BadInput } from 'src/app/common/bad-input';
-import { NotFoundError } from 'src/app/common/not-found-error';
-import { PostService } from 'src/app/services/post.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-services',
@@ -17,7 +14,7 @@ export class ServicesComponent implements OnInit {
 
   // Good practice is initialization Api responses in LifeCycle Hood.
   // Inject the PostService on the constructor and httpClient from PostService  
-  constructor(private service: PostService) { }
+  constructor(private service: DataService) { }
 
   // Initialized Api response in LifeCycle Hood.
   // Now I'm getting the data from PostService.
@@ -52,12 +49,6 @@ export class ServicesComponent implements OnInit {
       body.id = newPost.id;
       this.posts.splice(0, 0, body);
       // Implementation of unexpected errors(if api is nott valid throw error)
-    }, (error: AppError) => {
-      if ( error instanceof BadInput) {
-        // for handle reactive form and show it bellow form field
-        // this.form.setErrors(error.originalError);
-        // reThrow error for catch global error handler
-      } else throw error;
     });
   }
 
@@ -84,11 +75,6 @@ export class ServicesComponent implements OnInit {
       // to delete post we use splice method, which index and how many object i've to delete
       this.posts.splice(index, 1);
       // Implementation of unexpected errors
-    }, (error: AppError) => {
-      if (error instanceof NotFoundError) {
-        alert('This post has already been deleted');
-        // reThrow error for catch global error handler
-      } else throw error;
     });
   }
 
