@@ -30,13 +30,18 @@ export class AuthService {
 
   // Here i implemeted a static check....
   login({ loginName, loginPass }: any): Observable<any> {
+    let body:any = {
+      loginName: 'admin@sutra.earth',
+      loginPass: 'Admin1',
+    };
 
     // In live project i h've to connect this portion with API
-    if (loginName === 'admin@sutra.earth' && loginPass === 'Admin1') {
+    if (loginName === body.loginName && loginPass === body.loginPass) {
       this.setToken('abcdefghijklmnopqrstuvwxyz');
       return of({ name: 'Admin', email: 'admin@sutra.earth' });
     }
     return throwError(new Error('Failed to login'));
-
   }
+
+  
 }
