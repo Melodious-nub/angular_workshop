@@ -61,13 +61,13 @@
 
                             <!-- Login Input Field -->
                             <div class="mt-3 mb-3">
-                                <input required ngModel #loginName="ngModel" type="text" name="loginName" id="your_name" placeholder="  E-Mail/Login ID:" class="form-control f-info">
+                                <input required ngModel #email="ngModel" type="text" name="email" id="your_name" placeholder="  E-Mail/Login ID:" class="form-control f-info">
                             </div>
 
                             <!-- Password Input Field -->
                             <div class="mb-3">
 
-                                <input required ngModel #loginPass="ngModel" type="password" placeholder="  Password:" name="loginPass" id="your_pass" [type]="hide ? 'password' : 'text'" class="form-control f-info" onmousedown="this.type='text'" onmouseup="this.type='password'" onmousemove="this.type='password'">
+                                <input required ngModel #password="ngModel" type="password" placeholder="  Password:" name="password" id="your_pass" [type]="hide ? 'password' : 'text'" class="form-control f-info" onmousedown="this.type='text'" onmouseup="this.type='password'" onmousemove="this.type='password'">
 
                                 <!-- visible pass icon will implemented -->
                                 <!-- <button class="float-center" mat-icon-button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">

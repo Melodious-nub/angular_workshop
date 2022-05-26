@@ -1,12 +1,13 @@
 import { Observable, of, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private router: Router,) {}
+  constructor(private router: Router,private api: DataService) {}
 
   // Here I set token check in LocalStorage
   // In live project I've to check if tocken is valid or not, based on i will return true or false
@@ -29,14 +30,14 @@ export class AuthService {
   }
 
   // Here i implemeted a static check....
-  login({ loginName, loginPass }: any): Observable<any> {
+  login( loginForm: any): Observable<any> {
     let body:any = {
       loginName: 'admin@sutra.earth',
       loginPass: 'Admin1',
     };
 
     // In live project i h've to connect this portion with API
-    if (loginName === body.loginName && loginPass === body.loginPass) {
+    if (loginForm.loginName === body.loginName && loginForm.loginPass === body.loginPass) {
       this.setToken('abcdefghijklmnopqrstuvwxyz');
       return of({ name: 'Admin', email: 'admin@sutra.earth' });
     }

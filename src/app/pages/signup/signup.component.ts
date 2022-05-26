@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,15 +13,22 @@ export class SignupComponent implements OnInit {
   isChecked!: boolean;
   // for phone number input
   model: any = {};
+  dropValue = 1;
 
-  constructor() { }
+  constructor(private api: DataService) { }
 
   ngOnInit(): void {
   }
 
   // Registation Section will update here
-  onRegSubmit(registerForm: any){
+  onRegSubmit(registerForm: NgForm){
     console.log(registerForm.value);
+    
+    this.api.signUp(registerForm.value)
+    .subscribe(res=>{
+      alert(res.message);
+      registerForm.reset();
+    })
   }
   
 }

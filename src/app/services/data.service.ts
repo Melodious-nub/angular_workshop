@@ -12,6 +12,7 @@ export class DataService {
   // This the global data handle service, i created.
 
   urlApi = 'https://jsonplaceholder.typicode.com/posts';
+  baseUrl = 'https://sutra.azurewebsites.net/';
 
   constructor(private http: HttpClient) { }
 
@@ -38,6 +39,14 @@ export class DataService {
       return this.http.delete(this.urlApi + '/' + id)
       // mapping/transforming response object to array of javascript objects
       .pipe(map(response => response))      
+    }
+
+    signUp(data:any){
+      return this.http.post<any>(this.baseUrl+'api/v1/Auth/signup', data)
+    }
+
+    logIn(data:any){
+      return this.http.post<any>(this.baseUrl+'api/v1/Auth/login', data)
     }
   
 
