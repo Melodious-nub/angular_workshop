@@ -77,7 +77,7 @@
 
                             <!-- Login Button Field -->
                             <div class="">
-                                <input type="submit" name="signin" id="signin" class="button button-medium button-border button-rounded b-info" value="Log in" />
+                                <input type="submit" name="signin" id="signin" class="button button-medium button-border button-rounded b-info" value="Log in" [disabled]="!loginForm.valid" />
                             </div>
 
                             <!-- forgot pass field -->

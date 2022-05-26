@@ -49,7 +49,7 @@
 
                 <!-- designation Feild -->
                 <div class="col-md-12">
-                    <input required ngModel type="text" name="designation" id="designation" #designation="ngModel" placeholder="  designation:" class="form-control f-info" />
+                    <input required ngModel type="text" name="designation" id="designation" #designation="ngModel" placeholder="  Designation:" class="form-control f-info" />
 
                     <mat-error *ngIf="designation.touched && !designation.valid">
                         <mat-error *ngIf="designation.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"></i> designation is required.</mat-error>
@@ -65,7 +65,7 @@
 
                 <!-- password Feild -->
                 <div class="mb-3 col-md-12">
-                    <input required ngModel #password="ngModel" [(ngModel)]="model.password" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" class="form-control f-info" placeholder="  password:" onmousedown="this.type='text'" onmouseup="this.type='password'"
+                    <input required ngModel #password="ngModel" [(ngModel)]="model.password" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" class="form-control f-info" placeholder="  Password:" onmousedown="this.type='text'" onmouseup="this.type='password'"
                         onmousemove="this.type='password'">
 
                     <mat-error *ngIf="password.touched && !password.valid">

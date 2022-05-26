@@ -18,28 +18,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     // logic for <after login user do not redirect to login page  without logout
-    // if(this.auth.isLoggedIn()){
-    //   this.router.navigate(['admin']);
-    // }
+    if(this.auth.isLoggedIn()){
+      this.router.navigate(['admin']);
+    }
   }
 
   onLogin(loginForm: NgForm): void{
-    // if(loginForm.valid){
-    //   this.auth.login(loginForm.value).subscribe(
-    //     // if login is valid
-    //     (res) => { this.router.navigate(['admin']); },
-
-    //     // else login is invalid
-    //     (err: Error) => { alert(err.message) },
-    //   );
-    // }
     console.log(loginForm.value);
-    
     this.api.logIn(loginForm.value)
     .subscribe(res=>{
-      
-      alert(res.message);
-      this.router.navigate(['admin']);
+      if(res.success === true){
+        this.router.navigate(['admin']);
+      } else {
+        alert(res.message);
+      }
     })
   }
+
+
+
 }
