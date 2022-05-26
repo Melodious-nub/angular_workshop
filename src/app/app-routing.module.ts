@@ -18,20 +18,20 @@ const routes: Routes = [
   { path: 'confirm-account', component: ConfirmAccountComponent },
   { path: '', redirectTo: '/landing', pathMatch: 'full'},
   
-  // Lazzy Loadind Route 1
+  // Lazzy Loading Route 1
   {
     path: 'admin',
     // canActivate: [AuthGuard],
     loadChildren: () =>
     import('./modules/admin/admin.module').then((m) => m.AdminModule),
   },
-  // Lazzy Loadind Route 2
+  // Lazzy Loading Route 2
   {
     path: 'employee',
     loadChildren: () => 
     import('./modules/employee/employee.module').then((m) => m.EmployeeModule),
   },
-  // Lazzy Loadind Route 3
+  // Lazzy Loading Route 3
   {
     path: 'customer',
     loadChildren: () => 

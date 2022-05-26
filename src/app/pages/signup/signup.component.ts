@@ -23,7 +23,6 @@ export class SignupComponent implements OnInit {
   // Registation Section will update here
   onRegSubmit(registerForm: NgForm){
     console.log(registerForm.value);
-    
     this.api.signUp(registerForm.value)
     .subscribe(res=>{
       alert(res.message);
