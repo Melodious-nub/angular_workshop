@@ -90,7 +90,7 @@
                 <!-- <p>{{registerForm.value | json}}</p> -->
 
                 <div class="form-group form-button">
-                    <input type="submit" name="signup" id="signup" class="form-submit button button-medium button-border button-rounded b-info" value="register" [disabled]="!registerForm.valid" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
+                    <input type="submit" name="signup" id="signup" class="form-submit button button-medium button-border button-rounded b-info" value="register" [disabled]="!registerForm.valid" />
                 </div>
             </div>
             <!-- end row -->
@@ -99,7 +99,7 @@
     </div>
     <!-- container end -->
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content p-4 p-md-5 rounded text-center align-items-center shadow-lg border-0" style="background-color: #F1F1F1;">
                 <img src="../../../assets/images/popups/recovery-email.svg" alt="Svg" height="200" class="mb-4">
@@ -107,13 +107,12 @@
                 <h3>Confirmation link Sent to {{emailAddress.value}}</h3>
                 <p>Please, Check your emailAddress inbox and click the link to activate your account.</p>
 
-                <!-- Trigger -->
                 <div>
                     <a href="#" class="button button-circle button-3d button-dirtygreen mt-4" data-bs-dismiss="modal">Close</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- modal end -->
 </div>
 <!-- body end -->

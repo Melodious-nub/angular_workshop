@@ -33,7 +33,8 @@
                             "./src/assets/css/css/font-icons.css",
                             "./src/assets/css/css/animate.css",
                             "./src/assets/css/css/magnific-popup.css",
-                            "./src/assets/css/css/custom.css"
+                            "./src/assets/css/css/custom.css",
+                            "./node_modules/ngx-toastr/toastr.css"
                         ],
                         "scripts": []
                     },

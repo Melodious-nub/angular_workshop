@@ -48,6 +48,10 @@ export class DataService {
     logIn(data:any){
       return this.http.post<any>(this.baseUrl+'api/v1/Auth/login', data)
     }
+
+    emailVerify(data:any) {
+      return this.http.post<any>(this.baseUrl+'/api/v1/Auth/emailVarify', data)
+    }
   
 
 }

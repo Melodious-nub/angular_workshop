@@ -23,6 +23,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account.component';
 import { DataService } from './services/data.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { DataService } from './services/data.service';
     MatIconModule,
     MatRadioModule,
     MatTabsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     DataService,
