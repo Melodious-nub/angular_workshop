@@ -24,12 +24,31 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onLogin(loginForm: NgForm): void{
+  // onLogin(loginForm: NgForm) {
+  //   const loginObserver = {
+  //     next: (x) => {
+  //       this.toastr.success('Welcome back ' + x.email);
+  //       console.log('res', x);
+        
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //       this.toastr.warning('Unable to Login');
+
+  //     },
+  //   };
+
+  //   this.auth.login(loginForm.value)
+  //   .subscribe(loginObserver)
+  // }
+
+  onLogin(loginForm: NgForm) {
     this.api.logIn(loginForm.value)
     .subscribe(res=>{
       console.log('res',res);
       if(res.success === true){
         this.router.navigate(['admin']);
+        this.toastr.success(res.message, 'Welcome');
       } else {
         // alert(res.message);
         this.toastr.warning(res.message, 'Warning!');

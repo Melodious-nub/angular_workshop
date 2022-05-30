@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SignupComponent implements OnInit {
   model: any = {};
   dropValue = 1;
 
-  constructor(private api: DataService) { }
+  constructor(private api: DataService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +26,11 @@ export class SignupComponent implements OnInit {
     console.log(registerForm.value);
     this.api.signUp(registerForm.value)
     .subscribe(res=>{
-      alert(res.message);
+      if (res.success = true){
+        this.toastr.success(res.message, 'Welcome Newbie');
+      } else {
+        this.toastr.warning(res.message, 'Warning!');
+      }
       registerForm.reset();
     })
   }
