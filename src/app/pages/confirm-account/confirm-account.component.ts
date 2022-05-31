@@ -12,7 +12,7 @@ export class ConfirmAccountComponent implements OnInit {
 
   emailConfirmed: boolean = false;
   urlParams: any = {};
-  link = ''
+  link = 'http://localhost:4200/confirm-account?token=';
 
   constructor(private route: ActivatedRoute,private api: DataService,private toastr: ToastrService) { }
 
@@ -26,10 +26,11 @@ export class ConfirmAccountComponent implements OnInit {
       res=>{
         console.log('email',res, this.urlParams);
         if(res.success === true){
+          this.toastr.success(res.message, 'Congratulation.');
           this.emailConfirmed = true;
         } else {
-          // alert(res.message);
           this.emailConfirmed = false;
+          this.toastr.warning(res.message, 'Oops!');
         }
       }
     )

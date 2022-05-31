@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  { path: 'confirm-account', component: ConfirmAccountComponent },
+  { path: 'confirm-account/account/verify-email', component: ConfirmAccountComponent },
   { path: '', redirectTo: '/landing', pathMatch: 'full'},
   
   // Lazzy Loading Route 1

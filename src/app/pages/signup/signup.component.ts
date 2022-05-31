@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
     console.log(registerForm.value);
     this.api.signUp(registerForm.value)
     .subscribe(res=>{
-      if (res.success = true){
+      if (res.success === true){
         this.toastr.success(res.message, 'Welcome Newbie');
       } else {
         this.toastr.warning(res.message, 'Warning!');
