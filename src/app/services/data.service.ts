@@ -52,6 +52,10 @@ export class DataService {
     emailVerify(data:any) {
       return this.http.post<any>(this.baseUrl+'/api/v1/Auth/emailVarify', data)
     }
+
+    changePassword(data:any) {
+      return this.http.post<any>(this.baseUrl+'/api/v1/Auth/changePassword', data)
+    }
   
 
 }
