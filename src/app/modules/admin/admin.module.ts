@@ -26,6 +26,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { DataService } from 'src/app/services/data.service';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { DataService } from 'src/app/services/data.service';
     PoliciesComponent,
     CompanyInfoComponent,
     SupplyChainComponent,
-    ResourceManagementComponent
+    ResourceManagementComponent,
+    ChangePasswordComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/services/data.service';
 
@@ -14,7 +14,7 @@ export class ConfirmAccountComponent implements OnInit {
   urlParams: any = {};
   link = 'http://localhost:4200/confirm-account?token=';
 
-  constructor(private route: ActivatedRoute,private api: DataService,private toastr: ToastrService) { }
+  constructor(private route: ActivatedRoute,private api: DataService,private toastr: ToastrService, private router: Router,) { }
 
   ngOnInit(): void {
     this.urlParams.verificationToken = this.route.snapshot.queryParamMap.get('token');
@@ -34,6 +34,10 @@ export class ConfirmAccountComponent implements OnInit {
         }
       }
     )
+  }
+
+  navigateHome() {
+    this.router.navigate(['login']);
   }
 
 }

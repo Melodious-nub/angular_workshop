@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<ngx-ui-loader fgsColor="#fff" pbColor="#be4fc6" text="Please wait.." textColor="#fff" fgsType="chasing-dots"></ngx-ui-loader>
+
+<div ngxUiLoaderBlurred blur="5">
+    <router-outlet></router-outlet>
+    <!-- This page content will be blurred/frosted when foreground loader is showed -->
+</div>

@@ -24,6 +24,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account.component';
 import { DataService } from './services/data.service';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 @NgModule({
@@ -52,6 +53,8 @@ import { ToastrModule } from 'ngx-toastr';
     MatRadioModule,
     MatTabsModule,
     ToastrModule.forRoot(),
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   providers: [
     DataService,
