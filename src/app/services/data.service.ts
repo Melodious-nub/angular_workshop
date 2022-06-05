@@ -56,6 +56,10 @@ export class DataService {
     changePassword(data:any) {
       return this.http.post<any>(this.baseUrl+'/api/v1/Auth/changePassword', data)
     }
+
+    forgotPassword(data:any) {
+      return this.http.post<any>(this.baseUrl+'/api/v1/Auth/forgotpassword', data)
+    }
   
 
 }

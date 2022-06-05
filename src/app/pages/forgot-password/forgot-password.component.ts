@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -10,26 +14,22 @@ export class ForgotPasswordComponent implements OnInit {
 
   faLock = faLock;
 
-  email_recovery = 'yourmail@mail.com';
+  constructor(private router: Router,private api: DataService,private toastr: ToastrService) { }
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-    // for jquery dynamic loading
-    // this.loadScript('../assets/js/js/jquery.js');
-    // this.loadScript('../assets/js/js/plugins.min.js');
-    // this.loadScript('../assets/js/js/functions.js');
+  onForgot(forgotForm: NgForm) {
+    this.api.forgotPassword(forgotForm.value)
+    .subscribe(res=>{
+      console.log('res',res);
+      if(res.success === true){
+        this.toastr.success(res.message, 'Success');
+      } else {
+        // alert(res.message);
+        this.toastr.warning(res.message, 'Warning!');
+      }
+    })
   }
 
-  // for jquery dynamic loading
-//  public loadScript(url: string) {
-//     const body = <HTMLDivElement> document.body;
-//     const script = document.createElement('script');
-//     script.innerHTML = '';
-//     script.src = url;
-//     script.async = true;
-//     script.defer = true;
-//     body.appendChild(script);
-//   }
 
 }
