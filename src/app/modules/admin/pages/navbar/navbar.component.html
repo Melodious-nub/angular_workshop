@@ -2,33 +2,53 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid mt-2">
-                <a class="navbar-brand" routerLink="./home">Navbar</a>
+                <!-- nav brand logo -->
+                <a class="navbar-brand me-5" routerLink="./home" style="letter-spacing: 2px; color:#93117D;">Sutra</a>
+                <!-- collapse button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                         <li class="nav-item" routerLinkActive="active">
-                            <a class="nav-link" routerLink="./home">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link me-3" routerLink="./home">Home</a>
                         </li>
-                        <li class="nav-item" routerLinkActive="active">
+                        <li class="nav-item me-3" routerLinkActive="active">
                             <a class="nav-link" routerLink="./services">Services</a>
                         </li>
-                        <li class="nav-item" routerLinkActive="active">
+                        <li class="nav-item me-3" routerLinkActive="active">
                             <a class="nav-link" routerLink="about">About</a>
                         </li>
-                        <li class="nav-item" routerLinkActive="active">
+                        <li class="nav-item me-3" routerLinkActive="active">
                             <a class="nav-link" routerLink="survey/company-data">Survey</a>
                         </li>
-                        <li class="btn-primary text-white float-end" role="button">
-                            <a class="nav-link text-white" (click)="logout()">logout</a>
-                        </li>
                     </ul>
+                    <!-- Avatar -->
+                    <div class="dropdown">
+                        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #93117D;">
+                            <img src="../../../../../assets/images/user.png" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                            <li>
+                                <a class="dropdown-item">My profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item">Settings</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" (click)="logout()">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end dropdown avatar -->
                 </div>
+                <!-- end collapse items -->
             </div>
+            <!-- end container-fluid nav -->
         </nav>
     </div>
+    <!-- end container -->
 
 </div>
 <!-- Body End -->
