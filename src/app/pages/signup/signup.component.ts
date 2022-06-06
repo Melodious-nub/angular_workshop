@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
   constructor(private api: DataService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    
   }
 
   // Registation Section will update here
@@ -31,7 +32,17 @@ export class SignupComponent implements OnInit {
       } else {
         this.toastr.warning(res.message, 'Warning!');
       }
-      registerForm.reset();
+      // for full reset form
+      // registerForm.reset();
+      // for reseting form fields not all fields
+      registerForm.controls['firstName'].reset();
+      registerForm.controls['lastName'].reset();
+      registerForm.controls['emailAddress'].reset();
+      registerForm.controls['companyName'].reset();
+      registerForm.controls['designation'].reset();
+      registerForm.controls['password'].reset();
+      registerForm.controls['reEnterPassword'].reset();
+      registerForm.controls['ccmpanyType'].setValue(this.dropValue);
     })
   }
   
