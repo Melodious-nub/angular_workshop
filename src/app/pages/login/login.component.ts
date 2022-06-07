@@ -42,9 +42,23 @@ export class LoginComponent implements OnInit {
   //   .subscribe(loginObserver)
   // }
 
-  onLogin(loginForm: NgForm) {
-    this.api.logIn(loginForm.value)
-    .subscribe(res=>{
+  // onLogin(loginForm: NgForm) {
+  //   this.api.logIn(loginForm.value)
+  //   .subscribe(res=>{
+  //     console.log('res',res);
+  //     if(res.success === true){
+  //       this.router.navigate(['admin']);
+  //       this.toastr.success(res.message, 'Welcome');
+  //     } else {
+  //       // alert(res.message);
+  //       this.toastr.warning(res.message, 'Warning!');
+  //     }
+  //   })
+  // }
+  
+  onLogin(loginForm: NgForm): void{
+    if(loginForm.valid){
+      this.auth.login(loginForm.value).subscribe(res=>{
       console.log('res',res);
       if(res.success === true){
         this.router.navigate(['admin']);
@@ -53,19 +67,8 @@ export class LoginComponent implements OnInit {
         // alert(res.message);
         this.toastr.warning(res.message, 'Warning!');
       }
-    })
+    })}
   }
-  
-  // onLogin(loginForm: NgForm): void{
-  //   if(loginForm.valid){
-  //     this.auth.login(loginForm.value).subscribe(
-  //       // if login is valid
-  //       (res) => { this.router.navigate(['admin']); },
-
-  //       // else login is invalid
-  //       (err: Error) => { alert(err.message) },
-  //     );
-  //   }}
 
 
 

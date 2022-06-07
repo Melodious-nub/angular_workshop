@@ -21,7 +21,7 @@ const routes: Routes = [
   // Lazzy Loading Route 1
   {
     path: 'admin',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadChildren: () =>
     import('./modules/admin/admin.module').then((m) => m.AdminModule),
   },
