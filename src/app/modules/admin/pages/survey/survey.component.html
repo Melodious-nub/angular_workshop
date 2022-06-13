@@ -1,154 +1,98 @@
-<div class="body" style="background-color: #f5f5f8; height: auto;">
+<div class="body" style="background-color: #F6F6F6; height: auto;">
     <!-- div container start -->
-    <section>
-        <div class="container pt-4">
-            <div class="row justify-content-center h-100">
 
-                <!-- Login signup tabs -->
-                <ul class="nav nav-tabs mx-auto mb-0 center nav-modi" id="myTab0" role="tablist">
-                    <!-- Company Tab  -->
-                    <li class="nav-item link-modi" role="presentation">
-                        <button class="nav-link" routerLink="company-data" data-bs-toggle="tab" type="button" role="tab" routerLinkActive="active">
-                <b>Company Data</b>
-              </button>
-                    </li>
-                    <!-- Policies tab signup -->
-                    <li class="nav-item link-modi" role="presentation">
-                        <button class="nav-link " routerLink="policies" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
-                <b>Policies</b>
-              </button>
-                    </li>
-                    <!-- Company info  Tab-->
-                    <li class="nav-item link-modi" role="presentation">
-                        <button class="nav-link " routerLink="company-info" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
-                <b>Company Info</b>
-              </button>
-                    </li>
-                    <!-- Company info  Tab-->
-                    <li class="nav-item link-modi" role="presentation">
-                        <button class="nav-link " routerLink="supply-chain" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
-                           <b>Supply Chain</b>
-                         </button>
-                    </li>
-                    <!-- Company info  Tab-->
-                    <li class="nav-item link-modi" role="presentation">
-                        <button class="nav-link " routerLink="resource-management" routerLinkActive="active" data-bs-toggle="tab" type="button" role="tab">
-                        <b>Resource Management</b>
-                      </button>
-                    </li>
-
-                </ul>
-                <!-- end tab ul -->
-
-            </div>
-            <!-- div end -->
-
-        </div>
-    </section>
-    <!-- container div end -->
-
-
-    <!-- now on working -->
-
-    <div class="row">
-        <div class="col-md-2 ms-3">
-            <section>
-                <div class="flex-shrink-0 p-3 mt-5" style="width: 280px;">
-                    <ul class="list-unstyled ps-0">
-                        <!-- Company Data part -->
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                          Company Data
-                        </button>
-                            <div class="collapse show" id="home-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">About</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">General Data</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Customer</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Supplier</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- Product Part -->
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                          Product
-                        </button>
-                            <div class="collapse" id="dashboard-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- Tba part-->
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                          TBA
-                        </button>
-                            <div class="collapse" id="orders-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- Resource Management part -->
-                        <!-- <li class="border-top my-3"></li> -->
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                          Resource Management
-                        </button>
-                            <div class="collapse" id="account-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- Supply Chain Part -->
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                          Supply Chain
-                        </button>
-                            <div class="collapse" id="account-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- Structural Data part -->
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                          Structural Data
-                        </button>
-                            <div class="collapse" id="account-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-                                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
-                                </ul>
-                            </div>
-                        </li>
+    <div class="sidebar">
+        <ul class="list-unstyled ps-0 ms-3 mt-2">
+            <!-- Company Data part -->
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#companyData" aria-expanded="true"><img src="../../../../../assets/images/img/companyData.svg">
+              Company Data
+            </button>
+                <div class="collapse show" id="companyData">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ms-1">
+                        <li><a routerLink="about" routerLinkActive="active" class="link-dark d-inline-flex text-decoration-none rounded">About</a></li>
+                        <li><a routerLink="general-data" routerLinkActive="active" class="link-dark d-inline-flex text-decoration-none rounded">General Data</a></li>
+                        <li><a routerLink="customer" routerLinkActive="active" class="link-dark d-inline-flex text-decoration-none rounded">Customer</a></li>
+                        <li><a routerLink="supplier" routerLinkActive="active" class="link-dark d-inline-flex text-decoration-none rounded">Supplier</a></li>
                     </ul>
                 </div>
-            </section>
-        </div>
-        <div class="col-md-9">
-            <!-- <app-company-data></app-company-data> -->
-        </div>
+            </li>
+            <!-- Product Part -->
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#Product" aria-expanded="false"><img src="../../../../../assets/images/img/product.svg">
+              Product
+            </button>
+                <div class="collapse" id="Product">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Licences part-->
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#Licences" aria-expanded="false"><img src="../../../../../assets/images/img/licences.svg">
+                Licences
+            </button>
+                <div class="collapse" id="Licences">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Supply chain part -->
+            <!-- <li class="border-top my-3"></li> -->
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#supplychain" aria-expanded="false"><img src="../../../../../assets/images/img/supplychain.svg">
+                    Supply chain
+            </button>
+                <div class="collapse" id="supplychain">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Resource Management Part -->
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#resourceManagement" aria-expanded="false"><img src="../../../../../assets/images/img/resourceManagement.svg">
+              Resource Management
+            </button>
+                <div class="collapse" id="resourceManagement">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Site Data part -->
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#siteData" aria-expanded="false"><img src="../../../../../assets/images/img/siteData.svg">
+              Site Data
+            </button>
+                <div class="collapse" id="siteData">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                        <li><a routerLink="" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
     </div>
 
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
 
-    <router-outlet></router-outlet>
 </div>

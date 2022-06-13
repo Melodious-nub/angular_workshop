@@ -5,7 +5,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './pages/footer/footer.component';
-import { AboutComponent } from './pages/about/about.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -25,9 +24,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav'
 import { DataService } from 'src/app/services/data.service';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { GeneralDataComponent } from './pages/survey/company-data/general-data/general-data.component';
+import { CustomerComponent } from './pages/survey/company-data/customer/customer.component';
+import { SupplierComponent } from './pages/survey/company-data/supplier/supplier.component';
 
 
 @NgModule({
@@ -35,7 +38,6 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     AdminDashboardComponent,
     HomeComponent,
     FooterComponent,
-    AboutComponent,
     NavbarComponent,
     ServicesComponent,
     SurveyComponent,
@@ -45,6 +47,9 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     SupplyChainComponent,
     ResourceManagementComponent,
     ChangePasswordComponent,
+    GeneralDataComponent,
+    CustomerComponent,
+    SupplierComponent,
   ],
   imports: [
     CommonModule,
@@ -60,6 +65,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     MatIconModule,
     MatRadioModule,
     MatTabsModule,
+    MatSidenavModule,
     NgxUiLoaderModule,
     // NgxUiLoaderHttpModule,
   ],
