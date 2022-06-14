@@ -19,7 +19,7 @@
 
             <div class="col-md-3">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>District</mat-label>
+                    <mat-label>State/ Division</mat-label>
                     <input matInput ngModel #districtName="ngModel" type="text" name="districtName" id="districtName">
                 </mat-form-field>
             </div>
@@ -33,56 +33,106 @@
             <!-- end sub col-3 -->
 
             <!-- start new sub col-4*3 -->
-            <div class="col-md-4 mb-2 ">
-                <input ngModel #streetName="ngModel" type="text" name="streetName" id="streetName" placeholder="Street:">
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Street</mat-label>
+                    <input matInput ngModel #streetName="ngModel" type="text" name="streetName" id="streetName">
+                </mat-form-field>
             </div>
 
-            <div class="col-md-4 mb-2 ">
-                <input ngModel #contactNo="ngModel" type="text" id="contactNo" name="contactNo" placeholder="Contact no:">
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Postal code</mat-label>
+                    <input matInput ngModel #postalCode="ngModel" type="text" name="postalCode" id="postalCode">
+                </mat-form-field>
             </div>
-
-            <div class="col-md-4 mb-2 ">
-                <input ngModel #faxNo="ngModel" type="text" name="faxNo" id="faxNo" placeholder="Fax no:">
-            </div>
-            <!-- end new sub col-4 & contact info end-->
 
             <!-- GpsLat Field -->
-            <label for="gpsLat" class="form-label mb-2">Gps co-ordinate:</label>
-            <div class="col-md-6 mb-2">
-                <input ngModel #gpsLat="ngModel" type="text" name="gpsLat" id="gpsLat" placeholder="Latitude:">
+
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Latitude</mat-label>
+                    <input matInput ngModel #gpsLat="ngModel" type="text" name="gpsLat" id="gpsLat">
+                </mat-form-field>
             </div>
 
-            <div class="col-md-6 mb-2">
-                <input ngModel #gpsLong="ngModel" type="text" name="gpsLong" id="gpsLong" placeholder="Longitude:">
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Longtitude</mat-label>
+                    <input matInput ngModel #gpsLong="ngModel" type="text" name="gpsLong" id="gpsLong">
+                </mat-form-field>
             </div>
 
-            <!-- vission field -->
-            <div class="col-md-4 mb-2">
-                <label for="companyVision" class="form-label">Company vision:</label>
-                <textarea ngModel #companyVision="ngModel" name="companyVision" id="companyVision" rows="3" maxlength="200"></textarea>
-                <p class="hint"> *Maximum 200 characters</p>
+            <!-- end new sub col-3*4-->
+
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Contract No</mat-label>
+                    <input matInput ngModel #contactNo="ngModel" type="text" id="contactNo" name="contactNo">
+                </mat-form-field>
             </div>
 
-            <!-- col-4-end & mission field start -->
-            <div class="col-md-4 mb-2">
-                <label for="companyMission" class="form-label">Company mission:</label>
-                <textarea ngModel #companyMission="ngModel" id="companyMission" name="companyMission" rows="3" maxlength="200"></textarea>
-                <p class="hint"> *Maximum 200 characters</p>
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Fax No</mat-label>
+                    <input matInput ngModel #faxNo="ngModel" type="text" name="faxNo" id="faxNo">
+                </mat-form-field>
             </div>
 
-            <!-- col-4-end highlight field start  -->
-            <div class="col-md-4 mb-2">
-                <label for="companyHighlights" class="form-label">Company highlights:</label>
-                <textarea ngModel #companyHighlights="ngModel" name="companyHighlights" id="companyHighlights" rows="3" maxlength="200"></textarea>
-                <p class="hint"> *Maximum 200 characters</p>
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput ngModel #emailS="ngModel" type="text" name="emailS" id="emailS">
+                </mat-form-field>
             </div>
-            <!-- col-4-end & contact info start  -->
 
-            <!-- group of company field -->
-            <div class="col-md-12 mb-2">
-                <label for="groupofCompany" class="form-label mb-2">Belonging to group of companies? </label>
-                <input ngModel #groupofCompany="ngModel" type="text" name="groupofCompany" id="groupofCompany" placeholder="Company name:">
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Company website</mat-label>
+                    <input matInput ngModel #companyWeb="ngModel" type="text" name="companyWeb" id="companyWeb">
+                </mat-form-field>
             </div>
+
+            <!-- horizontal line -->
+            <hr class="mt-2">
+            <!-- end hr -->
+
+            <!-- Company vission,Mission & group field -->
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Company Vision</mat-label>
+                    <textarea matInput ngModel #companyVision="ngModel" name="companyVision" id="companyVision" rows="3" maxlength="200"></textarea>
+                    <mat-hint>Maximum 200 characters</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Company Mission</mat-label>
+                    <textarea matInput ngModel #companyMission="ngModel" id="companyMission" name="companyMission" rows="3" maxlength="200"></textarea>
+                    <mat-hint>Maximum 200 characters</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Company highlights</mat-label>
+                    <textarea matInput ngModel #companyHighlights="ngModel" name="companyHighlights" id="companyHighlights" rows="3" maxlength="200"></textarea>
+                    <mat-hint>Maximum 200 characters</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-12 mt-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Belonging to group of companies?</mat-label>
+                    <input matInput ngModel #companyHighlights="ngModel" name="companyHighlights" id="companyHighlights" rows="3" maxlength="200">
+                </mat-form-field>
+            </div>
+            <!--End company vission,Mission & group field -->
+
+            <!-- horizontal line -->
+            <hr class="mt-2">
+            <!-- end hr -->
 
             <!-- upload company photos -->
             <label for="companyPhotos" class="center mt-3 mb-3">Upload photos of your company:</label>
@@ -97,8 +147,12 @@
                 <p class="hint"> *Can upload multiple images</p>
             </div>
 
+            <!-- horizontal line -->
+            <hr class="mt-2">
+            <!-- end hr -->
+
             <!-- Membership field -->
-            <label for="membership" class="center mt-3 mb-3" style="font-size: 16px !important;">Membership:</label>
+            <label for="membership" class="center mt-3 mb-3" style="font-size: 13px !important;">Membership:</label>
             <div class="col-md-12 mb-2 center">
                 <div class="row">
                     <div class="col-md-3 mb-3">
