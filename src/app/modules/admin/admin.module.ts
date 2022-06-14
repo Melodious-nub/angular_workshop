@@ -31,6 +31,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { GeneralDataComponent } from './pages/survey/company-data/general-data/general-data.component';
 import { CustomerComponent } from './pages/survey/company-data/customer/customer.component';
 import { SupplierComponent } from './pages/survey/company-data/supplier/supplier.component';
+import { AboutComponent } from './pages/survey/company-data/about/about.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { SupplierComponent } from './pages/survey/company-data/supplier/supplier
     GeneralDataComponent,
     CustomerComponent,
     SupplierComponent,
+    AboutComponent,
   ],
   imports: [
     CommonModule,

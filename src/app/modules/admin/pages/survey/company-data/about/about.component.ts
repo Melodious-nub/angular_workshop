@@ -12,4 +12,10 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+    // About Section will update here
+    onaboutSubmit(aboutForm: any){
+      console.log(aboutForm.value);
+    }
+
+
 }

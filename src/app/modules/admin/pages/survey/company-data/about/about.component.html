@@ -1,1 +1,233 @@
-<p>about works!</p>
+<div class="mt-2">
+    <form id="aboutForm" #aboutForm="ngForm" (ngSubmit)="onaboutSubmit(aboutForm)">
+        <div class="row">
+            <!-- contact Info field -->
+            <!-- start sub col-3*4 -->
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Company name</mat-label>
+                    <input matInput ngModel #companyName="ngModel" type="text" name="companyName" id="companyName">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <input matInput ngModel #countryName="ngModel" type="text" name="countryName" id="countryName">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>District</mat-label>
+                    <input matInput ngModel #districtName="ngModel" type="text" name="districtName" id="districtName">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input matInput ngModel #cityName="ngModel" type="text" name="cityName" id="cityName">
+                </mat-form-field>
+            </div>
+            <!-- end sub col-3 -->
+
+            <!-- start new sub col-4*3 -->
+            <div class="col-md-4 mb-2 ">
+                <input ngModel #streetName="ngModel" type="text" name="streetName" id="streetName" placeholder="Street:">
+            </div>
+
+            <div class="col-md-4 mb-2 ">
+                <input ngModel #contactNo="ngModel" type="text" id="contactNo" name="contactNo" placeholder="Contact no:">
+            </div>
+
+            <div class="col-md-4 mb-2 ">
+                <input ngModel #faxNo="ngModel" type="text" name="faxNo" id="faxNo" placeholder="Fax no:">
+            </div>
+            <!-- end new sub col-4 & contact info end-->
+
+            <!-- GpsLat Field -->
+            <label for="gpsLat" class="form-label mb-2">Gps co-ordinate:</label>
+            <div class="col-md-6 mb-2">
+                <input ngModel #gpsLat="ngModel" type="text" name="gpsLat" id="gpsLat" placeholder="Latitude:">
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <input ngModel #gpsLong="ngModel" type="text" name="gpsLong" id="gpsLong" placeholder="Longitude:">
+            </div>
+
+            <!-- vission field -->
+            <div class="col-md-4 mb-2">
+                <label for="companyVision" class="form-label">Company vision:</label>
+                <textarea ngModel #companyVision="ngModel" name="companyVision" id="companyVision" rows="3" maxlength="200"></textarea>
+                <p class="hint"> *Maximum 200 characters</p>
+            </div>
+
+            <!-- col-4-end & mission field start -->
+            <div class="col-md-4 mb-2">
+                <label for="companyMission" class="form-label">Company mission:</label>
+                <textarea ngModel #companyMission="ngModel" id="companyMission" name="companyMission" rows="3" maxlength="200"></textarea>
+                <p class="hint"> *Maximum 200 characters</p>
+            </div>
+
+            <!-- col-4-end highlight field start  -->
+            <div class="col-md-4 mb-2">
+                <label for="companyHighlights" class="form-label">Company highlights:</label>
+                <textarea ngModel #companyHighlights="ngModel" name="companyHighlights" id="companyHighlights" rows="3" maxlength="200"></textarea>
+                <p class="hint"> *Maximum 200 characters</p>
+            </div>
+            <!-- col-4-end & contact info start  -->
+
+            <!-- group of company field -->
+            <div class="col-md-12 mb-2">
+                <label for="groupofCompany" class="form-label mb-2">Belonging to group of companies? </label>
+                <input ngModel #groupofCompany="ngModel" type="text" name="groupofCompany" id="groupofCompany" placeholder="Company name:">
+            </div>
+
+            <!-- upload company photos -->
+            <label for="companyPhotos" class="center mt-3 mb-3">Upload photos of your company:</label>
+            <div class="col-md-12 center">
+                <label class="btn btn-secondary p-2" style="color: #fff; width: 55%;" for="companyPhotos">
+                    <input id="companyPhotos" type="file" multiple="multiple" style="display:none" accept="image/*"
+                        onchange="$('#companyPhotos-label').html(
+                            (this.files.length == 1) ? this.files[0].name : this.files.length + ' images');
+                            $(this).parent().addClass('btn-success-s2')">
+                    <span id="companyPhotos-label"><i class="icon-picture pe-2"></i>Upload photo</span>
+                </label>
+                <p class="hint"> *Can upload multiple images</p>
+            </div>
+
+            <!-- Membership field -->
+            <label for="membership" class="center mt-3 mb-3" style="font-size: 16px !important;">Membership:</label>
+            <div class="col-md-12 mb-2 center">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #fwf="ngModel" type="checkbox" class="btn-check" name="fwf" id="fwf">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="fwf">FWF</label>
+                        <div class="input-add" *ngIf="fwf.value == true">
+                            <input ngModel #fwfMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="fwfMid" id="fwfMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #fla="ngModel" type="checkbox" class="btn-check" name="fla" id="fla">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="fla">FLA</label>
+                        <div class="input-add" *ngIf="fla.value == true">
+                            <input ngModel #flaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="flaMid" id="flaMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #bsci="ngModel" type="checkbox" class="btn-check" name="bsci" id="bsci">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="bsci">BSCI</label>
+                        <div class="input-add" *ngIf="bsci.value == true">
+                            <input ngModel #bsciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bsciMid" id="bsciMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #textilBundnis="ngModel" type="checkbox" class="btn-check" name="textilBundnis" id="textilBundnis">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="textilBundnis">Textilbündnis</label>
+                        <div class="input-add" *ngIf="textilBundnis.value == true">
+                            <input ngModel #textilBundnisMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="textilBundnisMid" id="textilBundnisMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #leatherWG="ngModel" type="checkbox" class="btn-check" name="leatherWG" id="leatherWG">
+                        <label class="btn btn-outline-secondary btn-size py-2" for="leatherWG">Leather Working Group</label>
+                        <div class="input-add" *ngIf="leatherWG.value == true">
+                            <input ngModel #leatherWGMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="leatherWGMid" id="leatherWGMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #globalCompact="ngModel" type="checkbox" class="btn-check" name="globalCompact" id="globalCompact">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="globalCompact">Global Compact</label>
+                        <div class="input-add" *ngIf="globalCompact.value == true">
+                            <input ngModel #globalCompactMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="globalCompactMid" id="globalCompactMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #bgmea="ngModel" type="checkbox" class="btn-check" name="bgmea" id="bgmea">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="bgmea">BGMEA</label>
+                        <div class="input-add" *ngIf="bgmea.value == true">
+                            <input ngModel #bgmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bgmeaMid" id="bgmeaMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #bkmea="ngModel" type="checkbox" class="btn-check" name="bkmea" id="bkmea">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="bkmea">BKMEA</label>
+                        <div class="input-add" *ngIf="bkmea.value == true">
+                            <input ngModel #bkmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bkmeaMid" id="bkmeaMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #btmea="ngModel" type="checkbox" class="btn-check" name="btmea" id="btmea">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="btmea">BTMEA</label>
+                        <div class="input-add" *ngIf="btmea.value == true">
+                            <input ngModel #btmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="btmeaMid" id="btmeaMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #bgcci="ngModel" type="checkbox" class="btn-check" name="bgcci" id="bgcci">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="bgcci">BGCCI</label>
+                        <div class="input-add" *ngIf="bgcci.value == true">
+                            <input ngModel #bgcciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bgcciMid" id="bgcciMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #dcci="ngModel" type="checkbox" class="btn-check" name="dcci" id="dcci">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="dcci">DCCI</label>
+                        <div class="input-add" *ngIf="dcci.value == true">
+                            <input ngModel #dcciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="dcciMid" id="dcciMid">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <input ngModel #tba="ngModel" type="checkbox" class="btn-check" name="tba" id="tba">
+                        <label class="btn btn-outline-secondary btn-size py-3" for="tba">TBA</label>
+                        <div class="input-add" *ngIf="tba.value == true">
+                            <input ngModel #tbaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="tbaMid" id="tbaMid">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end member raw -->
+            </div>
+
+            <!-- MemberShip Dynamic-adding field -->
+            <div class="col-md-12 mb-2 mt-2">
+                <div class="row">
+                    <div class="col-md-1 py-2">
+                        <label class="form-label">Others</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" name="companyName" id="companyName" placeholder="Membership Name:">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" name="companyName" id="companyName" placeholder="Membership ID:">
+                    </div>
+                    <div class="col-md-1 py-1">
+                        <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <p class="center">{{aboutForm.value | json}}</p> -->
+            <!-- button save -->
+            <div class="text-end mt-2">
+                <button class="button button-small button-border button-rounded b-info" type="submit" name="save" id="save" value="save">Save</button>
+            </div>
+
+
+        </div>
+        <!-- row end -->
+    </form>
+</div>
