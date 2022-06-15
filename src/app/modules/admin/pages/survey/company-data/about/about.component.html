@@ -269,12 +269,16 @@
             <p class="hint center">*If your group is not mentioned, please add from bellow input field.</p>
 
             <!-- MemberShip Dynamic-adding field -->
-            <div class="col-md-12 mb-2 mt-2">
+            <!-- add button-->
+            <div class="center mb-3">
+                <input ngModel #memberAdd="ngModel" class="btn-check" type="checkbox" name="memberAdd" id="memberAdd">
+                <label for="memberAdd" class="btn btn-outline-secondary btn-add">Add new</label>
+            </div>
+
+            <!-- adding field -->
+            <div class="col-md-12 mb-2 mt-2" *ngIf="memberAdd.value == true">
                 <div class="row">
-                    <div class="col-md-1 py-2">
-                        <label class="form-label">Others</label>
-                    </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Membership Name</mat-label>
                             <input matInput type="text" name="companyName" id="companyName">
@@ -286,11 +290,12 @@
                             <input matInput type="text" name="companyName" id="companyName">
                         </mat-form-field>
                     </div>
-                    <div class="col-md-1">
-                        <button mat-icon-button>
-                            <mat-icon><i class="icon-plus-sign"></i></mat-icon>
+                    <button mat-icon-button>
+                            <mat-icon><i class="icon-plus-sign icon-color"></i></mat-icon>
                           </button>
-                    </div>
+                    <button mat-icon-button class="icon-color">
+                            <mat-icon>delete</mat-icon>
+                          </button>
                 </div>
             </div>
 

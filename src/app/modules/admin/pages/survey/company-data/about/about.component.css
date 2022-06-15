@@ -70,9 +70,29 @@ hr {
     box-shadow: -5px -5px 10px #FFFFFF, 5px 5px 10px rgba(151, 149, 169, 0.5);
     border-radius: 8px;
     padding: 6px 30px;
-    margin-right: 20px;
+    margin-right: 10px;
+}
+
+.btn-add {
+    border: 1px solid #278E90;
+    border-radius: 8px;
+    padding: 6px 30px;
+}
+
+.btn-add:hover {
+    background: #278E90;
+}
+
+.btn-check:checked+.btn-outline-secondary {
+    color: #fff;
+    background-color: #278E90;
+    border-color: #278E90;
 }
 
 .hint {
     color: rgba(170, 0, 0, 0.6);
+}
+
+.icon-color {
+    color: #278E90;
 }
