@@ -32,6 +32,7 @@ import { GeneralDataComponent } from './pages/survey/company-data/general-data/g
 import { CustomerComponent } from './pages/survey/company-data/customer/customer.component';
 import { SupplierComponent } from './pages/survey/company-data/supplier/supplier.component';
 import { AboutComponent } from './pages/survey/company-data/about/about.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { AboutComponent } from './pages/survey/company-data/about/about.componen
     MatIconModule,
     MatRadioModule,
     MatTabsModule,
+    MatCheckboxModule,
     MatSidenavModule,
     NgxUiLoaderModule,
     // NgxUiLoaderHttpModule,

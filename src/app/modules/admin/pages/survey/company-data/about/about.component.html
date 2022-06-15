@@ -86,7 +86,7 @@
                 </mat-form-field>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 mb-2">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Company website</mat-label>
                     <input matInput ngModel #companyWeb="ngModel" type="text" name="companyWeb" id="companyWeb">
@@ -94,7 +94,7 @@
             </div>
 
             <!-- horizontal line -->
-            <hr class="mt-2">
+            <hr class="mb-3">
             <!-- end hr -->
 
             <!-- Company vission,Mission & group field -->
@@ -152,108 +152,121 @@
             <!-- end hr -->
 
             <!-- Membership field -->
-            <label for="membership" class="center mt-3 mb-3" style="font-size: 13px !important;">Membership:</label>
-            <div class="col-md-12 mb-2 center">
+            <label for="membership" class="center mt-3 mb-3" style="font-size: 12px !important;">Membership:</label>
+            <div class="col-md-12 mb-2">
                 <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #fwf="ngModel" type="checkbox" class="btn-check" name="fwf" id="fwf">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="fwf">FWF</label>
-                        <div class="input-add" *ngIf="fwf.value == true">
-                            <input ngModel #fwfMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="fwfMid" id="fwfMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #fwf="ngModel" type="checkbox" class="form-check-input" name="fwf" id="fwf">
+                        <label class="form-check-label ms-2" for="fwf">FWF</label>
+                        <mat-form-field *ngIf="fwf.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #fwfMid="ngModel" type="text" class="form-control" name="fwfMid" id="fwfMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #fla="ngModel" type="checkbox" class="btn-check" name="fla" id="fla">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="fla">FLA</label>
-                        <div class="input-add" *ngIf="fla.value == true">
-                            <input ngModel #flaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="flaMid" id="flaMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #fla="ngModel" type="checkbox" class="form-check-input" name="fla" id="fla">
+                        <label class="form-check-label ms-2" for="fla">FLA</label>
+                        <mat-form-field *ngIf="fla.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #flaMid="ngModel" type="text" class="form-control" name="flaMid" id="flaMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #bsci="ngModel" type="checkbox" class="btn-check" name="bsci" id="bsci">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="bsci">BSCI</label>
-                        <div class="input-add" *ngIf="bsci.value == true">
-                            <input ngModel #bsciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bsciMid" id="bsciMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #bsci="ngModel" type="checkbox" class="form-check-input" name="bsci" id="bsci">
+                        <label class="form-check-label ms-2" for="bsci">BSCI</label>
+                        <mat-form-field *ngIf="bsci.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #bsciMid="ngModel" type="text" class="form-control" name="bsciMid" id="bsciMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #textilBundnis="ngModel" type="checkbox" class="btn-check" name="textilBundnis" id="textilBundnis">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="textilBundnis">Textilbündnis</label>
-                        <div class="input-add" *ngIf="textilBundnis.value == true">
-                            <input ngModel #textilBundnisMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="textilBundnisMid" id="textilBundnisMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #textilBundnis="ngModel" type="checkbox" class="form-check-input" name="textilBundnis" id="textilBundnis">
+                        <label class="form-check-label ms-2" for="textilBundnis">Textilbündnis</label>
+                        <mat-form-field *ngIf="textilBundnis.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #textilBundnisMid="ngModel" type="text" class="form-control" name="textilBundnisMid" id="textilBundnisMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #leatherWG="ngModel" type="checkbox" class="btn-check" name="leatherWG" id="leatherWG">
-                        <label class="btn btn-outline-secondary btn-size py-2" for="leatherWG">Leather Working Group</label>
-                        <div class="input-add" *ngIf="leatherWG.value == true">
-                            <input ngModel #leatherWGMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="leatherWGMid" id="leatherWGMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #leatherWG="ngModel" type="checkbox" class="form-check-input" name="leatherWG" id="leatherWG">
+                        <label class="form-check-label ms-2" for="leatherWG">Leather WG</label>
+                        <mat-form-field *ngIf="leatherWG.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #leatherWGMid="ngModel" type="text" class="form-control" name="leatherWGMid" id="leatherWGMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #globalCompact="ngModel" type="checkbox" class="btn-check" name="globalCompact" id="globalCompact">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="globalCompact">Global Compact</label>
-                        <div class="input-add" *ngIf="globalCompact.value == true">
-                            <input ngModel #globalCompactMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="globalCompactMid" id="globalCompactMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #globalCompact="ngModel" type="checkbox" class="form-check-input" name="globalCompact" id="globalCompact">
+                        <label class="form-check-label ms-2" for="globalCompact">Global Com.</label>
+                        <mat-form-field *ngIf="globalCompact.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #globalCompactMid="ngModel" type="text" class="form-control" name="globalCompactMid" id="globalCompactMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #bgmea="ngModel" type="checkbox" class="btn-check" name="bgmea" id="bgmea">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="bgmea">BGMEA</label>
-                        <div class="input-add" *ngIf="bgmea.value == true">
-                            <input ngModel #bgmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bgmeaMid" id="bgmeaMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #bgmea="ngModel" type="checkbox" class="form-check-input" name="bgmea" id="bgmea">
+                        <label class="form-check-label ms-2" for="bgmea">BGMEA</label>
+                        <mat-form-field *ngIf="bgmea.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #bgmeaMid="ngModel" type="text" class="form-control" name="bgmeaMid" id="bgmeaMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #bkmea="ngModel" type="checkbox" class="btn-check" name="bkmea" id="bkmea">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="bkmea">BKMEA</label>
-                        <div class="input-add" *ngIf="bkmea.value == true">
-                            <input ngModel #bkmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bkmeaMid" id="bkmeaMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #bkmea="ngModel" type="checkbox" class="form-check-input" name="bkmea" id="bkmea">
+                        <label class="form-check-label ms-2" for="bkmea">BKMEA</label>
+                        <mat-form-field *ngIf="bkmea.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #bkmeaMid="ngModel" type="text" class="form-control" name="bkmeaMid" id="bkmeaMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #btmea="ngModel" type="checkbox" class="btn-check" name="btmea" id="btmea">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="btmea">BTMEA</label>
-                        <div class="input-add" *ngIf="btmea.value == true">
-                            <input ngModel #btmeaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="btmeaMid" id="btmeaMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #btmea="ngModel" type="checkbox" class="form-check-input" name="btmea" id="btmea">
+                        <label class="form-check-label ms-2" for="btmea">BTMEA</label>
+                        <mat-form-field *ngIf="btmea.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #btmeaMid="ngModel" type="text" class="form-control" name="btmeaMid" id="btmeaMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #bgcci="ngModel" type="checkbox" class="btn-check" name="bgcci" id="bgcci">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="bgcci">BGCCI</label>
-                        <div class="input-add" *ngIf="bgcci.value == true">
-                            <input ngModel #bgcciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="bgcciMid" id="bgcciMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #bgcci="ngModel" type="checkbox" class="form-check-input" name="bgcci" id="bgcci">
+                        <label class="form-check-label ms-2" for="bgcci">BGCCI</label>
+                        <mat-form-field *ngIf="bgcci.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #bgcciMid="ngModel" type="text" class="form-control" name="bgcciMid" id="bgcciMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #dcci="ngModel" type="checkbox" class="btn-check" name="dcci" id="dcci">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="dcci">DCCI</label>
-                        <div class="input-add" *ngIf="dcci.value == true">
-                            <input ngModel #dcciMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="dcciMid" id="dcciMid">
-                        </div>
+                    <div class="col-md-2 mb-3">
+                        <input ngModel #dcci="ngModel" type="checkbox" class="form-check-input" name="dcci" id="dcci">
+                        <label class="form-check-label ms-2" for="dcci">DCCI</label>
+                        <mat-form-field *ngIf="dcci.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #dcciMid="ngModel" type="text" class="form-control" name="dcciMid" id="dcciMid">
+                        </mat-form-field>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <input ngModel #tba="ngModel" type="checkbox" class="btn-check" name="tba" id="tba">
-                        <label class="btn btn-outline-secondary btn-size py-3" for="tba">TBA</label>
-                        <div class="input-add" *ngIf="tba.value == true">
-                            <input ngModel #tbaMid="ngModel" type="text" class="input-size" placeholder=" Membership ID:" name="tbaMid" id="tbaMid">
-                        </div>
+                    <div class="col-md-2 mb-2">
+                        <input ngModel #tba="ngModel" type="checkbox" class="form-check-input" name="tba" id="tba">
+                        <label class="form-check-label ms-2" for="tba">TBA</label>
+                        <mat-form-field *ngIf="tba.value == true" class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput ngModel #tbaMid="ngModel" type="text" class="form-control" name="tbaMid" id="tbaMid">
+                        </mat-form-field>
                     </div>
 
                 </div>
                 <!-- end member raw -->
             </div>
+            <p class="hint center">*If your group is not mentioned, please add from bellow input field.</p>
 
             <!-- MemberShip Dynamic-adding field -->
             <div class="col-md-12 mb-2 mt-2">
@@ -262,13 +275,21 @@
                         <label class="form-label">Others</label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="companyName" id="companyName" placeholder="Membership Name:">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Membership Name</mat-label>
+                            <input matInput type="text" name="companyName" id="companyName">
+                        </mat-form-field>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="companyName" id="companyName" placeholder="Membership ID:">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Membership ID</mat-label>
+                            <input matInput type="text" name="companyName" id="companyName">
+                        </mat-form-field>
                     </div>
-                    <div class="col-md-1 py-1">
-                        <button type="button" class="btn btn-outline-danger btn-circle"><i class="icon-plus1"></i></button>
+                    <div class="col-md-1">
+                        <button mat-icon-button>
+                            <mat-icon><i class="icon-plus-sign"></i></mat-icon>
+                          </button>
                     </div>
                 </div>
             </div>
@@ -276,8 +297,8 @@
 
             <!-- <p class="center">{{aboutForm.value | json}}</p> -->
             <!-- button save -->
-            <div class="text-end mt-2">
-                <button class="button button-small button-border button-rounded b-info" type="submit" name="save" id="save" value="save">Save</button>
+            <div class="text-end mt-4">
+                <button class="btn btn-outline-secondary b-info" type="submit" name="save" id="save" value="save">Save</button>
             </div>
 
 

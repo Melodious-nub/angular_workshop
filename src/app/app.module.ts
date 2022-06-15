@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import { LandingComponent } from './pages/landing/landing.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account.component';
@@ -51,6 +52,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     MatFormFieldModule,
     MatIconModule,
     MatRadioModule,
+    MatCheckboxModule,
     MatTabsModule,
     ToastrModule.forRoot(),
     NgxUiLoaderModule,
