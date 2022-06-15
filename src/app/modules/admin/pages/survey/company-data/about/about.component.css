@@ -29,10 +29,14 @@ mat-hint {
 /* mat-label focused style invalid and valid state */
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-    color: blue!important;
+    color: black!important;
     font-size: 12px;
     line-height: 14px;
     transform: translateY(-1.6em) scale(.66) !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: black !important;
 }
 
 
@@ -96,3 +100,6 @@ hr {
 .icon-color {
     color: #278E90;
 }
+
+
+/* for file upload */
