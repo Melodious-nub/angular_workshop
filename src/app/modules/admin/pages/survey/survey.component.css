@@ -239,3 +239,27 @@ img {
  ::-webkit-scrollbar-thumb:hover {
     background: #888;
 }
+
+
+/* for side nav hove, active dersign */
+
+li>a.active-side {
+    color: #227A7B;
+}
+
+li>a.active-side:hover,
+li>a.active-side:focus {
+    background-color: #d2f4ea;
+}
+
+
+/* .btn-toggle:hover,
+.btn-toggle:focus {
+    color: rgba(0, 0, 0, .85);
+    background-color: #d2f4ea;
+} */
+
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+    background-color: #d2f4ea;
+}

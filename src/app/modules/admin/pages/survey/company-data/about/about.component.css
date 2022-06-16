@@ -95,6 +95,7 @@ hr {
 
 .hint {
     color: rgba(170, 0, 0, 0.6);
+    font-size: smaller;
 }
 
 .icon-color {
