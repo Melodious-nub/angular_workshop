@@ -60,6 +60,10 @@ export class DataService {
     forgotPassword(data:any) {
       return this.http.post<any>(this.baseUrl+'/api/v1/Auth/forgotpassword', data)
     }
+
+    aboutData(data:any) {
+      return this.http.post<any>('https://sutra.azurewebsites.net/api/v1/Auth/upload', data)
+    }
   
 
 }

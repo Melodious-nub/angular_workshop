@@ -26,6 +26,7 @@ import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account
 import { DataService } from './services/data.service';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     MatRadioModule,
     MatCheckboxModule,
     MatTabsModule,
+    NgxDropzoneModule,
     ToastrModule.forRoot(),
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),

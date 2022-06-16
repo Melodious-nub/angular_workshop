@@ -135,16 +135,24 @@
             <!-- end hr -->
 
             <!-- upload company photos -->
-            <label for="companyPhotos" class="center mt-3 mb-3">Upload photos of your company:</label>
-            <div class="col-md-12 center">
-                <label class="btn btn-secondary p-2" style="color: #fff; width: 55%;" for="companyPhotos">
+            <label for="companyPhotos" class="center mt-3 mb-2">Upload photos of your copany front gate</label>
+            <div class="col-md-12 mb-4">
+                <!-- <label class="btn btn-secondary p-2" style="color: #fff; width: 55%;" for="companyPhotos">
                     <input id="companyPhotos" type="file" multiple="multiple" style="display:none" accept="image/*"
                         onchange="$('#companyPhotos-label').html(
                             (this.files.length == 1) ? this.files[0].name : this.files.length + ' images');
                             $(this).parent().addClass('btn-success-s2')">
                     <span id="companyPhotos-label"><i class="icon-picture pe-2"></i>Upload photo</span>
-                </label>
-                <p class="hint"> *Can upload multiple images</p>
+                </label> -->
+                <p class="sm-font text-center"> *PNG and JPG files are allowed</p>
+                <ngx-dropzone class="upload-style" (change)="onSelect($event)" accept="image/*">
+                    <ngx-dropzone-label><img src="../../../../../../../assets/images/img/upload.svg">
+                        <br><br> Drag your file(s) here or <b>browse</b></ngx-dropzone-label>
+                    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                    </ngx-dropzone-preview>
+                </ngx-dropzone>
+                <!-- <input type="button" class="btn btn-sm btn-success mt-2 mb-2" value="Upload" (click)="uploadFile()"> -->
             </div>
 
             <!-- horizontal line -->

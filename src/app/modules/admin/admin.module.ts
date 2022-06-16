@@ -33,6 +33,7 @@ import { CustomerComponent } from './pages/survey/company-data/customer/customer
 import { SupplierComponent } from './pages/survey/company-data/supplier/supplier.component';
 import { AboutComponent } from './pages/survey/company-data/about/about.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     MatRadioModule,
     MatTabsModule,
+    NgxDropzoneModule,
     MatCheckboxModule,
     MatSidenavModule,
     NgxUiLoaderModule,

@@ -101,5 +101,23 @@ hr {
     color: #278E90;
 }
 
+.sm-font {
+    font-size: 12px;
+    font-weight: 400;
+}
+
 
 /* for file upload */
+
+.upload-style {
+    background: #F6F6F6;
+    border: 1px dashed #000000;
+    border-radius: 20px;
+    width: 45% !important;
+    margin: auto;
+}
+
+b {
+    color: #419b9d;
+    font-weight: 600;
+}
