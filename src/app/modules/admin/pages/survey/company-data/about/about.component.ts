@@ -49,15 +49,19 @@ export class AboutComponent implements OnInit {
       // formData.append('latitude', aboutForm.controls['latitude'].value);
       // formData.append('longtitude', aboutForm.controls['longtitude'].value);
       // formData.append('belongingToGroupOfCompanies', aboutForm.controls['belongingToGroupOfCompanies'].value);
-
-      for (let i = 0; i < this.files.length; i++) {
-        formData.append('Files', this.files[i]);
+      if (this.files.length > 5) {
+        console.log('not  more than five'); 
+      } else {
+        for (let i = 0; i < this.files.length; i++) {
+          formData.append('Files', this.files[i]);
+        }
+  
+        this.api.aboutData(formData)
+          .subscribe(res => {
+              console.log('result :', res)
+            });
       }
 
-      this.api.aboutData(formData)
-        .subscribe(res => {
-            console.log('result :', res)
-          });
     }
 
 
