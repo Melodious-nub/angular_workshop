@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private http: HttpClient, private api: DataService) { }
+  constructor(private http: HttpClient, private api: DataService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -50,7 +51,8 @@ export class AboutComponent implements OnInit {
       // formData.append('longtitude', aboutForm.controls['longtitude'].value);
       // formData.append('belongingToGroupOfCompanies', aboutForm.controls['belongingToGroupOfCompanies'].value);
       if (this.files.length > 5) {
-        console.log('not  more than five'); 
+        console.log('not  more than five');
+        this.toastr.warning('Max limit is 5 picture', 'Warning!');
       } else {
         for (let i = 0; i < this.files.length; i++) {
           formData.append('Files', this.files[i]);
@@ -59,6 +61,12 @@ export class AboutComponent implements OnInit {
         this.api.aboutData(formData)
           .subscribe(res => {
               console.log('result :', res)
+              if(res.success === true){
+                this.toastr.success(res.message, 'Success');
+              } else {
+                // alert(res.message);
+                this.toastr.warning(res.message, 'Warning!');
+              }
             });
       }
 
