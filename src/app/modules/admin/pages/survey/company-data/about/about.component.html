@@ -20,14 +20,14 @@
             <div class="col-md-3">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>State/ Division</mat-label>
-                    <input matInput ngModel #districtName="ngModel" type="text" name="districtName" id="districtName">
+                    <input matInput ngModel #district="ngModel" type="text" name="district" id="district">
                 </mat-form-field>
             </div>
 
             <div class="col-md-3">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>City</mat-label>
-                    <input matInput ngModel #cityName="ngModel" type="text" name="cityName" id="cityName">
+                    <input matInput ngModel #city="ngModel" type="text" name="city" id="city">
                 </mat-form-field>
             </div>
             <!-- end sub col-3 -->
@@ -36,7 +36,7 @@
             <div class="col-md-3">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Street</mat-label>
-                    <input matInput ngModel #streetName="ngModel" type="text" name="streetName" id="streetName">
+                    <input matInput ngModel #street="ngModel" type="text" name="street" id="street">
                 </mat-form-field>
             </div>
 
@@ -47,19 +47,19 @@
                 </mat-form-field>
             </div>
 
-            <!-- GpsLat Field -->
+            <!-- latitude Field -->
 
             <div class="col-md-3">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Latitude</mat-label>
-                    <input matInput ngModel #gpsLat="ngModel" type="text" name="gpsLat" id="gpsLat">
+                    <input matInput ngModel #latitude="ngModel" type="text" name="latitude" id="latitude">
                 </mat-form-field>
             </div>
 
             <div class="col-md-3">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Longtitude</mat-label>
-                    <input matInput ngModel #gpsLong="ngModel" type="text" name="gpsLong" id="gpsLong">
+                    <input matInput ngModel #longtitude="ngModel" type="text" name="longtitude" id="longtitude">
                 </mat-form-field>
             </div>
 
@@ -68,7 +68,7 @@
             <div class="col-md-3">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Contract No</mat-label>
-                    <input matInput ngModel #contactNo="ngModel" type="text" id="contactNo" name="contactNo">
+                    <input matInput ngModel #contactNumber="ngModel" type="text" id="contactNumber" name="contactNumber">
                 </mat-form-field>
             </div>
 
@@ -125,7 +125,7 @@
             <div class="col-md-12 mt-2">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Belonging to group of companies?</mat-label>
-                    <input matInput ngModel #companyHighlights="ngModel" name="companyHighlights" id="companyHighlights" rows="3" maxlength="200">
+                    <input matInput ngModel #belongingToGroupOfCompanies="ngModel" name="belongingToGroupOfCompanies" id="belongingToGroupOfCompanies">
                 </mat-form-field>
             </div>
             <!--End company vission,Mission & group field -->

@@ -62,7 +62,7 @@ export class DataService {
     }
 
     aboutData(data:any) {
-      return this.http.post<any>('https://sutra.azurewebsites.net/api/v1/Auth/upload', data)
+      return this.http.post<any>(this.baseUrl+'/api/v1/CompanyData/About', data)
     }
   
 
