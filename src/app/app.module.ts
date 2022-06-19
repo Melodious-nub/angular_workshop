@@ -19,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import {MatTabsModule} from '@angular/material/tabs';
-import {MatCheckboxModule} from '@angular/material/checkbox'; 
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account.component';
@@ -27,6 +27,8 @@ import { DataService } from './services/data.service';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     MatRadioModule,
     MatCheckboxModule,
     MatTabsModule,
+    MatSelectModule,
+    MatAutocompleteModule,
     NgxDropzoneModule,
     ToastrModule.forRoot(),
     NgxUiLoaderModule,

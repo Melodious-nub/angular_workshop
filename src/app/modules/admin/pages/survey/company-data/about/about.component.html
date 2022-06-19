@@ -11,9 +11,19 @@
             </div>
 
             <div class="col-md-3">
-                <mat-form-field class="example-full-width" appearance="outline">
+                <!-- <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Country</mat-label>
                     <input matInput ngModel #countryName="ngModel" type="text" name="countryName" id="countryName">
+                </mat-form-field> -->
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <input type="text" placeholder="Select Your Country" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
                 </mat-form-field>
             </div>
 
@@ -137,13 +147,6 @@
             <!-- upload company photos -->
             <label for="companyPhotos" class="center mt-3 mb-2">Upload photos of your company front gate</label>
             <div class="col-md-12 mb-4">
-                <!-- <label class="btn btn-secondary p-2" style="color: #fff; width: 55%;" for="companyPhotos">
-                    <input id="companyPhotos" type="file" multiple="multiple" style="display:none" accept="image/*"
-                        onchange="$('#companyPhotos-label').html(
-                            (this.files.length == 1) ? this.files[0].name : this.files.length + ' images');
-                            $(this).parent().addClass('btn-success-s2')">
-                    <span id="companyPhotos-label"><i class="icon-picture pe-2"></i>Upload photo</span>
-                </label> -->
                 <p class="sm-font text-center"> *PNG and JPG files are allowed</p>
                 <ngx-dropzone class="upload-style" (change)="onSelect($event)" accept="image/*">
                     <ngx-dropzone-label><img src="../../../../../../../assets/images/img/upload.svg">
@@ -152,7 +155,6 @@
                         <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                     </ngx-dropzone-preview>
                 </ngx-dropzone>
-                <!-- <input type="button" class="btn btn-sm btn-success mt-2 mb-2" value="Upload" (click)="uploadFile()"> -->
             </div>
 
             <!-- horizontal line -->
@@ -308,7 +310,7 @@
             </div>
 
 
-            <!-- <p class="center">{{aboutForm.value | json}}</p> -->
+            <p class="center">{{aboutForm.value | json}}</p>
             <!-- button save -->
             <div class="text-end mt-4">
                 <button class="btn btn-outline-secondary b-info" type="submit" name="save" id="save" value="save">Save</button>

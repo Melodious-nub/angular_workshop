@@ -34,6 +34,8 @@ import { SupplierComponent } from './pages/survey/company-data/supplier/supplier
 import { AboutComponent } from './pages/survey/company-data/about/about.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -69,10 +71,12 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     MatIconModule,
     MatRadioModule,
     MatTabsModule,
+    MatSelectModule,
+    MatAutocompleteModule,
     NgxDropzoneModule,
     MatCheckboxModule,
     MatSidenavModule,
-    NgxUiLoaderModule,
+    // NgxUiLoaderModule,
     // NgxUiLoaderHttpModule,
   ],
   providers: [
