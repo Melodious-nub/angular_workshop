@@ -52,7 +52,7 @@ export class AboutComponent implements OnInit {
 
     // About Section will update here
     onaboutSubmit(aboutForm: NgForm){
-      console.log(aboutForm.value);
+      console.log(aboutForm.value, this.myControl.value);
       const formData = new FormData();
 
       formData.append('AboutData', this.about);
