@@ -29,6 +29,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ValidateEqualModule } from 'ng-validate-equal';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatSelectModule,
     MatAutocompleteModule,
     NgxDropzoneModule,
+    ValidateEqualModule,
     ToastrModule.forRoot(),
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),

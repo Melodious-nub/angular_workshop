@@ -102,7 +102,7 @@
                             <mat-form-field appearance="outline">
                                 <mat-label>Enter your password</mat-label>
                                 <input matInput [type]="hide ? 'password' : 'text'" required ngModel #password="ngModel" [(ngModel)]="model.password" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
-                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
                                 <mat-error *ngIf="password.errors?.['pattern']">Contain number, uppercase,lowercase letter, and at least 6 characters</mat-error>
@@ -114,11 +114,12 @@
                         <div class="col-md-12">
                             <mat-form-field appearance="outline">
                                 <mat-label>Re-enter password</mat-label>
-                                <input matInput [type]="hide ? 'password' : 'text'" required ngModel #reEnterPassword="ngModel" [(ngModel)]="model.reEnterPassword" type="password" name="reEnterPassword" id="reEnterPassword">
-                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                <input matInput [type]="hideC ? 'password' : 'text'" required ngModel #reEnterPassword="ngModel" [(ngModel)]="model.reEnterPassword" type="password" ngValidateEqual="password" name="reEnterPassword" id="reEnterPassword">
+                                <button type="button" mat-icon-button matSuffix (click)="hideC = !hideC" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideC">
+                                  <mat-icon>{{hideC ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
-                                <mat-error *ngIf="(model.password !== model.reEnterPassword)">Passwords do not match</mat-error>
+                                <mat-error *ngIf="reEnterPassword.hasError('notEqual') &&
+                                password.valid">Passwords do not match</mat-error>
                             </mat-form-field>
                         </div>
 

@@ -11,6 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 export class SignupComponent implements OnInit {
 
   hide = true;
+  hideC = true;
   isChecked!: boolean;
   // for phone number input
   model: any = {};

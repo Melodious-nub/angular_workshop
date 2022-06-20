@@ -55,7 +55,7 @@
                             <mat-form-field appearance="outline">
                                 <mat-label>Enter your password</mat-label>
                                 <input matInput [type]="hide ? 'password' : 'text'" required ngModel #password="ngModel" type="password" name="password" id="password">
-                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
                             </mat-form-field>
@@ -66,8 +66,7 @@
                         </div>
                         <!-- Login Button Field -->
                         <div class="mt-2">
-                            <!-- <input type="submit" name="signin" id="signin" class="btn btn-lg btn-primary" value="Log in" [disabled]="!loginForm.valid" /> -->
-                            <button mat-raised-button color="accent" type="submit" name="signin" id="signin" value="Log in">Log in</button>
+                            <button mat-raised-button color="accent" name="signin" id="signin" value="Log in">Log in</button>
                         </div>
 
                         <!-- forgot pass field -->
