@@ -1,13 +1,13 @@
 <div class="body" style="height: 100vh;">
     <!-- Navbar -->
-    <div class="container sticky-top">
+    <div class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid mt-2">
-                <a class="navbar-brand mb-2" href="#">SUTRA</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-3 nav-title" href="#">SUTRA</a>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          </button> -->
+                <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Services</a>
@@ -19,84 +19,76 @@
                             <a class="nav-link" routerLink="">Contact Us</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </nav>
     </div>
     <!-- nav end -->
-
     <!-- Your role field -->
-    <div class="center mt-5">
+    <!-- <div class="center mt-5">
         <a class="button button-large button-circle button-3d button-dirtygreen btn-modi animate__animated animate__fadeInUp" style="width: 230px !important;"><span class="text-center">Commercial</span><i class="icon-plus-circle icon-modi-1"></i></a>
-    </div>
+    </div> -->
 
     <!-- div container start -->
-    <section style="background-color: #f5f5f8;">
+    <section>
         <div class="container mt-4">
-            <div class="row justify-content-center h-100">
-
-                <!-- Login signup tabs -->
-                <ul class="nav nav-tabs mx-auto mb-0 center nav-modi" id="myTab0" role="tablist">
-                    <!-- first Tab Login -->
-                    <li class="nav-item link-modi" role="presentation">
-                        <button class="nav-link active" id="home-tab0" data-bs-toggle="tab" data-bs-target="#home0" type="button" role="tab" aria-controls="home" aria-selected="true">
-                <b>Login</b>
-              </button>
-                    </li>
-                    <!-- second tab signup -->
-                    <li class="nav-item link-modi" role="presentation">
-                        <button class="nav-link " id="profile-tab0" data-bs-toggle="tab" data-bs-target="#profile0" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                <b>Sign up</b>
-              </button>
-                    </li>
-                </ul>
-
-                <!-- Tab content -->
-                <div class="tab-content" id="myTabContent0">
-                    <!-- tab login -->
-                    <div class="tab-pane fade show active" id="home0" role="tabpanel" aria-labelledby="home-tab0">
-
-                        <!-- Login Form -->
-                        <form #loginForm="ngForm" class="register-form  center" id="loginForm" (submit)="onLogin(loginForm)">
-
-                            <!-- Login Input Field -->
-                            <div class="mt-3 mb-3">
-                                <input required ngModel #email="ngModel" type="text" name="email" id="your_name" placeholder="  E-Mail/Login ID:" class="form-control f-info">
-                            </div>
-
-                            <!-- Password Input Field -->
-                            <div class="mb-3">
-
-                                <input required ngModel #password="ngModel" type="password" placeholder="  Password:" name="password" id="your_pass" [type]="hide ? 'password' : 'text'" class="form-control f-info" onmousedown="this.type='text'" onmouseup="this.type='password'" onmousemove="this.type='password'">
-
-                                <!-- visible pass icon will implemented -->
-                                <!-- <button class="float-center" mat-icon-button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button> -->
-                            </div>
-
-                            <!-- Login Button Field -->
-                            <div class="">
-                                <input type="submit" name="signin" id="signin" class="button button-medium button-border button-rounded b-info" value="Log in" [disabled]="!loginForm.valid" />
-                            </div>
-
-                            <!-- forgot pass field -->
-                            <div class="text-center mt-2">
-                                <a class="link link-6" routerLink="../forgot-password"> <span>Forgot Password?</span></a>
-                            </div>
-
-
-                            <!-- <p>{{loginForm.value | json}}</p> -->
-                        </form>
+            <div class="row justify-content-center">
+                <div class="col-md-6 mt-6">
+                    <div class="text-center">
+                        <p class="text-login">Log in to your account</p>
+                        <p class="text-sub-l">Welcome to SUTRA, please put your <br> login credentials below to start using our service.</p>
                     </div>
-                    <!-- end tab login -->
+                    <!-- Login Form -->
+                    <form #loginForm="ngForm" class="register-form center" id="loginForm" (submit)="onLogin(loginForm)">
 
-                    <!-- tab content signup come from sign up page -->
-                    <div class="tab-pane fade" id="profile0" role="tabpanel" aria-labelledby="profile-tab0">
-                        <app-signup></app-signup>
+                        <!-- Login Input Field -->
+                        <div class="mt-3">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your email</mat-label>
+                                <input matInput required ngModel #email="ngModel" type="text" name="email" id="email" pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                <mat-error *ngIf="((email.invalid && email.touched) || email.dirty) || email.errors?.['pattern']">Email address pattern is not correct</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Password Input Field -->
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your password</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" required ngModel #password="ngModel" type="password" name="password" id="password">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="float-start ms-3 mb-2">
+                            <mat-checkbox class="example-margin">Remember me</mat-checkbox>
+                        </div>
+                        <!-- Login Button Field -->
+                        <div class="mt-2">
+                            <!-- <input type="submit" name="signin" id="signin" class="btn btn-lg btn-primary" value="Log in" [disabled]="!loginForm.valid" /> -->
+                            <button mat-raised-button color="accent" type="submit" name="signin" id="signin" value="Log in">Log in</button>
+                        </div>
+
+                        <!-- forgot pass field -->
+                        <div class="text-center mt-2">
+                            <a class="link link-6" routerLink="../forgot-password"> <span>Forgot Password?</span></a>
+                        </div>
+
+
+                        <!-- <p>{{loginForm.value | json}}</p> -->
+                    </form>
+                </div>
+
+                <!-- other hlf part on screen -->
+
+                <div class="col-md-6 my-auto">
+                    <div class="text-center mb-4">
+                        <p class="text-signup">Don’t have an account ?</p>
+                        <p class="text-sub-s">Join to SUTRA and make your <br> supplychain management easier</p>
+                        <button routerLink="../signup" mat-flat-button class="mb-4">Sign up</button>
                     </div>
                 </div>
-                <!-- tab div end -->
 
             </div>
             <!-- div end -->

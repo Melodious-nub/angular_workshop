@@ -12,7 +12,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 const routes: Routes = [
   { path:'landing', component: LandingComponent},
   { path:'login', component: LoginComponent },
-  // { path: 'signup', component: SignupComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'confirm-account/account/verify-email', component: ConfirmAccountComponent },

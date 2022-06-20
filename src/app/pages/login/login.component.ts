@@ -8,7 +8,7 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css','../landing/landing.component.css']
+  styleUrls: ['./login.component.css',]
 })
 export class LoginComponent implements OnInit {
 

@@ -1,118 +1,145 @@
-<div class="body">
-    <div class="container width mt-3" style="height: auto !important;">
-        <!-- Full Form Hander Field -->
-        <form id="registerForm" #registerForm="ngForm" (submit)="onRegSubmit(registerForm)">
+<div class="body" style="height: 100vh;">
+    <!-- Navbar -->
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-3 nav-title" href="#">SUTRA</a>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+                <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="">Contact Us</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </nav>
+    </div>
+    <!-- nav end -->
 
-            <!-- firstName Feild -->
-            <div class="mb-3 row col-md-12">
-                <div class="col-md-6 mb-3">
-                    <input required ngModel minlength="2" type="text" name="firstName" id="firstName" #firstName="ngModel" placeholder="  First name:" class="form-control f-info">
-
-                    <div *ngIf="firstName.touched && !firstName.valid" class="ms-3">
-                        <div *ngIf="firstName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
-                        </div>
-                        <div *ngIf="firstName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"> User name should be minimum {{firstName.errors?.['minlength'].requiredLength}} characters.</i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Last Name field -->
-                <div class="col-md-6 mb-3">
-                    <input required ngModel minlength="2" type="text" name="lastName" id="lastName" #lastName="ngModel" placeholder="  Last name:" class="form-control f-info">
-
-                    <div *ngIf="lastName.touched && !lastName.valid" class="ms-3">
-                        <div *ngIf="lastName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> User name is required.</i>
-                        </div>
-                        <div *ngIf="lastName.errors?.['minlength']"><i class="zmdi zmdi-alert-circle-o"> User name should be minimum {{lastName.errors?.['minlength'].requiredLength}} characters.</i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- emailAddress Feild -->
-                <div class="mb-3 col-md-12">
-                    <input required ngModel type="emailAddress" name="emailAddress" id="emailAddress" #emailAddress="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="  E-mail:" class="form-control f-info" />
-
-                    <div *ngIf="((emailAddress.invalid && emailAddress.touched) || emailAddress.dirty)" class="ms-3">
-                        <div *ngIf="emailAddress.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> Email address is required.</i></div>
-                        <div *ngIf="emailAddress.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"> Email address pattern is not correct</i></div>
-                    </div>
-                </div>
-
-                <!-- companyName Feild -->
-                <div class="mb-3 col-md-12">
-                    <input required ngModel type="text" name="companyName" id="companyName" #companyName="ngModel" placeholder="  Company Name:" class="form-control f-info" />
-
-                    <div *ngIf="companyName.touched && !companyName.valid" class="ms-3">
-                        <div *ngIf="companyName.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> Brand name is required.</i></div>
-                    </div>
-                </div>
-
-                <!-- designation Feild -->
-                <div class="col-md-12">
-                    <input required ngModel type="text" name="designation" id="designation" #designation="ngModel" placeholder="  Designation:" class="form-control f-info" />
-
-                    <div *ngIf="designation.touched && !designation.valid" class="ms-3">
-                        <div *ngIf="designation.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> Designation is required.</i></div>
-                    </div>
-                </div>
-
-                <!-- companyType Feild -->
-                <div class="form-group">
-                    <select hidden [ngModel]="dropValue" name="ccmpanyType" class="form-control f-info" id="exampleFormControlSelect1">
-                      <option [value]="dropValue">Commercial</option>
-                    </select>
-                </div>
-
-                <!-- password Feild -->
-                <div class="mb-3 col-md-12">
-                    <input required ngModel #password="ngModel" [(ngModel)]="model.password" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" class="form-control f-info" placeholder="  Password:" onmousedown="this.type='text'" onmouseup="this.type='password'"
-                        onmousemove="this.type='password'">
-
-                    <div *ngIf="password.touched && !password.valid" class="ms-3">
-                        <div *ngIf="password.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> Password field can not be empty.</i></div>
-                        <div *ngIf="password.errors?.['pattern']"><i class="zmdi zmdi-alert-circle-o"> Contain number, uppercase,lowercase letter, and at least 6 characters.</i></div>
-                    </div>
-                </div>
-
-
-                <!-- Confirm password Feild -->
-                <div class="mb-3 col-md-12">
-                    <input required ngModel #reEnterPassword="ngModel" [(ngModel)]="model.reEnterPassword" type="password" name="reEnterPassword" id="reEnterPassword" class="form-control f-info" placeholder="  Re-enter password:" />
-
-                    <div *ngIf="reEnterPassword.touched && !reEnterPassword.valid" class="ms-3">
-                        <div *ngIf="(model.password !== model.reEnterPassword)"><i class="zmdi zmdi-alert-circle-o"> Passwords do not match.</i></div>
-                        <div *ngIf="reEnterPassword.errors?.['required']"><i class="zmdi zmdi-alert-circle-o"> Password field can not be empty.</i></div>
-                    </div>
-                </div>
-
-                <!-- For viewing output -->
-
-                <!-- <p>{{registerForm.value | json}}</p> -->
-
-                <div class="form-group form-button center">
-                    <input type="submit" name="signup" id="signup" class="form-submit button button-medium button-border button-rounded b-info" value="register" [disabled]="!registerForm.valid" />
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6 my-auto">
+                <div class="text-center mb-4">
+                    <p class="text-signup">Already have an account ?</p>
+                    <p class="text-sub-s">Login to SUTRA and make your <br> supplychain management easier</p>
+                    <button routerLink="../login" mat-flat-button class="mb-4">Login</button>
                 </div>
             </div>
-            <!-- end row -->
-        </form>
+            <!-- col-6 end -->
 
+            <div class="col-md-6">
+                <div class="text-center">
+                    <p class="text-sub-l"><b class="text-login">Sign up for new account</b> <br><br> Let’s got you all set up so you can start creating <br> your first onboarding experience</p>
+                </div>
+                <!-- Full Form Hander Field -->
+                <form id="registerForm" #registerForm="ngForm" (submit)="onRegSubmit(registerForm)">
+
+                    <!-- hidden prefix data field -->
+                    <!-- companyType Feild -->
+                    <div class="form-group">
+                        <select hidden [ngModel]="dropValue" name="ccmpanyType" class="form-control f-info" id="exampleFormControlSelect1">
+                  <option [value]="dropValue">Commercial</option>
+                </select>
+                    </div>
+
+                    <!-- firstName Feild -->
+                    <div class="row col-md-12">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline">
+                                <mat-label>First name</mat-label>
+                                <input matInput required ngModel minlength="2" type="text" name="firstName" id="firstName" #firstName="ngModel">
+                                <mat-error *ngIf="firstName.errors?.['minlength']">User name should be minimum {{firstName.errors?.['minlength'].requiredLength}} characters</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Last Name field -->
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Last name</mat-label>
+                                <input matInput required ngModel minlength="2" type="text" name="lastName" id="lastName" #lastName="ngModel">
+                                <mat-error *ngIf="lastName.errors?.['minlength']">User name should be minimum {{firstName.errors?.['minlength'].requiredLength}} characters</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- emailAddress Feild -->
+                        <div class="col-md-12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>E-mail address</mat-label>
+                                <input matInput required ngModel type="emailAddress" name="emailAddress" id="emailAddress" #emailAddress="ngModel" pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                <mat-error *ngIf="emailAddress.errors?.['pattern']">Email address pattern is not correct</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- companyName Feild -->
+                        <div class="col-md-12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Company name</mat-label>
+                                <input matInput required ngModel type="text" name="companyName" id="companyName" #companyName="ngModel">
+                                <mat-error *ngIf="companyName.errors?.['required']">Company name is required</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- designation Feild -->
+                        <div class="col-md-12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Designation</mat-label>
+                                <input matInput required ngModel type="text" name="designation" id="designation" #designation="ngModel">
+                                <mat-error *ngIf="designation.errors?.['required']">Designation is required</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- password Feild -->
+                        <div class="col-md-12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your password</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" required ngModel #password="ngModel" [(ngModel)]="model.password" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="password.errors?.['pattern']">Contain number, uppercase,lowercase letter, and at least 6 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+                        <!-- Confirm password Feild -->
+                        <div class="col-md-12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Re-enter password</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" required ngModel #reEnterPassword="ngModel" [(ngModel)]="model.reEnterPassword" type="password" name="reEnterPassword" id="reEnterPassword">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="(model.password !== model.reEnterPassword)">Passwords do not match</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- For viewing output -->
+
+                        <!-- <p>{{registerForm.value | json}}</p> -->
+                        <div class="float-start ms-1 mb-2">
+                            <mat-checkbox class="example-margin">I accept the <a class="term-con" href="">terms and conditions</a></mat-checkbox>
+                        </div>
+
+                        <div class="center">
+                            <button mat-raised-button color="accent" type="submit" name="signup" id="signup" value="register" [disabled]="!registerForm.valid">Create account</button>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </form>
+            </div>
+            <!-- last col-6 end -->
+        </div>
+        <!-- row end -->
     </div>
     <!-- container end -->
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-4 p-md-5 rounded text-center align-items-center shadow-lg border-0" style="background-color: #F1F1F1;">
-                <img src="../../../assets/images/popups/recovery-email.svg" alt="Svg" height="200" class="mb-4">
-                <h2>Hi, {{firstName.value}} {{lastName.value}}</h2>
-                <h3>Confirmation link Sent to {{emailAddress.value}}</h3>
-                <p>Please, Check your emailAddress inbox and click the link to activate your account.</p>
-
-                <div>
-                    <a href="#" class="button button-circle button-3d button-dirtygreen mt-4" data-bs-dismiss="modal">Close</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- modal end -->
 </div>
 <!-- body end -->
