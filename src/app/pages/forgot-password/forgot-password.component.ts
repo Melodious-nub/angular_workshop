@@ -8,7 +8,7 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css','../landing/landing.component.css']
+  styleUrls: ['./forgot-password.component.css',]
 })
 export class ForgotPasswordComponent implements OnInit {
 
@@ -28,6 +28,7 @@ export class ForgotPasswordComponent implements OnInit {
         // alert(res.message);
         this.toastr.warning(res.message, 'Warning!');
       }
+      forgotForm.reset();
     })
   }
 
