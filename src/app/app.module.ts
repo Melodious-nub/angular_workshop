@@ -62,7 +62,10 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     MatAutocompleteModule,
     NgxDropzoneModule,
     ValidateEqualModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-center',
+    }),
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],

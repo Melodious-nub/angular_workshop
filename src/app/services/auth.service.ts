@@ -60,9 +60,10 @@ export class AuthService {
       map((res: any) => {
         // this.currentUser = res;
         if (res.success === true) {
-
           this.setToken(res.data);
-
+          return res;
+        } else {
+          this.setToken(res.data = null);
           return res;
         }
       })

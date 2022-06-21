@@ -151,9 +151,8 @@
                 <ngx-dropzone class="upload-style" (change)="onSelect($event)" accept="image/*">
                     <ngx-dropzone-label><img src="../../../../../../../assets/images/img/upload.svg">
                         <br><br> Drag your file(s) here or <b>browse</b></ngx-dropzone-label>
-                    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                    </ngx-dropzone-preview>
+                    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                    </ngx-dropzone-image-preview>
                 </ngx-dropzone>
             </div>
 
