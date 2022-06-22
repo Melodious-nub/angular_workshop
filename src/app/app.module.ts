@@ -24,7 +24,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './pages/confirm-account/confirm-account.component';
 import { DataService } from './services/data.service';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatSelectModule } from '@angular/material/select';
@@ -65,7 +65,13 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-center',
+      progressBar: true,
+      progressAnimation: 'decreasing',
+      preventDuplicates: true,
+      countDuplicates: true,
+      resetTimeoutOnDuplicate: true,
     }),
+    ToastContainerModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],

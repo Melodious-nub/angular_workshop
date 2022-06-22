@@ -40,8 +40,13 @@ export class AboutComponent implements OnInit {
 
     // for add files/pics
     onSelect(event) {
+      // condition for max file limit
       console.log(event);
-      this.files.push(...event.addedFiles);
+      if (event.addedFiles.length > 5) {
+        this.toastr.warning('Max limit is 5 picture', 'Warning!');
+      } else {
+        this.files.push(...event.addedFiles);
+      }
     }
 
     // for remove files/pics
