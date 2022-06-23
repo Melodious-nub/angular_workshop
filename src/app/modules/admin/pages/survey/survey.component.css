@@ -181,14 +181,16 @@ div.content {
         width: 100%;
         height: auto;
         position: relative;
+        left: 0px;
+        top: 5px;
     }
     .sidebar a {
-        float: left;
+        float: none;
     }
     div.content {
         position: relative;
         margin-left: 0;
-        margin-top: 60px;
+        margin-top: 0px;
     }
 }
 
@@ -200,7 +202,7 @@ div.content {
     div.content {
         position: relative;
         margin-left: 0;
-        margin-top: 60px;
+        margin-top: 0px;
     }
 }
 
