@@ -1,15 +1,20 @@
-::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-    background-color: #93117D !important;
+/* mat form field */
+
+.example-full-width {
+    width: 100%;
 }
 
- ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-    background-color: #93117D!important;
-    /*inner circle color change*/
+mat-hint {
+    font-size: 9px;
 }
 
- ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: #93117D!important;
-    /*outer ring color change*/
+.mat-form-field {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.125;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: normal;
+    background: transparent;
 }
 
 
@@ -75,7 +80,7 @@ hr {
 .btn-add {
     border: 1px solid #278E90;
     border-radius: 8px;
-    padding: 3px 25px;
+    padding: 6px 30px;
 }
 
 .btn-add:hover {
@@ -116,42 +121,4 @@ hr {
 b {
     color: #419b9d;
     font-weight: 600;
-}
-
-.btn-circle {
-    width: 30px;
-    height: 30px;
-    padding: 6px 0px;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.42857;
-    color: #93117D !important;
-    border-color: #93117D !important;
-}
-
-.btn-circle:hover {
-    background: #93117D !important;
-    border-color: #93117D !important;
-    color: #FFFFFF !important;
-}
-
-
-/* mat form field */
-
-.example-full-width {
-    width: 100%;
-}
-
-mat-hint {
-    font-size: 9px;
-}
-
-.mat-form-field {
-    font-size: 10px;
-    font-weight: 600;
-    line-height: 1.125;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: normal;
-    background: transparent;
 }

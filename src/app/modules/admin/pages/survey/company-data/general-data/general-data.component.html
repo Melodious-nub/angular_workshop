@@ -1,1 +1,188 @@
-<p>general-data works!</p>
+<div class="mt-2">
+    <form id="generaldataForm" #generaldataForm="ngForm" (ngSubmit)="ongeneraldataSubmit(generaldataForm)">
+        <div class="row">
+            <label class="center mb-3" style="font-size: 12px !important;">Type of company</label>
+            <!-- type of company select radio as button -->
+            <div class="col-md-12 mb-4">
+                <!-- radio buttons -->
+                <div class="center">
+                    <mat-radio-group class="form-row">
+                        <mat-radio-button class="m-15 me-3" #brand id="brand" type="radio" name="exist" value="1"> Sole Proprietorship
+                        </mat-radio-button>
+
+                        <mat-radio-button class="m-15 me-3" #employee id="employee" type="radio" name="exist" value="2"> Partnership
+                        </mat-radio-button>
+
+                        <mat-radio-button class="m-15 me-3" #factory id="factory" type="radio" name="exist" value="3"> Private Limited
+                        </mat-radio-button>
+
+                        <mat-radio-button class="m-15 me-3" #consumer id="consumer" type="radio" name="exist" value="4"> Public Limited
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <!-- end col-12 type of ccompany radio -->
+
+            <!-- 4*3col start -->
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Name of Investors / Shareholder</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Origin of Investors / Shareholder</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Percentage of share</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <!-- end 4*3col start -->
+            <!-- add button-->
+            <div class="center mb-3">
+                <input ngModel #memberAdd="ngModel" class="btn-check" type="checkbox" name="memberAdd" id="memberAdd">
+                <label for="memberAdd" class="btn btn-outline-secondary btn-add">Add</label>
+            </div>
+
+            <!-- horizontal line -->
+            <hr class="mb-3">
+            <!-- end hr -->
+
+            <label class="center mb-3" style="font-size: 12px !important;">Company details</label>
+            <!-- company details field -->
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Year of foundation </mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Male employee</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Female employee</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Economic sector</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Own Brands</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- horizontal line -->
+            <div class="mb-3"></div>
+            <hr class="mb-3">
+            <!-- end hr -->
+
+            <label class="center mb-3" style="font-size: 12px !important;">Business License</label>
+            <!-- business license field -->
+            <div class="col-md-12 mb-4">
+                <!-- radio buttons -->
+                <div class="center">
+                    <mat-radio-group class="form-row">
+                        <mat-radio-button class="m-15 me-4" type="radio" name="blicense" value="1"> Available
+                        </mat-radio-button>
+
+                        <mat-radio-button class="m-15 me-4" type="radio" name="blicense" value="2"> In application process
+                        </mat-radio-button>
+
+                        <mat-radio-button class="m-15 me-4" type="radio" name="blicense" value="3"> Not yet applied
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Business licence no</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Date of expire</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+
+            <!-- horizontal line -->
+            <div class="mb-3"></div>
+            <hr class="mb-3">
+            <!-- end hr -->
+
+            <label class="center mb-3" style="font-size: 12px !important;">Trade licence</label>
+            <!-- trade license field -->
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Trade licence no</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Date of expire</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+
+            <!-- horizontal line -->
+            <div class="mb-3"></div>
+            <hr class="mb-3">
+            <!-- end hr -->
+
+            <label class="center mb-3" style="font-size: 12px !important;">Trade licence</label>
+            <!-- taxID field -->
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Tax ID</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+
+        </div>
+        <!-- end row -->
+    </form>
+</div>

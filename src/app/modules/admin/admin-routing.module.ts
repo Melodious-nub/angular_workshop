@@ -7,7 +7,9 @@ import { ServicesComponent } from './pages/services/services.component';
 import { AboutComponent } from './pages/survey/company-data/about/about.component';
 import { CompanyDataComponent } from './pages/survey/company-data/company-data.component';
 import { CustomerComponent } from './pages/survey/company-data/customer/customer.component';
+import { DepartmentComponent } from './pages/survey/company-data/department/department.component';
 import { GeneralDataComponent } from './pages/survey/company-data/general-data/general-data.component';
+import { MembershipComponent } from './pages/survey/company-data/membership/membership.component';
 import { SupplierComponent } from './pages/survey/company-data/supplier/supplier.component';
 import { CompanyInfoComponent } from './pages/survey/company-info/company-info.component';
 import { PoliciesComponent } from './pages/survey/policies/policies.component';
@@ -31,6 +33,8 @@ const routes: Routes = [
         { path: 'general-data', component: GeneralDataComponent},
         { path: 'customer', component: CustomerComponent},
         { path: 'supplier', component: SupplierComponent},
+        { path: 'membership', component: MembershipComponent},
+        { path: 'department', component: DepartmentComponent},
         // { path: 'resource-management', component: ResourceManagementComponent},
       ]
     

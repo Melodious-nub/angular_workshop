@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-general-data',
@@ -10,6 +11,10 @@ export class GeneralDataComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ongeneraldataSubmit(generaldataForm: NgForm){
+    console.log(generaldataForm.value);
   }
 
 }

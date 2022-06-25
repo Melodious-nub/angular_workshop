@@ -36,7 +36,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
+import { MembershipComponent } from './pages/survey/company-data/membership/membership.component';
+import { DepartmentComponent } from './pages/survey/company-data/department/department.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     CustomerComponent,
     SupplierComponent,
     AboutComponent,
+    MembershipComponent,
+    DepartmentComponent,
   ],
   imports: [
     CommonModule,
